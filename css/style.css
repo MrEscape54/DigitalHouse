@@ -37,22 +37,23 @@ svg{
     margin-top: 0;
 }
 
-#MainNav {
+#MainNav, #SubNav, #Gender{
     display: flex;
     flex-direction: column;
-    padding: 0;}
+    padding: 0;
+    margin: 0 10% 10px;
+}
 
-#MainNav li{
+#MainNav li, #SubNav li, #Gender li{
     border: 1px solid #ececec;;
     background-color: #F7F7F7;
     padding: 0 15px;
     height: 45px;
     line-height: 45px;
-    margin: 0 10%;
     letter-spacing: 0.1em;
 }
 
-#MainNav li a{
+#MainNav li a, #SubNav li a, #Gender li a{
     text-transform: uppercase;
     text-decoration: none;
     color: #4F4F4F;
