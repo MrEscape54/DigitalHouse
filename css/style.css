@@ -83,16 +83,60 @@ color: #999;
 font-size: 0.8em;
 }
 
-footer .container{padding: 50px 5% 5px;}
+footer .container{
+    padding: 0 5% 5px; 
+    color: white;
+    line-height: 1em;
+}
+footer .container > div{padding-top: 40px;}
+
 footer h6{
+    margin: 0 0 0.8em;
     text-transform: uppercase; 
     color: white;
     font-size: 1em;
 }
 
-footer ul{list-style: none;}
+.foot-contacto a{
+    padding-top: 2px;
+}
+.input-wrap input{
+    border: 1px solid #fff;
+    height: 40px;
+    background-color: transparent;
+    padding: 0 10px;
+    width: 65%;
+    margin-top: .5em;
+}
 
-footer a{
+.input-wrap{
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-wrap button{
+    background-color: #fff;
+    border-color: #fff;
+    height: 40px;
+    color: #000;
+    text-transform: uppercase;
+    width: 30%;
+    margin-top: .5em;
+    border-style: none;
+}
+
+footer ul{
+    padding: 0;
+    list-style: none; 
+    display: flex;
+    flex-direction: column;
+}
+
+footer li{
+    padding: 10px 0;
+    border-bottom: 0.5px solid #999;
+}
+footer a, footer address{
     text-decoration: none;
     color: #999;
 }
