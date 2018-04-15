@@ -91,7 +91,7 @@ footer .container{
 footer .container > div{padding-top: 40px;}
 
 footer h6{
-    margin: 0 0 0.8em;
+    margin: 0 0 10px;
     text-transform: uppercase; 
     color: white;
     font-size: 1em;
@@ -136,6 +136,8 @@ footer li{
     padding: 10px 0;
     border-bottom: 0.5px solid #999;
 }
+
+footer li:first-child{padding-top: 0}
 footer a, footer address{
     text-decoration: none;
     color: #999;
