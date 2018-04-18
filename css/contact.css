@@ -1,0 +1,90 @@
+.contact{
+   padding: 1em 1em;
+  margin: 2em 5%; 
+  border: 0.5px solid #ccc;
+}
+input, input[type="radio"] + label,
+input[type="checkbox"] + label:before, textarea {
+  font-family: Montserrat, sans-serif;
+  font-size: 0.85rem;
+  color: #2f4f4f;
+  width: 100%;
+  padding: 0.5em;
+  background-color: #f9f9f9;
+  border: 1px solid #e5e5e5;
+  box-sizing: border-box;
+}
+input:focus, textarea:focus {
+  outline: 0;
+  border-color: #5D7E95;
+}
+input:focus + .input-icon svg {
+  color: #5D7E95;
+}
+.input-group-icon .input-icon:after {
+  position: absolute;
+  top: 0.3em;
+  bottom: 0.3em;
+  left: 1.5em;
+  display: block;
+  border-right: 1px solid #e5e5e5;
+  content: "";
+}
+input:focus + .input-icon:after {
+  border-right-color: #5D7E95;
+}
+input[type="radio"] {
+  display: none;
+}
+input[type="radio"] + label, input[type="submit"], input[type="reset"]{
+  display: inline-block;
+  width: 48.5%;
+  text-align: center;
+  border-radius: 0;
+}
+
+input[type="radio"] + label:last-of-type, input[type="reset"]{
+  float: right;
+}
+input[type="radio"] + label i {
+  padding-right: 0.4em;
+}
+input[type="radio"]:checked + label,
+input:checked + label:before
+{
+  background-color: #5D7E95;
+  color: #fff;
+  border-color: #5D7E95;
+}
+
+.input-group {
+  margin-bottom: 0.75em;
+}
+
+.contact div:last-child{margin-bottom: 0;}
+
+.input-group:before,
+.input-group:after {
+  content: "";
+  display: table;
+}
+.input-group:after {
+  clear: both;
+}
+.input-group-icon {
+  position: relative;
+}
+.input-group-icon input {
+  padding-left: 2em;
+}
+.input-group-icon .input-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1.65em;
+  height: 2em;
+  line-height: 2.2em;
+  text-align: center;
+  pointer-events: none;
+}
+

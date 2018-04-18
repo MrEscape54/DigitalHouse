@@ -132,7 +132,6 @@ nav span{
     margin: 0 auto 30px;
     background-color: #EFECEA;
     overflow: hidden;
-    text-align: center;
     padding-bottom: 30px;
 }
 
@@ -143,16 +142,18 @@ nav span{
 }
 
 .boton-tr{
-    display: inline-block;
+    display: block;
     background-color: #222;
     color: #fff;
     font-size: 12px;
     letter-spacing: .125em;
     text-transform: uppercase;
+    text-align: center;
     cursor: pointer;
     line-height: 35px;
     width: 200px;
     text-decoration: none;
+    margin: 0 auto;
 }
 
 footer{
@@ -231,6 +232,7 @@ footer a, footer address{
     text-align: center;
 }
 
+/* -------------------contact.hmtl-------------------------- */
 .map{
     display: block;
     margin: 0 auto;
@@ -243,21 +245,4 @@ footer a, footer address{
     margin: 10px auto;
     display: flex;
     justify-content: space-between;
-}
-
-.google-map address{font-size: 0.8em; text-align: start;}
-
-.google-map a {
-    text-align: center;
-    display: inline-block;
-    color: #222;
-    border: 1px solid #222;
-    font-size: 12px;
-    letter-spacing: .125em;
-    text-transform: uppercase;
-    cursor: pointer;
-    line-height: 35px;
-    width: 200px;
-    text-decoration: none;
-    height: 35px;
 }
