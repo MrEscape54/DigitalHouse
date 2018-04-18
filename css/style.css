@@ -7,7 +7,7 @@ svg{
 }
 
 .search-scart{
-    width: 40%;
+    
     margin: 20px auto;
     display: flex;
     justify-content: space-around;    
@@ -37,25 +37,227 @@ svg{
     margin-top: 0;
 }
 
-#MainNav {
+#MainNav, #SubNav, #Gender{
     display: flex;
     flex-direction: column;
-    padding: 0;}
+    padding: 0;
+    margin: 0 10% 10px;
+}
 
-#MainNav li{
+#MainNav li, #SubNav li, #Gender li, nav span{
     border: 1px solid #ececec;;
     background-color: #F7F7F7;
     padding: 0 15px;
     height: 45px;
     line-height: 45px;
-    margin: 0 10%;
     letter-spacing: 0.1em;
+    border-bottom: 0;
 }
 
-#MainNav li a{
+#MainNav li a, #SubNav li a, #Gender li a, nav span{
     text-transform: uppercase;
     text-decoration: none;
-    color: #4F4F4F;
+    color: #232323;
     font-size: 0.8em;
-    font-weight: 700;
+}
+
+#MainNav .last, #SubNav .last, #Gender .last{border-bottom: 1px solid #ececec;}
+
+nav span{
+    display: block;
+    margin: 0 10%;
+}
+
+.login{color: #999; font-size: 0.9em;}
+
+.about{
+    background-color: #f6f6f6;
+    padding: 10px 5% 40px;
+    text-align: center;
+}
+
+.brands{
+    padding: 10px 5% 30px;
+    text-align: center;
+}
+
+.about p{line-height: 25px; color: #999; margin-bottom: 25px;
+}
+
+.about h3{color: #222; font-weight: 100; font-size: 24px;}
+.about a, .brands > a{
+    display: inline-block;
+    background-color: #222;
+    color: #fff;
+    font-size: 12px;
+    letter-spacing: .125em;
+    text-transform: uppercase;
+    cursor: pointer;
+    line-height: 35px;
+    width: 200px;
+    text-decoration: none;
+}
+
+.brands > a{
+    margin-top: 25px;
+    
+}
+.brands ul{
+    display: flex;
+    padding: 0;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0 auto;
+    opacity: 0.7;
+}
+.brands li{
+    list-style: none; 
+    width: 30%; 
+    text-align: center; 
+    margin: 10px 0;}
+.brands img{width: 70%;
+}
+
+.destacados{padding-top: 25px;}
+
+.destacados h3{
+    text-align: center; 
+    color: #222; 
+    font-weight: 100; 
+    font-size: 20px; 
+    margin: 0 0 20px;}
+
+.collections{
+    width: 80%;
+    margin: 0 auto 30px;
+    background-color: #EFECEA;
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.collections .logo{    
+    margin: 10px auto;
+    width: 35%;
+    display: block;
+}
+
+.boton-tr{
+    display: inline-block;
+    background-color: #222;
+    color: #fff;
+    font-size: 12px;
+    letter-spacing: .125em;
+    text-transform: uppercase;
+    cursor: pointer;
+    line-height: 35px;
+    width: 200px;
+    text-decoration: none;
+}
+
+footer{
+background-color: black;
+color: #999;
+font-size: 0.8em;
+}
+
+footer .container{
+    padding: 0 5% 5px; 
+    color: white;
+    line-height: 1em;
+}
+footer .container > div{padding-top: 40px;}
+
+footer h6{
+    margin: 0 0 10px;
+    text-transform: uppercase; 
+    color: white;
+    font-size: 1em;
+}
+
+.foot-contacto a{
+    padding-top: 2px;
+}
+.input-wrap input{
+    border: 1px solid #fff;
+    height: 40px;
+    background-color: transparent;
+    padding: 0 10px;
+    width: 65%;
+    margin-top: .5em;
+}
+
+.input-wrap{
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-wrap button{
+    background-color: #fff;
+    border-color: #fff;
+    height: 40px;
+    color: #000;
+    text-transform: uppercase;
+    width: 30%;
+    margin-top: .5em;
+    border-style: none;
+}
+
+footer ul{
+    padding: 0;
+    list-style: none; 
+    display: flex;
+    flex-direction: column;
+}
+
+footer li{
+    padding: 10px 0;
+    border-bottom: 0.5px solid #999;
+}
+
+footer li:first-child{padding-top: 0}
+footer a, footer address{
+    text-decoration: none;
+    color: #999;
+    margin-bottom: 5px;
+}
+
+
+.foot-social{margin-top: -10px;}
+
+.copyright{
+    color: #999; 
+    font-size: 0.7em; 
+    text-align: center;
+}
+
+.map{
+    display: block;
+    margin: 0 auto;
+    width: 90%;
+    filter: grayscale(0.7);
+}
+
+.google-map{
+    width: 90%;
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.google-map address{font-size: 0.8em; text-align: start;}
+
+.google-map a {
+    text-align: center;
+    display: inline-block;
+    color: #222;
+    border: 1px solid #222;
+    font-size: 12px;
+    letter-spacing: .125em;
+    text-transform: uppercase;
+    cursor: pointer;
+    line-height: 35px;
+    width: 200px;
+    text-decoration: none;
+    height: 35px;
 }
