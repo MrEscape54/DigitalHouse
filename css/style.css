@@ -7,10 +7,10 @@ svg{
 }
 
 .search-scart{
-    
+
     margin: 20px auto;
     display: flex;
-    justify-content: space-around;    
+    justify-content: space-around;
 }
 
 .badge{
@@ -100,7 +100,7 @@ nav span{
 
 .brands > a{
     margin-top: 25px;
-    
+
 }
 .brands ul{
     display: flex;
@@ -111,9 +111,9 @@ nav span{
     opacity: 0.7;
 }
 .brands li{
-    list-style: none; 
-    width: 30%; 
-    text-align: center; 
+    list-style: none;
+    width: 30%;
+    text-align: center;
     margin: 10px 0;}
 .brands img{width: 70%;
 }
@@ -121,10 +121,10 @@ nav span{
 .destacados{padding-top: 25px;}
 
 .destacados h3{
-    text-align: center; 
-    color: #222; 
-    font-weight: 100; 
-    font-size: 20px; 
+    text-align: center;
+    color: #222;
+    font-weight: 100;
+    font-size: 20px;
     margin: 0 0 20px;}
 
 .collections{
@@ -135,7 +135,7 @@ nav span{
     padding-bottom: 30px;
 }
 
-.collections .logo{    
+.collections .logo{
     margin: 10px auto;
     width: 35%;
     display: block;
@@ -163,7 +163,7 @@ font-size: 0.8em;
 }
 
 footer .container{
-    padding: 0 5% 5px; 
+    padding: 0 5% 5px;
     color: white;
     line-height: 1em;
 }
@@ -171,7 +171,7 @@ footer .container > div{padding-top: 40px;}
 
 footer h6{
     margin: 0 0 10px;
-    text-transform: uppercase; 
+    text-transform: uppercase;
     color: white;
     font-size: 1em;
 }
@@ -206,7 +206,7 @@ footer h6{
 
 footer ul{
     padding: 0;
-    list-style: none; 
+    list-style: none;
     display: flex;
     flex-direction: column;
 }
@@ -227,8 +227,8 @@ footer a, footer address{
 .foot-social{margin-top: -10px;}
 
 .copyright{
-    color: #999; 
-    font-size: 0.7em; 
+    color: #999;
+    font-size: 0.7em;
     text-align: center;
 }
 
@@ -254,3 +254,61 @@ footer a, footer address{
 .faq-item{width: 90%; margin: 0 auto 20px;}
 .question{margin: 0; padding: 5px; font-weight: 600; background-color: #DDD;}
 .answer{margin: 0; padding: 5px; background-color: #f6f6f6;}
+
+
+/* ----------------- MEDIA QUERIES  ------------------------- */
+
+/* ::::: Pantallas chicas verticales (479px o menos) ::::: */
+@media only screen and (max-width: 479px) {
+
+  body {
+  	padding: 0;
+    width: 320px;
+  }
+
+}
+/* : : : fin de estructura de pantallas chicas verticales : : : */
+
+/* ::::: Pantallas chicas apaisadas (entre 480px y 767px) ::::: */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+
+  body {
+  	padding: 0;
+    width: 480px;
+  }
+
+}
+/* : : : fin de estructura de pantallas chicas apaisadas : : : */
+
+/* ::::: Pantallas medianas verticales (entre 768px y 991px) ::::: */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+  body {
+  	padding: 20px 28px 0 28px;
+    width: 712px;
+  }
+
+}
+/* : : : fin de estructura de pantallas medianas verticales : : : */
+
+/* ::::: Pantallas medianas apaisadas (entre 992px y 1175px) ::::: */
+@media only screen and (min-width: 992px) and (max-width: 1175px) {
+
+  body {
+	  padding: 20px 28px 0 28px;
+    width: 712px;
+}
+
+}
+
+/* : : : fin de estructura de pantallas medianas apaisadas : : : */
+
+/* ::::: Pantallas grandes (1176px o más) ::::: */
+@media only screen and (min-width: 1176px) {
+  body {
+    width: 1080px;
+  }
+
+}
+
+/* : : : fin de estructura de padding: pantallas grandes : : : */
