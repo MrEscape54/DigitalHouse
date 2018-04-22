@@ -126,12 +126,13 @@ nav span{
 
 .brands li{
     list-style: none;
-    width: 30%;
+    width: 50%;
     text-align: center;
     margin: 10px 0;
 }
 
-.brands img{width: 70%;
+.brands img{
+  width: 70%;
 }
 
 .destacados{
@@ -316,10 +317,10 @@ footer a, footer address{
 
 /* -----------------  MEDIA QUERIES  ------------------------- */
 
-/*-------------------index.html-------------------*/
+/*------------------index.html-------------------*/
 
 @media (min-width: 768px) {
-                      /*nav*/
+/*nav*/
   .search-scart {
     display: flex;
     justify-content: flex-end;
@@ -330,7 +331,7 @@ footer a, footer address{
   .scart {
     padding: 0 30px;
   }
-                      /*marcas destacadas*/
+/*marcas destacadas*/
   .destacados {
     display: flex;
     flex-wrap: wrap;
@@ -344,11 +345,13 @@ footer a, footer address{
     width: 40%;
   }
 
-                      /*-----footer-----*/
+/*marcas*/
 
-  footer {
-    display:
+  .brands li {
+    width: 30%;
   }
+
+/*footer*/
 
   .foot-newsletter, .foot-contacto, .foot-info, .foot-social {
     width: 40%;
@@ -362,10 +365,28 @@ footer a, footer address{
     width: 61.5%;
   }
 
-/*-------------------faq.html-------------------*/
+/*---faq.html---*/
 
   .question {
     text-align: left;
+  }
+
+}
+
+/*------- ¡¡¡ LAPTOP 1024PX !!! -------*/
+
+@media (min-width: 1024px) {
+
+  .collections {
+    width: 20%;
+  }
+
+  .boton-tr {
+    width: 80%;
+  }
+
+  .faq-container {
+    font-size: 1em;
   }
 
 }
