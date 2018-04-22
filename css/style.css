@@ -75,6 +75,14 @@ nav span{
   font-size: 0.9em;
 }
 
+.showcase {
+  display: none;
+}
+
+.showcase img {
+  width: 100%;
+}
+
 .about{
     background-color: #f6f6f6;
     padding: 10px 5% 40px;
@@ -317,7 +325,7 @@ footer a, footer address{
 
 /* -----------------  MEDIA QUERIES  ------------------------- */
 
-/*------------------index.html-------------------*/
+/*---index.html---*/
 
 @media (min-width: 768px) {
 /*nav*/
@@ -348,7 +356,7 @@ footer a, footer address{
 /*marcas*/
 
   .brands li {
-    width: 30%;
+    width: 20%;
   }
 
 /*footer*/
@@ -376,6 +384,11 @@ footer a, footer address{
 /*------- ¡¡¡ LAPTOP 1024PX !!! -------*/
 
 @media (min-width: 1024px) {
+
+  .showcase {
+    width: 100%;
+    display: block;
+  }
 
   .collections {
     width: 20%;
