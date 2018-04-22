@@ -61,14 +61,19 @@ svg{
     font-size: 0.8em;
 }
 
-#MainNav .last, #SubNav .last, #Gender .last{border-bottom: 1px solid #ececec;}
+#MainNav .last, #SubNav .last, #Gender .last{
+  border-bottom: 1px solid #ececec;
+}
 
 nav span{
     display: block;
     margin: 0 10%;
 }
 
-.login{color: #999; font-size: 0.9em;}
+.login{
+  color: #999;
+  font-size: 0.9em;
+}
 
 .about{
     background-color: #f6f6f6;
@@ -81,10 +86,18 @@ nav span{
     text-align: center;
 }
 
-.about p{line-height: 25px; color: #999; margin-bottom: 25px;
+.about p{
+  line-height: 25px;
+  color: #999;
+  margin-bottom: 25px;
 }
 
-.about h3{color: #222; font-weight: normal; font-size: 24px;}
+.about h3{
+  color: #222;
+  font-weight: normal;
+  font-size: 24px;
+}
+
 .about a, .brands > a{
     display: inline-block;
     background-color: #222;
@@ -110,15 +123,20 @@ nav span{
     margin: 0 auto;
     opacity: 0.7;
 }
+
 .brands li{
     list-style: none;
     width: 30%;
     text-align: center;
-    margin: 10px 0;}
+    margin: 10px 0;
+}
+
 .brands img{width: 70%;
 }
 
-.destacados{padding-top: 25px;}
+.destacados{
+  padding-top: 25px;
+}
 
 .destacados h3{
     text-align: center;
@@ -133,6 +151,10 @@ nav span{
     background-color: #EFECEA;
     overflow: hidden;
     padding-bottom: 30px;
+}
+
+.collections .foto {
+  width: 100%;
 }
 
 .collections .logo{
@@ -167,7 +189,9 @@ footer .container{
     color: white;
     line-height: 1em;
 }
-footer .container > div{padding-top: 40px;}
+footer .container > div{
+  padding-top: 40px;
+}
 
 footer h6{
     margin: 0 0 10px;
@@ -179,6 +203,7 @@ footer h6{
 .foot-contacto a{
     padding-top: 2px;
 }
+
 .input-wrap input{
     border: 1px solid #fff;
     height: 40px;
@@ -216,7 +241,10 @@ footer li{
     border-bottom: 0.5px solid #999;
 }
 
-footer li:first-child{padding-top: 0}
+footer li:first-child{
+  padding-top: 0
+}
+
 footer a, footer address{
     text-decoration: none;
     color: #999;
@@ -248,67 +276,96 @@ footer a, footer address{
 }
 
 /*-------------------FAQ.html--------------------------------*/
-.faq-msg{background-color: #f6f6f6; padding: 10px; text-align: center; width: 90%; margin: 0 auto 20px;}
-.faq-msg h3{font-weight: normal;}
-.faq-container{width: 100%; font-size: 0.85em;}
-.faq-item{width: 90%; margin: 0 auto 20px;}
-.question{margin: 0; padding: 5px; font-weight: 600; background-color: #DDD;}
-.answer{margin: 0; padding: 5px; background-color: #f6f6f6;}
+
+.faq-msg{
+  background-color: #f6f6f6;
+  padding: 10px;
+  text-align: center;
+  width: 90%;
+  margin: 0 auto 20px;
+}
+
+.faq-msg h3{
+  font-weight: normal;
+}
+
+.faq-container{
+  width: 100%;
+  font-size: 0.85em;
+}
+
+.faq-item{
+  width: 90%;
+  margin: 0 auto 20px;
+}
+
+.question{
+  margin: 0;
+  padding: 5px;
+  font-weight: 600;
+  background-color: #DDD;
+  text-align: center;
+}
+
+.answer{
+  margin: 0;
+  padding: 5px;
+  background-color: #f6f6f6;
+}
 
 
-/* ----------------- MEDIA QUERIES  ------------------------- */
+/* -----------------  MEDIA QUERIES  ------------------------- */
 
-/* ::::: Pantallas chicas verticales (479px o menos) ::::: */
-@media only screen and (max-width: 479px) {
+/*-------------------index.html-------------------*/
 
-  body {
-  	padding: 0;
-    width: 320px;
+@media (min-width: 768px) {
+                      /*nav*/
+  .search-scart {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 10%;
+    position: relative;
+  }
+
+  .scart {
+    padding: 0 30px;
+  }
+                      /*marcas destacadas*/
+  .destacados {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .destacados h3 {
+    width: 100%;
+  }
+
+  .collections {
+    width: 40%;
+  }
+
+                      /*-----footer-----*/
+
+  footer {
+    display:
+  }
+
+  .foot-newsletter, .foot-contacto, .foot-info, .foot-social {
+    width: 40%;
+  }
+
+  .foot-newsletter button {
+    width: 36.5%;
+  }
+
+  .foot-newsletter input {
+    width: 61.5%;
+  }
+
+/*-------------------faq.html-------------------*/
+
+  .question {
+    text-align: left;
   }
 
 }
-/* : : : fin de estructura de pantallas chicas verticales : : : */
-
-/* ::::: Pantallas chicas apaisadas (entre 480px y 767px) ::::: */
-@media only screen and (min-width: 480px) and (max-width: 767px) {
-
-  body {
-  	padding: 0;
-    width: 480px;
-  }
-
-}
-/* : : : fin de estructura de pantallas chicas apaisadas : : : */
-
-/* ::::: Pantallas medianas verticales (entre 768px y 991px) ::::: */
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-
-  body {
-  	padding: 20px 28px 0 28px;
-    width: 712px;
-  }
-
-}
-/* : : : fin de estructura de pantallas medianas verticales : : : */
-
-/* ::::: Pantallas medianas apaisadas (entre 992px y 1175px) ::::: */
-@media only screen and (min-width: 992px) and (max-width: 1175px) {
-
-  body {
-	  padding: 20px 28px 0 28px;
-    width: 712px;
-}
-
-}
-
-/* : : : fin de estructura de pantallas medianas apaisadas : : : */
-
-/* ::::: Pantallas grandes (1176px o más) ::::: */
-@media only screen and (min-width: 1176px) {
-  body {
-    width: 1080px;
-  }
-
-}
-
-/* : : : fin de estructura de padding: pantallas grandes : : : */
