@@ -6,8 +6,7 @@ svg{
     color: #DCDC;
 }
 
-.search-scart{
-
+.search-scart {
     margin: 20px auto;
     display: flex;
     justify-content: space-around;
@@ -329,16 +328,35 @@ footer a, footer address{
 
 @media (min-width: 768px) {
 /*nav*/
+
   .search-scart {
-    display: flex;
-    justify-content: flex-end;
+    float: right;
     padding-right: 10%;
-    position: relative;
+    margin-top: 60px;
   }
 
   .scart {
-    padding: 0 30px;
+    padding: 0 60px;
   }
+
+  .logo-container {
+    float: left;
+    padding-left: 10%;
+    margin-top: 25px;
+  }
+
+  .logo-container img {
+    margin: 0 auto;
+  }
+
+  hr {
+    display: none;
+  }
+
+  #MainNavOuter {
+    clear: both;
+  }
+
 /*marcas destacadas*/
   .destacados {
     display: flex;
@@ -375,11 +393,21 @@ footer a, footer address{
 
 /*---faq.html---*/
 
+  .faq-msg {
+    clear: both;
+  }
+
   .question {
     text-align: left;
   }
 
 }
+
+/*---LOGIN---*/
+
+  .login-page {
+    clear: both;
+  }
 
 /*------- ¡¡¡ LAPTOP 1024PX !!! -------*/
 
@@ -400,6 +428,13 @@ footer a, footer address{
 
   .faq-container {
     font-size: 1em;
+  }
+
+
+/*---CONTACTO---*/
+
+  .boton-mapa {
+    width: 20%;
   }
 
 }
