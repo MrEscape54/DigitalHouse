@@ -193,11 +193,11 @@ font-size: 0.8em;
 }
 
 footer .container{
-    padding: 0 5% 5px;
-    color: white;
-    line-height: 1em;
+  padding: 0 5% 5px;
+  color: white;
+  line-height: 1em;
 }
-footer .container > div{
+footer .container .primera-fila > div, footer .container .segunda-fila > div{
   padding-top: 40px;
 }
 
@@ -379,6 +379,18 @@ footer a, footer address{
 
 /*footer*/
 
+  .primera-fila, .segunda-fila{
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .segunda-fila{align-items: baseline;} 
+
+    
+  .copyright {
+    clear: both;
+  }
+
   .foot-newsletter, .foot-contacto, .foot-info, .foot-social {
     width: 40%;
   }
@@ -430,7 +442,21 @@ footer a, footer address{
     font-size: 1em;
   }
 
+  .primera-fila, .segunda-fila{
+      width: 50%;
+      float: left;
+    }
+    
+  .copyright {
+    visibility: hidden;
+  }
 
+  .input-wrap{
+    flex-direction: column;
+  }
+
+  .foot-newsletter input{ width: 100%;}
+  .foot-newsletter button{width: 100%; height: 30px;}
 /*---CONTACTO---*/
 
   .boton-mapa {
