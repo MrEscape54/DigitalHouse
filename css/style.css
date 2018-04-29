@@ -91,6 +91,7 @@ nav span{
 .brands{
     padding: 10px 5% 30px;
     text-align: center;
+    border-bottom: 1px solid #f2f2f2;
 }
 
 .about p{
@@ -150,7 +151,7 @@ nav span{
     text-align: center;
     color: #222;
     font-weight: 100;
-    font-size: 20px;
+    font-size: 22px;
     margin: 0 0 20px;}
 
 .collections{
@@ -315,6 +316,7 @@ footer a, footer address{
 }
 
 .answer{
+  font-size: 0.9em;
   margin: 0;
   padding: 5px;
   background-color: #f6f6f6;
@@ -352,8 +354,58 @@ footer a, footer address{
     display: none;
   }
 
-  #MainNavOuter {
+  nav span{display: none;}
+
+    #MainNavOuter {
     clear: both;
+  }
+
+  #MainNav, #SubNav, #Gender{
+    font-size: 0.9em;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0;
+  }
+
+  #MainNav li{
+    background-color: white;
+    border:none;
+    padding: 10px 10px 0;
+    height: inherit;
+  }
+
+  #MainNav li:nth-child(n+7){
+    display: none;
+  }
+  #MainNav li:last-child{
+    display: block;
+    border: none;
+    font-weight: 700;
+  }
+
+  #MainNav li:last-child a{color:#5d7e95;}
+
+  #SubNav li:last-child, #Gender li:last-child{display: none;}
+
+  #SubNav li{
+    border: none;
+    background-color: #5d7e95;
+  }
+
+  #SubNav li:first-child{border-bottom-left-radius: 10px;}
+  #SubNav li:nth-last-child(2){border-bottom-right-radius: 10px;}
+
+  #SubNav li a{
+    color: #FFF;
+  }
+
+  #Gender{margin-top: 10px;}
+  #Gender li{
+    margin: 0 5px;
+    text-align: center;
+    border: none;
+    width: 100px;
+    border-radius: 10px;
   }
 
   .slider {
@@ -378,9 +430,6 @@ footer a, footer address{
     overflow: hidden;
     position: relative;
     left: 0px;
-    -webkit-transition: left .8s cubic-bezier(0.77, 0, 0.175, 1);
-    -moz-transition: left .8s cubic-bezier(0.77, 0, 0.175, 1);
-    -o-transition: left .8s cubic-bezier(0.77, 0, 0.175, 1);
     transition: left .8s cubic-bezier(0.77, 0, 0.175, 1);
 }
  
@@ -398,7 +447,7 @@ footer a, footer address{
 .slider input[type=radio] {
     position: relative;
     left: 50%;
-    transform: translate(-330%);
+    transform: translate(-230%);
     top: 10px;
     z-index: 100;
 }
@@ -412,16 +461,9 @@ footer a, footer address{
     width: 12px;
     height: 12px;
     background-color:#ccc;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
     border-radius: 50%;
     cursor: pointer;
-    -webkit-box-shadow: 0px 0px 3px rgba(0,0,0,.8);
-    -moz-box-shadow: 0px 0px 3px rgba(0,0,0,.8);
     box-shadow: 0px 0px 3px rgba(0,0,0,.8);
-    -webkit-transition: background-color .2s;
-    -moz-transition: background-color .2s;
-    -o-transition: background-color .2s;
     transition: background-color .2s;
 }
  
@@ -530,6 +572,25 @@ footer a, footer address{
     color: #fff;
 }
 
+ #MainNav, #SubNav, #Gender{font-size: 1em;}
+
+
+ #MainNav li{padding: 10px 20px 0;}
+ #SubNav li, #Gender li{ padding: 0 20px;}
+
+ #MainNav li a:hover, #Gender li a:hover{
+   color:#385667;
+    border-bottom: 1px solid #385667;
+  }
+
+  #SubNav li a:hover{
+   color: #FFF;
+    border-bottom: 1px solid #FFF;
+  }
+
+  .brands img{
+  width: 50%;
+}
   .collections {
     width: 20%;
   }
@@ -559,4 +620,14 @@ footer a, footer address{
     width: 20%;
   }
 
+}
+
+@media (min-width: 1440px) {
+
+  #MainNav{
+  font-size: 1em;
+      width: 65%;
+      margin: 0 auto;
+      justify-content: space-around;
+  }
 }
