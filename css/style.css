@@ -566,7 +566,8 @@ footer a, footer address{
 
 
  #MainNav li{padding: 10px 20px 0;}
- #SubNav li, #Gender li{ padding: 0 20px;}
+ #SubNav li{ padding: 0 20px;}
+ #Gender li{ padding: 0 10px;}
 
  #MainNav li a:hover, #Gender li a:hover{
    color:#385667;
