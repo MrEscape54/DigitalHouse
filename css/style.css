@@ -7,7 +7,7 @@ svg{
 }
 
 .search-scart {
-    margin: 20px auto;
+    margin: 20px auto 5px;
     display: flex;
     justify-content: space-around;
 }
@@ -91,7 +91,6 @@ nav span{
 .brands{
     padding: 10px 5% 30px;
     text-align: center;
-    border-bottom: 1px solid #f2f2f2;
 }
 
 .about p{
@@ -330,25 +329,13 @@ footer a, footer address{
 @media (min-width: 768px) {
 /*nav*/
 
-  .search-scart {
-    float: right;
-    padding-right: 10%;
-    margin-top: 60px;
-  }
-
-  .scart {
-    padding: 0 60px;
-  }
-
-  .logo-container {
-    float: left;
-    padding-left: 10%;
-    margin-top: 25px;
-  }
-
   .logo-container img {
     margin: 0 auto;
   }
+
+  .search-scart{width: 75%;}
+
+  .fa-search{margin-right: 400px;}
 
   hr {
     display: none;
@@ -488,6 +475,7 @@ footer a, footer address{
   .destacados {
     display: flex;
     flex-wrap: wrap;
+    background-color: #f9f9f9;
   }
 
   .destacados h3 {
@@ -552,6 +540,8 @@ footer a, footer address{
 
 @media (min-width: 1024px) {
  
+.fa-search{margin-right: 575px;}
+
 .description {
     position: absolute;
     bottom: 0;
@@ -624,10 +614,14 @@ footer a, footer address{
 
 @media (min-width: 1440px) {
 
+  .fa-search{margin-right: 840px;}
+
   #MainNav{
   font-size: 1em;
-      width: 65%;
+      width: 75%;
       margin: 0 auto;
       justify-content: space-around;
   }
+
+  #SubNav li{padding: 0 35px;}
 }
