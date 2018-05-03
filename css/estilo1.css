@@ -459,9 +459,9 @@ sub-boton:hover {
   margin: 2em 5%;
   border: 0.5px solid #ccc;
 }
-
-.contact form{position: relative;}
-
+.contact form {
+  position: relative;
+}
 input, input[type="radio"] + label, textarea {
   font-family: Montserrat, sans-serif;
   font-size: 0.85rem;
@@ -500,7 +500,6 @@ input[type="radio"] + label, input[type="submit"], input[type="reset"]{
   text-align: center;
   border-radius: 0;
 }
-
 input[type="radio"] + label:last-of-type, input[type="reset"]{
   float: right;
 }
@@ -514,24 +513,26 @@ input:checked + label:before
   color: #fff;
   border-color: #5D7E95;
 }
-div label{font-size: 0.8em;}
-
-input[type="checkbox"] {width: auto; float: left;}
-
+div label {
+  font-size: 0.8em;
+}
+input[type="checkbox"] {
+  width: auto; float: left;
+}
 form span{
   float: left;
   padding-left: 5px;
   margin-top: -1.5px;
 }
-
-main .login{padding-bottom: 25px;}
-
+main .login {
+  padding-bottom: 25px;
+}
 .input-group {
   margin-bottom: 0.75em;
 }
-
-.contact div:last-child{margin-bottom: 0;}
-
+.contact div:last-child {
+  margin-bottom: 0;
+}
 .input-group-icon {
   position: relative;
 }
@@ -548,31 +549,32 @@ main .login{padding-bottom: 25px;}
   text-align: center;
   pointer-events: none;
 }
-input[type="submit"] + a{text-decoration: none; color: #222; font-size: 0.8em; padding-left: 10px;}
-
+input[type="submit"] + a {
+  text-decoration: none;
+  color: #222;
+  font-size: 0.8em;
+  padding-left: 10px;
+}
 /* --- configuraciones especificas de faq.html --- */
 .faq-msg{
   background-color: #f6f6f6;
   padding: 10px;
   text-align: center;
   width: 90%;
-  margin: 0 auto 20px;
+  margin: 0 auto 50px;
 }
-
 .faq-msg h3{
   font-weight: normal;
 }
-
 .faq-container{
-  width: 100%;
   font-size: 0.85em;
+  margin: 0 auto 50px;
+  width: 100%;
 }
-
 .faq-item{
   width: 90%;
   margin: 0 auto 20px;
 }
-
 .question{
   margin: 0;
   padding: 5px;
@@ -580,7 +582,6 @@ input[type="submit"] + a{text-decoration: none; color: #222; font-size: 0.8em; p
   background-color: #DDD;
   text-align: center;
 }
-
 .answer{
   font-size: 0.9em;
   margin: 0;
@@ -605,7 +606,7 @@ input[type="submit"] + a{text-decoration: none; color: #222; font-size: 0.8em; p
 /* ----------------- MEDIA QUERIES  ------------------------- */
 
 /* ::::: Pantallas chicas apaisadas (entre 480px y 767px) :::::*/
-@media only screen and (min-width: 480px) and (max-width: 767px) {
+@media only screen and (min-width: 480px) {
   body {
     width: 480px;
   }
@@ -677,7 +678,6 @@ input[type="submit"] + a{text-decoration: none; color: #222; font-size: 0.8em; p
   .brands a {
     margin-top: 25px;
   }
-
   /* ---------- footer ---------- */
   .foot-content  {
     flex-direction: row;
@@ -702,7 +702,7 @@ input[type="submit"] + a{text-decoration: none; color: #222; font-size: 0.8em; p
 /* : : : fin de estructura de pantallas chicas apaisadas : : : */
 
 /* ::::: Pantallas medianas verticales (entre 768px y 991px) ::::: */
-@media only screen and (min-width: 768px) and (max-width: 991px) {
+@media only screen and (min-width: 768px) {
   body {
   	padding: 20px 28px 0 28px;
     width: 712px;
@@ -743,18 +743,6 @@ input[type="submit"] + a{text-decoration: none; color: #222; font-size: 0.8em; p
   header nav li a:hover {
     background-position: 50% 3px;
   }
-  .n-inicio {
-    background-image:  url(../img/n-inicio.jpg);
-  }
-  .n-registro {
-    background-image: url(../img/n-registro.jpg);
-  }
-  .n-preguntas {
-    background-image: url(../img/n-preguntas.jpg);
-  }
-  .n-contacto {
-    background-image: url(../img/n-contacto.jpg);
-  }
   /* --- configuraciones especificas de inicio.html --- */
   /* ---------- contenido ---------- */
   .content{
@@ -787,7 +775,6 @@ input[type="submit"] + a{text-decoration: none; color: #222; font-size: 0.8em; p
     top: 335px;
     width: 440px;
   }
-
   /* ---------- destacado > subscripcion ---------- */
  .subscripcion {
     background-size: 50px auto;
@@ -796,18 +783,18 @@ input[type="submit"] + a{text-decoration: none; color: #222; font-size: 0.8em; p
    .subscripcion p {
     display: inline-block;
     float: left;
-    margin: 6px 20px 6px 20px;
+    margin: 6px 20px 6px 15px;
     width: auto;
   }
   .newsletter {
     float: right;
-    margin-left: 20px;
+    margin: 0 20px;
     padding: 10px 10px;
     width: auto;
   }
   /* ---------- destacado > subscripcion ---------- */
   .email {
-    width: 230px;
+    width: 180px;
   }
   /* ---------- contenido principal > menu filtros ---------- */
   #MainNavOuter, #SubNavOuter, #GenderOuter{
@@ -992,7 +979,6 @@ input[type="submit"] + a{text-decoration: none; color: #222; font-size: 0.8em; p
   .collections{
     width: 40%;
   }
-
   /* ---------- footer ---------- */
   .foot-content  {
     flex-direction: row;
@@ -1036,10 +1022,10 @@ input[type="submit"] + a{text-decoration: none; color: #222; font-size: 0.8em; p
   /* --- configuraciones especificas de contacto.html --- */
   main .login, main .signin{
   margin: 0 auto 2em;
-  width: 50%;
+  width: 60%;
   }
   .map{margin: 0 auto;
-    width: 70%;
+    width: 90%;
   }
   .login .input-group, .login .input-group-icon,
   .signin .input-group, .signin .input-group-icon
@@ -1077,18 +1063,26 @@ input[type="submit"] + a{text-decoration: none; color: #222; font-size: 0.8em; p
     text-align: center;
     border-radius: 0;
   }
-   input[type="reset"] {width: 50%;}
+   input[type="reset"] {
+     width: 50%;
+   }
   }
-}
 /* : : : fin de estructura de pantallas medianas verticales : : : */
 
 /* ::::: Pantallas medianas apaisadas (entre 992px y 1175px) :::::*/
-@media only screen and (min-width: 992px) and (max-width: 1175px) {
+@media only screen and (min-width: 992px) {
   body {
 	  padding: 50px 48px 0 48px;
     width: 896px;
   }
-    header {
+  .wrap {
+    position: relative;
+    height: 100%;
+    margin: 0 0 25px;
+    width: 100%;
+  }
+  header {
+    float: left;
     width: 160px;
   }
   .head-nav {
@@ -1102,7 +1096,7 @@ input[type="submit"] + a{text-decoration: none; color: #222; font-size: 0.8em; p
   }
   .content {
   	float: right;
-  	width: 896px;
+  	width: 730px;
   }
   .head-nav nav li:last-child {
     margin: 0;
@@ -1110,7 +1104,7 @@ input[type="submit"] + a{text-decoration: none; color: #222; font-size: 0.8em; p
       /* --- destacado --*/
   .destacado {
     position: relative;
-    height: 510px;
+    height: 460px;
   }
   .destacado .d-foto {
     width: 712px;
@@ -1175,7 +1169,6 @@ input[type="submit"] + a{text-decoration: none; color: #222; font-size: 0.8em; p
   padding: 10px 10px 0;
   height: inherit;
 }
-
 #MainNav li:nth-child(n+7){
   display: none;
 }
@@ -1398,7 +1391,6 @@ input[type="submit"] + a{text-decoration: none; color: #222; font-size: 0.8em; p
   .legal-content ul{
     margin: 1rem;
   }
-
   /*  --------- footer > pagos ---------- */
   .pagos-content {
     display: inline;
@@ -1418,11 +1410,20 @@ input[type="submit"] + a{text-decoration: none; color: #222; font-size: 0.8em; p
   }
   /* ---------- footer > social ---------- */
   .social-content {
+    display: inline;
     margin: 1rem;
   }
-  .social-link span{
+  .social-content ul {
+    display: inline-block;
+  }
+  .social-content ul li {
+    border: none;
+  }
+  .social {
+    display: inline-block;
+  }
+  .social-link {
     display: inline;
-    font-size: 0.8rem;
   }
   /* --- configuraciones especificas de login.html --- */
 
@@ -1430,14 +1431,14 @@ input[type="submit"] + a{text-decoration: none; color: #222; font-size: 0.8em; p
 
   /* --- configuraciones especificas de contacto.html --- */
   .map{margin: 0 auto;
-    width: 40%;
+    width: 80%;
   }
   .contact{
   margin: 2em auto;
-    width: 60%;
+    width: 75%;
   }
   main .login, main .signin{
-    width: 40%;
+    width: 60%;
   }
 }
 /* : : : fin de estructura de pantallas medianas apaisadas : : : */
@@ -1468,50 +1469,7 @@ input[type="submit"] + a{text-decoration: none; color: #222; font-size: 0.8em; p
   	float: right;
   	width: 896px;
   }
-/*
-
-.destacado {
-  position: relative;
-  height: 510px;
-}
-.destacado .d-foto {
-  width: 712px;
-}
-.d-foto section {
-  position: relative;
-  width: 896px;
-}
-.d-foto section img {
-  left: -92px;
-  position: absolute;
-  width: 100%;
-}
-.d-foto section h1,
-.d-foto section h2 {
-  left: 0;
-}
-.d-foto section.alt h1,
-.d-foto section.alt h2 {
-  left: auto;
-  right: 184px;
-}
-.d-foto section h1 {
-  background: #FFF;
-  color: #314455;
-  font-size: 1.5em;
-  padding: 10px 24px 15px;
-  top: 285px;
-}
-.d-foto section h2 {
-  font-size: 1em;
-  padding: 8px 24px 12px;
-  top: 334px;
-}
-
-*/
-
 /* ---------- contenido principal > menu filtros ---------- */
-
 #MainNavOuter, #SubNavOuter, #GenderOuter{
   clear: both;
   display: block;
@@ -1537,7 +1495,6 @@ input[type="submit"] + a{text-decoration: none; color: #222; font-size: 0.8em; p
   padding: 10px 10px 0;
   height: inherit;
 }
-
 #MainNav li:nth-child(n+7){
   display: none;
 }
@@ -1693,14 +1650,11 @@ input[type="submit"] + a{text-decoration: none; color: #222; font-size: 0.8em; p
 .collections{
   width: 20%;
 }
-
   footer {
-    float: right;
-    width: 896px;
+    width: 100%;
   }
-
   .destacado {
-    height: 560px;
+    height: 460px;
   }
   .destacado .d-foto {
     width: 896px;
@@ -1751,7 +1705,6 @@ input[type="submit"] + a{text-decoration: none; color: #222; font-size: 0.8em; p
   color: #FFFFFF;
   }
   .foot-news {  /*  antes era "newsletter" */
-
   }
   .foot-input-wrap {  /*  antes era "input-wrap" */
   width: 100%;
@@ -1813,11 +1766,10 @@ input[type="submit"] + a{text-decoration: none; color: #222; font-size: 0.8em; p
 
   /* --- configuraciones especificas de contacto.html --- */
   .contact{
-    width: 50%;
+    width: 75%;
   }
-
   main .login, main .signin{
-    width: 30%;
+    width: 60%;
   }
 
 }
