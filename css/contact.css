@@ -1,10 +1,20 @@
 .contact{
    padding: 1em 1em;
-  margin: 2em 5%; 
+  margin: 2em 5%;
   border: 0.5px solid #ccc;
 }
 
 .contact form{position: relative;}
+
+.login p, .signin p{
+    font-size: 0.9em;
+    color: #5d7e95;
+    font-weight: 700;
+  }
+
+   .signin p{
+    font-size: 0.8em;
+  }
 
 input, input[type="radio"] + label, textarea {
   font-family: Montserrat, sans-serif;
@@ -119,7 +129,7 @@ input[type="submit"] + a{text-decoration: none; color: #222; font-size: 0.8em; p
   input[type="radio"]{
     position: absolute;
     top: 0;
-    right: 0; 
+    right: 0;
   }
 
   input[placeholder="Asunto"]{
@@ -159,7 +169,7 @@ input[type="submit"] + a{text-decoration: none; color: #222; font-size: 0.8em; p
     width: 60%;
   }
 
-  
+
 main .login, main .signin{
     width: 40%;
   }
