@@ -1,189 +1,173 @@
 <!DOCTYPE html>
-<html lang="es" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>LDD relojes</title>
-    <link rel="icon" type="image/png" href="img/favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="img/favicon-16x16.png" sizes="16x16" />
-    <link rel="stylesheet" href="css/estilo1.css">
+    <title>DDL | Relojes de Lujo</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/sanitize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contact.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700|Open+Sans:800" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
-  </head>
-  <body id="home-page">
-    <div class="wrap">
-      <header>
-        <h1 class="branding">
-          <a href="/" title="Home">LDD relojes</a>
-        </h1>
-        <nav class="head-nav">
-          <ul>
-            <li class="n-inicio">
-              <a href="index.html">Inicio</a>
-            </li>
-            <li class="n-registro">
-              <a href="login.html">Registro</a>
-            </li>
-            <li class="n-preguntas">
-              <a href="faq.html">Preguntas</a>
-            </li>
-            <li class="n-contacto">
-              <a href="contacto.html">Contacto</a>
-            </li>
-          </ul>
-        </nav>
-      </header>
-      <main class="content">
-          <div class="contact login">
-              <form>
-                  <div class="input-group input-group-icon">
-                      <input type="email" placeholder="Correo electrónico" />
-                      <div class="input-icon">
-                          <i class="fas fa-envelope"></i>
-                      </div>
-                  </div>
-                  <div class="input-group input-group-icon">
-                      <input type="password" placeholder="Contraseña" />
-                      <div class="input-icon">
-                          <i class="fas fa-lock"></i>
-                      </div>
-                  </div>
-                  <div class="input-group">
-                      <input type="submit" value="Ingresar" />
-                      <a href="#">Olvidé mi contraseña</a>
-                  </div>
-                  <div>
-                  <label>
-                      <input type="checkbox" id="cbox1" value="remember">
-                      <span>Recordarme</span>
-                  </label>
-                  </div>
-              </form>
-          </div>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="search-scart">
+            <i class="fas fa-search fa-lg"></i>
+            <div class="scart">
+                <a href="#"><i class="fas fa-shopping-cart fa-lg"></i></a>
+                <span class="badge">13</span>
+            </div>
 
-          <div class="contact signin">
-              <form>
-                  <div class="input-group input-group-icon">
-                      <input type="text" placeholder="Nombre" />
-                      <div class="input-icon">
-                          <i class="fas fa-user"></i>
-                      </div>
-                  </div>
-                  <div class="input-group input-group-icon">
-                      <input type="email" placeholder="Correo electrónico" />
-                      <div class="input-icon">
-                          <i class="fas fa-envelope"></i>
-                      </div>
-                  </div>
-                  <div class="input-group input-group-icon">
-                      <input type="tel" placeholder="Teléfono" />
-                      <div class="input-icon">
-                          <i class="fas fa-phone"></i>
-                      </div>
-                  </div>
-                  <div class="input-group input-group-icon">
-                      <input type="password" placeholder="Contraseña" />
-                      <div class="input-icon">
-                          <i class="fas fa-lock"></i>
-                      </div>
-                  </div>
-                  <div class="input-group input-group-icon">
-                      <input type="password" placeholder="Repite la contraseña" />
-                      <div class="input-icon">
-                          <i class="fas fa-lock"></i>
-                      </div>
-                  </div>
-                  <div class="input-group">
-                      <input type="submit" value="Registrarse" />
-                      <input type="reset" value="Limpiar campos" />
-                  </div>
-              </form>
-          </div>
-      </main>
-      <footer>
-        <div class="foot-big">
-        <div class="news-content"> <!-- antes era "foot-newsletter" -->
-            <h4>Lista de Correo</h4>
-            <p>Recibe novedades y ofertas especiales</p>
-            <form class="foot-news"> <!-- antes era "newsletter" -->
-                <div class="foot-input-wrap"> <!-- antes era "input-wrap" -->
-                    <input class="foot-mail" type="text" placeholder="userix@dominio.com" name="email">
-                    <button class="foot-btn" type="submit">Suscribirse</button>
+            <div class="login">
+                <a href="login.html"> <i class="fas fa-sign-in-alt fa-lg"></i></a>
+            </div>
+        </div>
+        <hr style="border:0.2px solid #ccc; width: 80%;">
+        </div>
+        <div class="logo-container">
+            <a href="index.html"><img src="img/logo.png" alt="logo"></a>
+            <h4>RELOJES DE LUJO</h4>
+        </div>
+    </header>
+    <main class="login-page">
+        <div class="contact login">
+            <p>Ingresar</p>
+            <form>
+                <div class="input-group input-group-icon">
+                    <input type="email" placeholder="Correo electrónico" />
+                    <div class="input-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                </div>
+                <div class="input-group input-group-icon">
+                    <input type="password" placeholder="Contraseña" />
+                    <div class="input-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <input type="submit" value="Ingresar" />
+                    <a href="#">Olvidé mi contraseña</a>
+                </div>
+                <div>
+                <label>
+                    <input type="checkbox" id="cbox1" value="remember">
+                    <span>Recordarme</span> 
+                </label>
                 </div>
             </form>
         </div>
-          <div class="foot-content">
-            <div class="pagos-content">
-              <h4>Pagos verificados por: </h4>
-              <ul class="pagos">
-                <li class="copyright-item">
-                <i class="fab fa-cc-amex"> </i>
-                </li>
-                <li class="copyright-item">
-                <i class="fab fa-cc-mastercard"> </i>
-                </li>
-                <li class="copyright-item">
-                <i class="fab fa-cc-visa"> </i>
-                </li>
-                <li class="copyright-item">
-                <i class="fab fa-cc-paypal"> </i>
-                </li>
-              </ul>
-            </div> <!-- class="pagos-content" -->
-            <div class="legal-content">
-              <h4>©2018 LDD relojes</h4>
-              <ul class="legal">
-              <li class="nota-pie-2">
-                <a href="#">Política de privacidad</a>
-                </li>
-                <li class="nota-pie-2">
-                <a href="#">Términos de uso</a>
-                </li>
-                <li class="nota-pie-2">
-                <a href="#">Política de cookies</a>
-                </li>
-              </ul>
-            </div> <!-- class="legal-content" -->
-            <div class="social-content">
-              <h4>Seguinos en las redes</h4>
-                <ul>
-                <li class="social-link">
-                  <a href="#" target="_blank">
-                    <i class="fab fa-facebook-square"></i>
-                    <span>Facebook</span>
-                  </a>
-                </li>
-                <li class="social-link">
-                  <a href="#" target="_blank">
-                  <i class="fab fa-twitter"></i>
-                  <span>Twitter</span>
-                  </a>
-                </li>
-                <li class="social-link">
-                  <a href="#" target="_blank">
-                    <i class="fab fa-google-plus"></i>
-                    <span>Google+</span>
-                  </a>
-                </li>
-                <li class="social-link">
-                  <a href="#" target="_blank">
-                    <i class="fab fa-youtube"></i>
-                    <span>YouTube</span>
-                  </a>
-                </li>
-                <li class="social-link">
-                  <a href="#" target="_blank">
-                  <i class="fab fa-instagram"></i>
-                  <span>Instagram</span>
-                </a>
-              </li>
-              </ul>
-            </div> <!-- class="social-content" -->
-          </div> <!-- class="foot-content" -->
-        </div>
 
-        </footer>
-  </div> <!-- class="wrap" -->
+        <div class="contact signin">
+            <p>Registrarse</p>
+            <form>
+                <div class="input-group input-group-icon">
+                    <input type="text" placeholder="Nombre" />
+                    <div class="input-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+                <div class="input-group input-group-icon">
+                    <input type="email" placeholder="Correo electrónico" />
+                    <div class="input-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                </div>
+                <div class="input-group input-group-icon">
+                    <input type="tel" placeholder="Teléfono" />
+                    <div class="input-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                </div>
+                <div class="input-group input-group-icon">
+                    <input type="password" placeholder="Contraseña" />
+                    <div class="input-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                </div>
+                <div class="input-group input-group-icon">
+                    <input type="password" placeholder="Repite la contraseña" />
+                    <div class="input-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <input type="submit" value="Registrarse" />
+                    <input type="reset" value="Limpiar campos" />
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="primera-fila">
+                <div class="foot-newsletter">
+                    <h6>Lista de Correo</h6>
+                    <form class="newsletter">
+                        <div class="input-wrap">
+                            <input type="text" placeholder="noticias@ddl.com" name="email">
+                            <button type="submit">Suscribirse</button>
+                        </div>
+                    </form>
+                    <p style="margin-bottom: 0;">Recibe novedades y ofertas especiales</p>
+                </div>
+    
+                <div class="foot-contacto">
+                    <h6>Contacto</h6>
+                    <address>
+                        Lima 1111, CABA 1043
+                    </address>
+                    <a style="display: block" href="tel:+54 11 4248 7979">+54 11 4248 7979</a>
+                    <a href="mailto:info@nyd.com">info@ddl.com</a>
+                </div>
+            </div>
+    
+            <div class="segunda-fila">
+                <div class="foot-info">
+                    <h6>Información</h6>
+                    <ul>
+                        <li>
+                            <a href="index.html">Inicio</a>
+                        </li>
+                        <li>
+                            <a href="#">Acerca de</a>
+                        </li>
+                        <li>
+                            <a href="contacto.html">Contacto</a>
+                        </li>
+                        <li>
+                            <a href="faq.html">FAQ</a>
+                        </li>
+                    </ul>
+                </div>
+    
+                <div class="foot-social">
+                    <h6>Seguinos</h6>
+                    <ul>
+                        <li id="instagram">
+                            <a href="#">
+                                <i class="fab fa-instagram fa-lg"></i> Instagram</a>
+                        </li>
+                        <li id="facebook">
+                            <a href="#">
+                                <i class="fab fa-facebook fa-lg"></i> Facebook</a>
+                        </li>
+                        <li id="pinterest">
+                            <a href="#">
+                                <i class="fab fa-pinterest fa-lg"></i> Pinterest</a>
+                        </li>
+                        <li id="twitter">
+                            <a href="#">
+                                <i class="fab fa-twitter fa-lg"></i> Twitter</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <p class="copyright">Copyright 2018 - DDL</p>
+        </div>
+    </footer>
 </body>
 </html>

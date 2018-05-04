@@ -6,6 +6,16 @@
 
 .contact form{position: relative;}
 
+.login p, .signin p{
+    font-size: 0.9em;
+    color: #5d7e95;
+    font-weight: 700;
+  }
+
+   .signin p{
+    font-size: 0.8em;
+  }
+
 input, input[type="radio"] + label, textarea {
   font-family: Montserrat, sans-serif;
   font-size: 0.85rem;
