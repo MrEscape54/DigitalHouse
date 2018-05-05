@@ -12,62 +12,11 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header>
-        <div class="search-scart">
-            <i class="fas fa-search fa-lg"></i>
-            <div class="scart">
-                <a href="#"><i class="fas fa-shopping-cart fa-lg"></i></a>
-                <span class="badge">13</span>
-            </div>
 
-            <div class="login">
-                <a href="login.html"> <i class="fas fa-sign-in-alt fa-lg"></i></a>
-            </div>
-        </div>
-        <hr style="border:0.2px solid #ccc; width: 80%;">
-        <div class="logo-container">
-            <a href="index.html"><img src="img/logo.png" alt="logo"></a>
-            <h4>RELOJES DE LUJO</h4>
-        </div>
+<?php
+    include 'header.php';
+?>
 
-        <nav id="MainNavOuter">
-            <span>Marca</span>
-            <ul id="MainNav" class="">
-                <li class="active"><a href="#">Breguet</a></li>
-                <li><a href="#">Breitling</a></li>
-                <li><a href="#">Cartier</a></li>
-                <li><a href="#">Longines</a></li>
-                <li><a href="#">Montblanc</a></li>
-                <li><a href="#">Omega</a></li>
-                <li><a href="#">Piaget</a></li>
-                <li><a href="#">Rolex</a></li>
-                <li><a href="#">TAG Heuer</a></li>
-                <li class="last"><a href="#">Todos</a></li>
-            </ul>
-        </nav>
-
-        <nav id="SubNavOuter">
-            <span>Tipo</span>
-            <ul id="SubNav" class="">
-                <li class="active"><a href="#">Deportivo</a></li>
-                <li><a href="#">Automático</a></li>
-                <li><a href="#">Cronógrafo</a></li>
-                <li><a href="#">Buceo</a></li>
-                <li><a href="#">Smart</a></li>
-                <li><a href="#">Vintage</a></li>
-                <li class="last"> <a href="#">Todos</a></li>
-            </ul>
-        </nav>
-
-        <nav id="GenderOuter">
-            <span>Género</span>
-            <ul id="Gender" class="">
-                <li class="active"><a href="#">Hombre</a></li>
-                <li><a href="#">Mujer</a></li>
-                <li class="last"><a href="#">Todos</a></li>
-            </ul>
-        </nav>
-    </header>
     <main>
         <div class="slider">
             <input type="radio" id="control1" name="controls" checked="checked" />
@@ -101,7 +50,7 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi impedit saepe nihil ea, eligendi exercitationem
                     ipsum quia, quibusdam et porro distinctio enim vero consectetur incidunt vel aliquam autem, nam sapiente.
                 </p>
-                <a class="boton-tr" href="login.html">Registrarse</a>
+                <a class="boton-tr" href="login.php">Registrarse</a>
         </div>
         <section>
             <div class="second-sponsor">
@@ -162,53 +111,10 @@
             </div>
         </div>
     </main>
-    <footer>
-        <div class="container">
-            <div class="primera-fila">
-                <div class="foot-newsletter">
-                    <h6>Lista de Correo</h6>
-                    <form class="newsletter">
-                        <div class="input-wrap">
-                            <input type="text" placeholder="noticias@ddl.com" name="email">
-                            <button type="submit">Suscribirse</button>
-                        </div>
-                    </form>
-                    <p style="margin-bottom: 0;">Recibe novedades y ofertas especiales</p>
-                </div>
 
-                <div class="foot-contacto">
-                    <h6>Contacto</h6>
-                    <address>
-                        Lima 1111, CABA 1043
-                    </address>
-                    <a style="display: block" href="tel:+54 11 4248 7979">+54 11 4248 7979</a>
-                    <a href="mailto:info@nyd.com">info@ddl.com</a>
-                </div>
-            </div>
+<?php
+    include 'footer.php';
+?>  
 
-            <div class="segunda-fila">
-                <div class="foot-info">
-                    <h6>Información</h6>
-                    <ul>
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="#">Acerca de</a></li>
-                        <li><a href="contacto.html">Contacto</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                    </ul>
-                </div>
-
-                <div class="foot-social">
-                    <h6>Seguinos</h6>
-                    <ul>
-                        <li id="instagram"><a href="#"><i class="fab fa-instagram fa-lg"></i> Instagram</a></li>
-                        <li id="facebook"><a href="#"><i class="fab fa-facebook fa-lg"></i> Facebook</a></li>
-                        <li id="pinterest"><a href="#"><i class="fab fa-pinterest fa-lg"></i> Pinterest</a></li>
-                        <li id="twitter"><a href="#"><i class="fab fa-twitter fa-lg"></i> Twitter</a></li>
-                    </ul>
-                </div>
-            </div>
-            <p class="copyright">Copyright 2018 - DDL</p>
-        </div>
-      </footer>
 </body>
 </html>

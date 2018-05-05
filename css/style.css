@@ -318,6 +318,8 @@ footer a, footer address{
 @media (min-width: 768px) {
 /*nav*/
 
+  header{margin-bottom: 20px;}
+  
   .logo-container img {
     margin: 0 auto;
   }
