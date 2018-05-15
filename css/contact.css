@@ -6,15 +6,41 @@
 
 .contact form{position: relative;}
 
+.titulos{display: flex; justify-content: space-between; align-items: center;}
+
+.warning{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2em 5% -1em;
+  border: 1px solid tomato;
+  font-size: 0.85em;
+  font-weight: 600;
+  color: tomato;
+}
+
 .login p, .signin p{
     font-size: 0.9em;
     color: #5d7e95;
     font-weight: 700;
-  }
+}
 
    .signin p{
     font-size: 0.8em;
-  }
+}
+
+.login p a, .signin p a{
+  color: tomato;
+  
+}
+
+.obligatorio{
+  color: red; 
+  font-size: 0.7em; 
+  font-weight: 600;
+  margin-top: 0;
+  float: left;
+}
 
 input, input[type="radio"] + label, textarea {
   font-family: Montserrat, sans-serif;
@@ -81,7 +107,7 @@ form span{
 main .login{padding-bottom: 25px;}
 
 .input-group {
-  margin-bottom: 0.75em;
+  margin-bottom: 1.4em;
 }
 
 .contact div:last-child{margin-bottom: 0;}
@@ -91,6 +117,7 @@ main .login{padding-bottom: 25px;}
 }
 .input-group-icon input {
   padding-left: 2em;
+  margin-bottom: 4px;
 }
 .input-group-icon .input-icon {
   position: absolute;
@@ -112,6 +139,11 @@ input[type="submit"] + a{text-decoration: none; color: #222; font-size: 0.8em; p
     width: 50%;
   }
 
+  .warning{
+    width: 50%;
+    margin: 2em auto 1em;
+  }
+
   .map{margin: 0 auto;
     width: 70%;
   }
@@ -120,7 +152,7 @@ input[type="submit"] + a{text-decoration: none; color: #222; font-size: 0.8em; p
   .signin .input-group, .signin .input-group-icon
   {
     width: 100%;
-    margin: 0 auto 0.75em;
+    margin: 0 auto 1.4em;
   }
   .input-group, .input-group-icon{
     width: 48%;
@@ -138,12 +170,13 @@ input[type="submit"] + a{text-decoration: none; color: #222; font-size: 0.8em; p
     top: 0;
     right: 0;
   }
+  
   .input-group textarea{
     position: absolute;
     right: 0;
     width: 50%;
-    bottom: 44px;
-    height: 76px;
+    bottom: 55px;
+    height: 91px;
   }
 
   .send-reset{
@@ -170,7 +203,7 @@ input[type="submit"] + a{text-decoration: none; color: #222; font-size: 0.8em; p
   }
 
 
-main .login, main .signin{
+main .login, main .signin, .warning{
     width: 40%;
   }
 }
@@ -182,7 +215,7 @@ main .login, main .signin{
     width: 50%;
   }
 
-  main .login, main .signin{
+  main .login, main .signin, .warning{
     width: 30%;
   }
 }

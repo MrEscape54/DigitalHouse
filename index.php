@@ -30,18 +30,10 @@
 
             <div class="sliderinner">
                 <ul>
-                    <li>
-                        <img src="img/Showcase/rolex-hero-april-desktop.jpg" />
-                    </li>
-                    <li>
-                        <img src="img/Showcase/hublot-world-cup-desktop.jpg" />
-                    </li>
-                    <li>
-                        <img src="img/Showcase/cartiersantos-desktop.jpg " />
-                    </li>
-                    <li>
-                        <img src="img/Showcase/tag-comp-hp-hero.jpg" />
-                    </li>
+                    <li><img src="img/Showcase/rolex-hero-april-desktop.jpg" /></li>
+                    <li><img src="img/Showcase/hublot-world-cup-desktop.jpg" /></li>
+                    <li><img src="img/Showcase/cartiersantos-desktop.jpg " /></li>
+                    <li><img src="img/Showcase/tag-comp-hp-hero.jpg" /></li>
                 </ul>
             </div>
         </div>

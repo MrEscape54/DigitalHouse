@@ -5,7 +5,7 @@
                     <h6>Lista de Correo</h6>
                     <form class="newsletter">
                         <div class="input-wrap">
-                            <input type="text" placeholder="noticias@ddl.com" name="email">
+                            <input type="text" placeholder="Ingresa tu email" name="email">
                             <button type="submit">Suscribirse</button>
                         </div>
                     </form>

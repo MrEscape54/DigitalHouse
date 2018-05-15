@@ -1,3 +1,16 @@
+<?php
+//--------------------------------------------------validación de datos----------------------------
+
+require_once('functions.php');
+
+$email = '';
+$msg = '';
+$todoOk = ValidarIngreso($_POST);
+
+$todoOk === true ? header('Location: index.php') : $msg = 'Usuario o contraseña incorrecta';
+    
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,19 +30,29 @@
 <?php
     include 'header.php';
 ?>
+    <div class="warning">
+        <div class="input-icon">
+        <i style="font-size:1.5em; color:Tomato;" class="fas fa-exclamation-triangle"></i>
+        </div>
+        <p>Usuario o contraseña incorrecta</p>
+    </div>
 
     <main class="login-page">
         <div class="contact login">
-            <p>Ingresar</p>
-            <form>
+            <div class="titulos">
+                <p>Ingresar</p>
+                <p><a href="registro.php">Soy nuevo</a></p>
+            </div>
+
+            <form method="post">
                 <div class="input-group input-group-icon">
-                    <input type="email" placeholder="Correo electrónico" />
+                    <input type="email" name="email" placeholder="Correo electrónico" value=" <?php echo $email ?>"/>
                     <div class="input-icon">
                         <i class="fas fa-envelope"></i>
                     </div>
                 </div>
                 <div class="input-group input-group-icon">
-                    <input type="password" placeholder="Contraseña" />
+                    <input type="password" name="password" placeholder="Contraseña" />
                     <div class="input-icon">
                         <i class="fas fa-lock"></i>
                     </div>
@@ -40,53 +63,14 @@
                 </div>
                 <div>
                 <label>
-                    <input type="checkbox" id="cbox1" value="remember">
+                    <input type="checkbox" name="recordar "id="cbox1" value="remember">
                     <span>Recordarme</span>
                 </label>
                 </div>
             </form>
-        </div>
 
-        <div class="contact signin">
-            <p>Registrarse</p>
-            <form>
-                <div class="input-group input-group-icon">
-                    <input type="text" placeholder="Nombre" />
-                    <div class="input-icon">
-                        <i class="fas fa-user"></i>
-                    </div>
-                </div>
-                <div class="input-group input-group-icon">
-                    <input type="email" placeholder="Correo electrónico" />
-                    <div class="input-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                </div>
-                <div class="input-group input-group-icon">
-                    <input type="tel" placeholder="Teléfono" />
-                    <div class="input-icon">
-                        <i class="fas fa-phone"></i>
-                    </div>
-                </div>
-                <div class="input-group input-group-icon">
-                    <input type="password" placeholder="Contraseña" />
-                    <div class="input-icon">
-                        <i class="fas fa-lock"></i>
-                    </div>
-                </div>
-                <div class="input-group input-group-icon">
-                    <input type="password" placeholder="Repite la contraseña" />
-                    <div class="input-icon">
-                        <i class="fas fa-lock"></i>
-                    </div>
-                </div>
-                <div class="input-group">
-                    <input type="submit" value="Registrarse" />
-                    <input type="reset" value="Limpiar campos" />
-                </div>
-            </form>
         </div>
-    </main>
+    </main>    
 
 <?php
     include 'footer.php';
