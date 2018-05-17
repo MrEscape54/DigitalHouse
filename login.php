@@ -4,10 +4,14 @@
 require_once('functions.php');
 
 $email = '';
-$msg = '';
-$todoOk = ValidarIngreso($_POST);
+$password = '';
+$msg = 'none';
 
-$todoOk === true ? header('Location: index.php') : $msg = 'Usuario o contraseña incorrecta';
+if($_POST) {
+    $email = $_POST['email'];
+    $error = ValidarIngreso($_POST);
+    $error === true ? header('Location: index.php') : $msg = 'flex';
+}
     
 ?>
 
@@ -25,6 +29,9 @@ $todoOk === true ? header('Location: index.php') : $msg = 'Usuario o contraseña
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700|Open+Sans:800" rel="stylesheet">
     <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
 </head>
+<style>
+    .warning{display: <?php echo $msg ?> ;}
+</style>
 <body>
    
 <?php
@@ -52,7 +59,7 @@ $todoOk === true ? header('Location: index.php') : $msg = 'Usuario o contraseña
                     </div>
                 </div>
                 <div class="input-group input-group-icon">
-                    <input type="password" name="password" placeholder="Contraseña" />
+                    <input type="password" name="password" placeholder="Contraseña" value=" <?php echo $password ?>"/>
                     <div class="input-icon">
                         <i class="fas fa-lock"></i>
                     </div>

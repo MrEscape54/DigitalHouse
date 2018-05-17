@@ -1,5 +1,5 @@
 <?php
-
+//------------------------------------Valida datos ingresados en form de registro-------------------------------
 function ValidarRegistro($datos) {
 
   $nombre = '';
@@ -20,6 +20,12 @@ function ValidarRegistro($datos) {
       if ($email === '') {
         $errores['email'] = 'Campo obligatorio';
       }
+      elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      $errores['email'] = "En email ingresado no es válido.";
+      }
+      // elseif (existeMail($email)) { ///////////////////////////////////////////////////////////////////////////////
+      // $errores['email'] = 'Ya existe un usuario asociado a ese email.';
+  //}
 
       $password = trim($datos['password']);
       if ($password === '') {
@@ -34,7 +40,6 @@ function ValidarRegistro($datos) {
 
     if (!$errores) {
       $datosValidos = true;
-      $usuarioJSON = json_encode($datos);
     }
   } //end if($datos)
 
@@ -46,39 +51,56 @@ function ValidarRegistro($datos) {
   }
 } // end function
 
+//-------------------------------------------Guarda datos de usuario en DBUsuario.json---------------------------------
+function GuardarDatos($nuevoUsuario) { 
+  $nuevoUsuario['password'] = password_hash($nuevoUsuario['password'], PASSWORD_DEFAULT);
+  unset($nuevoUsuario['rePassword']);
+  $usuarioJSON = json_encode($nuevoUsuario);
 
-function GuardarDatos($datows) {
+  file_put_contents('DBUsuarios.json', $usuarioJSON . PHP_EOL, FILE_APPEND | LOCK_EX);
+  header('Location: index.php');
 
 }
 function ValidarIngreso($datosIngreso) {
   $email = ''; 
   $password = '';
+  $datosValidos = false;
 
   if($datosIngreso) {
-    $errores = [];
-
-    if (isset($datosIngreso['email'])) {
       $email = trim($datosIngreso['email']);
-      if ($email === '') {
-        $errores['email'] = 'El campo es obligatorio';
-        return $email;
-      }     
-    }
-
-    if (isset($datosIngreso['password'])) {
       $password = trim($datosIngreso['password']);
-      if ($password === '') {
-        $errores['password'] = 'El campo es obligatorio';
-        return $password;
-      }     
-    }
 
-    if(!$errores) {
-      return true;
-    } 
-    else {
+      $baseDeUsuarios = TraerBaseDeUsuarios();
+
+      foreach ($baseDeUsuarios as $usuario) {
+        if ($email == $usuario['email']) {
+          $fila = $usuario;
+        }
+      }
+      
+      if (isset($fila)) {
+        if (password_verify($password, $fila['password'])) {
+          return true;
+        }
+        else {
+          return false;
+        }
+      }
       return false;
-    }
+
   }
+}
+
+function TraerBaseDeUsuarios() {
+  $usuariosJSON = file_get_contents('DBUsuarios.json');
+  $array = explode(PHP_EOL, $usuariosJSON); //Crea un elemento del array por línea. Usa como delimiter PHP_EOL
+  array_pop($array); // Quita la última linea ya que esta vacía
+
+  $arrayUsuarios = []; //contenedor
+
+    foreach ($array as $usuario) {
+        $arrayUsuarios[] = json_decode($usuario, true); //Completa $arrayUsuarios por cada índice de $array
+    }
+    return $arrayUsuarios; 
 }
  ?>
