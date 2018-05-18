@@ -39,7 +39,7 @@ if($_POST) {
 ?>
     <div class="warning">
         <div class="input-icon">
-        <i style="font-size:1.5em; color:Tomato;" class="fas fa-exclamation-triangle"></i>
+        <i style="font-size:1.5em; color:Tomato; margin-right:5px;" class="fas fa-exclamation-triangle"></i>
         </div>
         <p>Usuario o contraseña incorrecta</p>
     </div>
@@ -53,13 +53,13 @@ if($_POST) {
 
             <form method="post">
                 <div class="input-group input-group-icon">
-                    <input type="email" name="email" placeholder="Correo electrónico" value=" <?php echo $email ?>"/>
+                    <input type="email" name="email" placeholder="Correo electrónico" value="<?php echo $email ?>"/>
                     <div class="input-icon">
                         <i class="fas fa-envelope"></i>
                     </div>
                 </div>
                 <div class="input-group input-group-icon">
-                    <input type="password" name="password" placeholder="Contraseña" value=" <?php echo $password ?>"/>
+                    <input type="password" name="password" placeholder="Contraseña" value="<?php echo $password ?>"/>
                     <div class="input-icon">
                         <i class="fas fa-lock"></i>
                     </div>

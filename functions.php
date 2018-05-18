@@ -23,9 +23,9 @@ function ValidarRegistro($datos) {
       elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
       $errores['email'] = "En email ingresado no es válido.";
       }
-      // elseif (existeMail($email)) { ///////////////////////////////////////////////////////////////////////////////
-      // $errores['email'] = 'Ya existe un usuario asociado a ese email.';
-  //}
+      elseif (EsUsuario(TraerBaseDeUsuarios(), $email)) { 
+      $errores['email'] = 'Ya existe un usuario asociado a ese email.';
+      }
 
       $password = trim($datos['password']);
       if ($password === '') {
@@ -64,7 +64,6 @@ function GuardarDatos($nuevoUsuario) {
 function ValidarIngreso($datosIngreso) {
   $email = ''; 
   $password = '';
-  $datosValidos = false;
 
   if($datosIngreso) {
       $email = trim($datosIngreso['email']);
@@ -74,23 +73,14 @@ function ValidarIngreso($datosIngreso) {
 
       foreach ($baseDeUsuarios as $usuario) {
         if ($email == $usuario['email']) {
-          $fila = $usuario;
-        }
-      }
-      
-      if (isset($fila)) {
-        if (password_verify($password, $fila['password'])) {
-          return true;
-        }
-        else {
-          return false;
+          return password_verify($password, $usuario['password']);
         }
       }
       return false;
-
   }
 }
 
+//Trae la base entera en formato de array asociativo.
 function TraerBaseDeUsuarios() {
   $usuariosJSON = file_get_contents('DBUsuarios.json');
   $array = explode(PHP_EOL, $usuariosJSON); //Crea un elemento del array por línea. Usa como delimiter PHP_EOL
@@ -101,6 +91,17 @@ function TraerBaseDeUsuarios() {
     foreach ($array as $usuario) {
         $arrayUsuarios[] = json_decode($usuario, true); //Completa $arrayUsuarios por cada índice de $array
     }
-    return $arrayUsuarios; 
+    return $arrayUsuarios;
 }
+
+//Busca el mail ingresado en la base de usuarios. Retorna verdadero si lo encuentra.
+function EsUsuario($tablaUsuarios, $email) {
+  foreach ($tablaUsuarios as $usuario) {
+    if ($email == $usuario['email']) {
+      return true;
+    }
+  }
+  return false;
+}
+
  ?>
