@@ -1,6 +1,6 @@
 <?php
 //------------------------------------Valida datos ingresados en form de registro-------------------------------
-function ValidarRegistro($datos) {
+function ValidarRegistro($datos, $avatar) {
 
   $nombre = '';
   $email = '';
@@ -9,6 +9,7 @@ function ValidarRegistro($datos) {
   $errores = [];
   $datosValidos = false;
 
+  //Si se hace un submit
   if($datos) {
 
       $nombre = trim($datos['nombre']);
@@ -23,6 +24,7 @@ function ValidarRegistro($datos) {
       elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
       $errores['email'] = "En email ingresado no es válido.";
       }
+      //Verifica si ya existe un usuario registrado con ese email
       elseif (EsUsuario(TraerBaseDeUsuarios(), $email)) { 
       $errores['email'] = 'Ya existe un usuario asociado a ese email.';
       }
@@ -34,33 +36,55 @@ function ValidarRegistro($datos) {
     
     $rePassword = trim($datos['rePassword']);
 
-    if (($password !== '') && ($password !== $rePassword) ) {
+    if (($password !== '') && ($password !== $rePassword)) {
       $errores['rePassword'] = 'Las contraseñas no coinciden';
     }
 
+    if($_FILES['avatar']['error'] == UPLOAD_ERR_OK) {
+      $ext = pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION);
+      if (($ext == 'jpg') || ($ext == 'JPG') || ($ext == 'PNG') || ($ext == 'png') || ($ext == 'gif') || ($ext == 'GIF')){
+        $avatar = dirname(__FILE__) . '\img\fotosPerfil\\' . $datos['email'] . '.' . $ext ;
+      }
+      else {
+        $errores['avatar'] = 'El archivo no es una imagen válida (png, jpg, gif)';
+      }
+    }
     if (!$errores) {
       $datosValidos = true;
     }
   } //end if($datos)
 
+  //Si los datos son válidos se crea y guarda el registro.
   if ($datosValidos) {
-    guardarDatos($datos);
+    GuardarDatos($datos, $avatar);
   }
   else {
     return $errores;
   }
 } // end function
 
-//-------------------------------------------Guarda datos de usuario en DBUsuario.json---------------------------------
-function GuardarDatos($nuevoUsuario) { 
-  $nuevoUsuario['password'] = password_hash($nuevoUsuario['password'], PASSWORD_DEFAULT);
-  unset($nuevoUsuario['rePassword']);
-  $usuarioJSON = json_encode($nuevoUsuario);
+//Crea registro de nuevo usuario
+function CrearUsuario($datos, $avatar) {
+  $usuario = [
+    'ID' => AgregarID(),
+    'nombre' => $datos['nombre'],
+    'email' => $datos['email'],
+    'password' => password_hash($datos['password'], PASSWORD_DEFAULT),
+    'avatar' => $avatar
+  ];
 
+  return  $usuario;
+}
+
+//-------------------------------------------Guarda datos de usuario en DBUsuario.json---------------------------------
+function GuardarDatos($nuevoUsuario, $avatar) { 
+  $usuarioJSON = json_encode(CrearUsuario($nuevoUsuario, $avatar));
   file_put_contents('DBUsuarios.json', $usuarioJSON . PHP_EOL, FILE_APPEND | LOCK_EX);
   header('Location: index.php');
 
 }
+
+//-----------------------------------------Valida email y password del form ingreso-----------------------------------
 function ValidarIngreso($datosIngreso) {
   $email = ''; 
   $password = '';
@@ -102,6 +126,17 @@ function EsUsuario($tablaUsuarios, $email) {
     }
   }
   return false;
+}
+
+//Retorna el ID del último registro de la bade de usuarios
+function AgregarID() {
+  $usuarios = TraerBaseDeUsuarios();
+  if (empty($usuarios)) {
+    return 1;
+  }
+  else {
+    return $usuarios[count($usuarios) - 1]['ID'] + 1;
+  }
 }
 
  ?>
