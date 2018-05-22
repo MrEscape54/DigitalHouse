@@ -1,12 +1,4 @@
-{"ID":1,"nombre":"sssss","email":"fssssssda@sddf.sscodsms","password":"$2y$10$Ta1\/VFDHk1zAfcvc8bWGmu3Oil3fnCP58Wz.iI8u0lsecs8IFp2z."}
-{"ID":2,"nombre":"sssss","email":"fsssssssda@sddf.sscodsms","password":"$2y$10$sQjXOjS4JE5R7MVKVUZGl.YExmwhyihbdpoWljknzRDBPjD0dg2nq"}
-{"ID":3,"nombre":"diego","email":"dsad@dddc.com","password":"$2y$10$LUXde.bJ.p46P2Z.BcAbzOniEosxGLUs5QILhPdWIh1VxaCa0hxam"}
-{"ID":4,"nombre":"diego","email":"dddd@ddsd.com","password":"$2y$10$sFBOFT4iABhJMphzNkk1NOZdewyPJfFcqY2aBJcFCaUJSW3c6kQY2"}
-{"ID":5,"nombre":"xxx","email":"xxx@xx.com","password":"$2y$10$qzVvi6tnswNeDQrGYxz4Y.z94ijgtg0XYJANRHBa2Vpjea5J8Sdy6"}
-{"ID":6,"nombre":"www","email":"www@ddd.com","password":"$2y$10$dabB\/y.QMZlyfZwk3HVEzOZOnU7wRv5SQ6h7WeLUU4bpOLtoOYYgG"}
-{"ID":7,"nombre":"ssss","email":"ssss@dasdc.com","password":"$2y$10$fLpZtfRMOPvFZ.igZG2dUOawvQivAF7qG7Spk4R6eUblRtwlzwkDa"}
-{"ID":8,"nombre":"ssss","email":"ssss@dasddc.com","password":"$2y$10$nuQ8PduGVs9IONbiImNY0OD7gjfxocSnlsn\/eNKvZlw856Hfw306K"}
-{"ID":9,"nombre":"diego","email":"diego@caca.com","password":"$2y$10$6er5MAslgLx4J9mYEjQtfuc0O3uv94FbSYrrug1vP3TqzEPupXviO","avatar":null}
-{"ID":10,"nombre":"diego","email":"diego@casca.com","password":"$2y$10$yc.c84XeMtsHIUVUl.Q05.oKmWj6yk27sF4AGFSiKvnplxUlUEYLW","avatar":""}
-{"ID":18,"nombre":"sd","email":"asdf@wsdsdd.com","password":"$2y$10$H2BBB2h5xfiHycRMMaxdgu9NXr7DypCtTfAviq1lBTvbGv6P10t\/K","avatar":"C:\\xampp\\htdocs\\php\\DigitalHouse\\img\\fotosPerfil\\Avatar_generico.png"}
-{"ID":19,"nombre":"asf","email":"asdf@ssss.c","password":"$2y$10$U2rPCW5OHZTTrR23J8BSl.TKByG3P28abh380A8rq3IF0\/lBbqlCO","avatar":"C:\\xampp\\htdocs\\php\\DigitalHouse\\img\\fotosPerfil\\asdf@ssss.c.PNG"}
+{"nombre":"sss","email":"sss@ss","phone":"","password":"$2y$10$d7ES5Qe0cPwVGmH7K9g8COrg4f8PunKKd5aagMgL9mLbvibCmcVju"}
+{"nombre":"sss","email":"sss@ss","phone":"","password":"$2y$10$Daf6GQLQXxgtX2INhrBon.jBUYASRzUyKmiGEq19feYk2JSt1JwGi"}
+{"nombre":"sss","email":"sss@ss","phone":"112244112345","password":"$2y$10$8Ym1NDGRFTvqE3IgX8oqf.JsuCtHCnxzt5GG6.V0wTI8t5G7scg4W"}
+{"nombre":"aaa","email":"aa@aa.com","phone":"","password":"$2y$10$wjDrWa\/YvTX3u2a9Mbd89.mCbEliv2Fs0Bm9d1pErN\/23fITOyS7S"}

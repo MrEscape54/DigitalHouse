@@ -3,11 +3,7 @@
 
 require_once('functions.php');
 
-
-$avatar = dirname(__FILE__);
-$avatar = $avatar . '\img\fotosPerfil\Avatar_generico.png';
-
-$errores = ValidarRegistro($_POST, $avatar);
+$errores = ValidarRegistro($_POST);
 $nombre = '';
 $email = '';
 $phone = '';
@@ -48,8 +44,7 @@ if ($_POST) {
                 <p>Registrarse</p>
                 <p><a href="login.php">Ya tengo cuenta</a></p>
             </div>
-            <form method="post" enctype="multipart/form-data">
-
+            <form method="post">
                 <div class="input-group input-group-icon">
                     <input type="text" name="nombre" value="<?php echo $nombre ?>" placeholder="Nombre completo" />
                     <div class="input-icon">
@@ -65,14 +60,12 @@ if ($_POST) {
                     </div>
                     <span class="obligatorio" ><?php if(isset($errores['email'])) { echo $errores['email'];}?></span>
                 </div>
-
                 <div class="input-group input-group-icon">
                     <input type="tel" name="phone" value="<?php echo $phone ?>" placeholder="Teléfono (opcional)" />
                     <div class="input-icon">
                         <i class="fas fa-phone"></i>
                     </div>
                 </div>
-
                 <div class="input-group input-group-icon">
                     <input type="password"  name="password" placeholder="Contraseña" />
                     <div class="input-icon">
@@ -80,7 +73,6 @@ if ($_POST) {
                     </div>
                     <span class="obligatorio" ><?php if(isset($errores['password'])) { echo $errores['password'];}?></span>
                 </div>
-
                 <div class="input-group input-group-icon">
                     <input type="password"  name="rePassword" placeholder="Repite la contraseña" />
                     <div class="input-icon">
@@ -88,16 +80,6 @@ if ($_POST) {
                     </div>
                     <span class="obligatorio" ><?php if(isset($errores['rePassword'])) { echo $errores['rePassword'];}?></span>
                 </div>
-
-                <div class="input-group input-group-icon">
-                    <input type="file"  name="avatar" />
-                    <div class="input-icon">
-                    <i class="fas fa-file-image"></i>
-                    </div>
-                    <span class="obligatorio" ><?php if(isset($errores['avatar'])) { echo $errores['avatar'];}?></span>
-                    
-                </div>
-                
                 <div class="input-group">
                     <input type="submit" value="Registrarse" />
                     <input type="reset" value="Limpiar campos" />
