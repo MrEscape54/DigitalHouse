@@ -43,7 +43,7 @@ function ValidarRegistro($datos, $avatar) {
     if($_FILES['avatar']['error'] == UPLOAD_ERR_OK) {
       $ext = pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION);
       if (($ext == 'jpg') || ($ext == 'JPG') || ($ext == 'PNG') || ($ext == 'png') || ($ext == 'gif') || ($ext == 'GIF')){
-        $avatar = dirname(__FILE__) . '\img\fotosPerfil\\' . $datos['email'] . '.' . $ext ;
+        $avatar = dirname(__FILE__) . '\img\fotosPerfil\\' . 'user' . AgregarID() . '.' . $ext ;
       }
       else {
         $errores['avatar'] = 'El archivo no es una imagen válida (png, jpg, gif)';
@@ -80,6 +80,7 @@ function CrearUsuario($datos, $avatar) {
 function GuardarDatos($nuevoUsuario, $avatar) { 
   $usuarioJSON = json_encode(CrearUsuario($nuevoUsuario, $avatar));
   file_put_contents('DBUsuarios.json', $usuarioJSON . PHP_EOL, FILE_APPEND | LOCK_EX);
+  move_uploaded_file($_FILES['avatar']['tmp_name'], $avatar);
   header('Location: index.php');
 
 }
