@@ -18,7 +18,7 @@
                         Lima 1111, CABA 1043
                     </address>
                     <a style="display: block" href="tel:+54 11 4248 7979">+54 11 4248 7979</a>
-                    <a href="mailto:info@nyd.com">info@ddl.com</a>
+                    <a href="mailto:info@nyd.com">info@ldd.com</a>
                 </div>
             </div>
 
@@ -43,6 +43,6 @@
                     </ul>
                 </div>
             </div>
-            <p class="copyright">Copyright 2018 - DDL</p>
+            <p class="copyright">Copyright 2018 - LDD</p>
         </div>
     </footer>
