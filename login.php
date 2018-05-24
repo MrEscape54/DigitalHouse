@@ -4,13 +4,31 @@
 require_once('functions.php');
 
 $email = '';
-$password = '';
 $msg = 'none';
+$checked = '';
+
+if(isset($_COOKIE['email'])) {
+    $email = $_COOKIE['email'];
+    $checked = 'checked';
+}
 
 if($_POST) {
     $email = $_POST['email'];
     $error = ValidarIngreso($_POST);
-    $error === true ? header('Location: index.php') : $msg = 'flex';
+
+    if($error === true) {
+        if(isset($_POST['recordar'])) {
+            setcookie('email', $_POST['email'], time() + 60*60*24*30);
+        }
+
+        if(isset($_COOKIE['email']) && !isset($_POST['recordar'])) {
+            setcookie('email', $email, time() -1);
+        }
+        header('Location: index.php');
+    }
+    else {
+        $msg = 'flex';
+    }
 }
     
 ?>
@@ -59,7 +77,7 @@ if($_POST) {
                     </div>
                 </div>
                 <div class="input-group input-group-icon">
-                    <input type="password" name="password" placeholder="Contraseña" value="<?php echo $password ?>"/>
+                    <input type="password" name="password" placeholder="Contraseña"/>
                     <div class="input-icon">
                         <i class="fas fa-lock"></i>
                     </div>
@@ -70,8 +88,8 @@ if($_POST) {
                 </div>
                 <div>
                 <label>
-                    <input type="checkbox" name="recordar "id="cbox1" value="remember">
-                    <span>Recordarme</span>
+                    <input type="checkbox" name="recordar" id="cbox1" value="recordar" <?php echo $checked; ?>>
+                    <span>Recordar mi usuario</span>
                 </label>
                 </div>
             </form>
