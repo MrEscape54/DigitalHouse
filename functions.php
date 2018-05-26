@@ -81,7 +81,7 @@ function CrearUsuario($datos, $avatar) {
 function GuardarDatos($nuevoUsuario, $avatar) { 
   $usuarioJSON = json_encode(CrearUsuario($nuevoUsuario, $avatar));
   file_put_contents('DBUsuarios.json', $usuarioJSON . PHP_EOL, FILE_APPEND | LOCK_EX);
-  move_uploaded_file(dirname(__FILE__) . $_FILES['avatar']['tmp_name'], dirname(__FILE__) . $avatar);
+  move_uploaded_file($_FILES['avatar']['tmp_name'], dirname(__FILE__) . $avatar);
 }
 
 //-----------------------------------------Valida email y password del form ingreso-----------------------------------

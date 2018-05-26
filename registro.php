@@ -18,7 +18,7 @@ if ($_POST) {
     $nombre = $_POST['nombre'];
     $email = $_POST['email'];
     $phone = $_POST['phone'];
-    $avatar = '/php/DigitalHouse/img/fotosPerfil/avatar-generico.jpg';
+    $avatar = '/img/fotosPerfil/avatar-generico.jpg';
     $errores = ValidarRegistro($_POST, $avatar);
 }
 include 'header.php';
