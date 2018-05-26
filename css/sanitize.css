@@ -16,8 +16,6 @@
 html {
 	box-sizing: border-box;
 	cursor: default;
-	-ms-text-size-adjust: 100%;
-	-webkit-text-size-adjust: 100%;
 }
 
 article, aside, footer, header, nav, section {

@@ -1,11 +1,9 @@
 <?php
 //------------------------------------Valida datos ingresados en form de registro-------------------------------
+session_start();
+
 function ValidarRegistro($datos, $avatar) {
 
-  $nombre = '';
-  $email = '';
-  $password = '';
-  $rePassword = '';
   $errores = [];
   $datosValidos = false;
 
@@ -43,7 +41,7 @@ function ValidarRegistro($datos, $avatar) {
     if($_FILES['avatar']['error'] == UPLOAD_ERR_OK) {
       $ext = pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION);
       if (($ext == 'jpg') || ($ext == 'JPG') || ($ext == 'PNG') || ($ext == 'png') || ($ext == 'gif') || ($ext == 'GIF')){
-        $avatar = dirname(__FILE__) . '\img\fotosPerfil\\' . 'user' . AgregarID() . '.' . $ext ;
+        $avatar = '/img/fotosPerfil/' . 'user' . AgregarID() . '.' . $ext ;
       }
       else {
         $errores['avatar'] = 'El archivo no es una imagen válida (png, jpg, gif)';
@@ -57,6 +55,9 @@ function ValidarRegistro($datos, $avatar) {
   //Si los datos son válidos se crea y guarda el registro.
   if ($datosValidos) {
     GuardarDatos($datos, $avatar);
+    Ingresar($datos['email']);
+    header('Location: index.php');
+    exit;
   }
   else {
     return $errores;
@@ -80,9 +81,7 @@ function CrearUsuario($datos, $avatar) {
 function GuardarDatos($nuevoUsuario, $avatar) { 
   $usuarioJSON = json_encode(CrearUsuario($nuevoUsuario, $avatar));
   file_put_contents('DBUsuarios.json', $usuarioJSON . PHP_EOL, FILE_APPEND | LOCK_EX);
-  move_uploaded_file($_FILES['avatar']['tmp_name'], $avatar);
-  header('Location: index.php');
-
+  move_uploaded_file(dirname(__FILE__) . $_FILES['avatar']['tmp_name'], dirname(__FILE__) . $avatar);
 }
 
 //-----------------------------------------Valida email y password del form ingreso-----------------------------------
@@ -129,7 +128,7 @@ function EsUsuario($tablaUsuarios, $email) {
   return false;
 }
 
-//Retorna el ID del último registro de la bade de usuarios
+//Retorna ID++ del último registro de la bade de usuarios
 function AgregarID() {
   $usuarios = TraerBaseDeUsuarios();
   if (empty($usuarios)) {
@@ -139,5 +138,17 @@ function AgregarID() {
     return $usuarios[count($usuarios) - 1]['ID'] + 1;
   }
 }
+ 
+function Ingresar($email) {
+  $baseUsarios = TraerBaseDeUsuarios();
+  foreach ($baseUsarios as $usuario) {
+    if($usuario['email'] === $email) {
+      $_SESSION['avatar'] = $usuario['avatar'];
+    }
+  }
+}
 
+function estaLogueado(){
+  return isset($_SESSION['avatar']);
+}
  ?>

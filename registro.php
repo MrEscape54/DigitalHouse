@@ -3,11 +3,11 @@
 
 require_once('functions.php');
 
+if (estaLogueado()) {
+    header('location:index.php');
+    exit;
+}
 
-$avatar = dirname(__FILE__);
-$avatar = $avatar . '\img\fotosPerfil\Avatar_generico.png';
-
-$errores = ValidarRegistro($_POST, $avatar);
 $nombre = '';
 $email = '';
 $phone = '';
@@ -18,28 +18,10 @@ if ($_POST) {
     $nombre = $_POST['nombre'];
     $email = $_POST['email'];
     $phone = $_POST['phone'];
+    $avatar = '/php/DigitalHouse/img/fotosPerfil/avatar-generico.jpg';
+    $errores = ValidarRegistro($_POST, $avatar);
 }
-    
-?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>DDL | Relojes de Lujo</title>
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="css/sanitize.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/contact.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700|Open+Sans:800" rel="stylesheet">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
-</head>
-<body>
-   
-<?php
-    include 'header.php';
+include 'header.php';
 ?>
 
     <main class="login-page">
@@ -51,7 +33,7 @@ if ($_POST) {
             <form method="post" enctype="multipart/form-data">
 
                 <div class="input-group input-group-icon">
-                    <input type="text" name="nombre" value="<?php echo $nombre ?>" placeholder="Nombre completo" />
+                    <input type="text" name="nombre" value="<?php echo $nombre ?>" placeholder="Nombre de usuario" />
                     <div class="input-icon">
                         <i class="fas fa-user"></i>
                     </div>

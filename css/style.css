@@ -6,10 +6,16 @@ svg{
     color: #DCDC;
 }
 
+.fa-search{margin-right: auto;}
+
+.scart {margin-right: 30px;}
+
 .search-scart {
     margin: 20px auto 5px;
+    width: 80%;
     display: flex;
     justify-content: space-around;
+    align-items: center;
 }
 
 .badge{
@@ -73,6 +79,15 @@ nav span{
   color: #999;
   font-size: 0.9em;
 }
+
+.ingreso a{
+  color: #999;
+  text-decoration: none;
+  font-size: 0.9em;
+  padding: 2px;
+}
+
+.ingreso a img{height: 30px; border-radius: 5px;}
 
 .slider, .second-sponsor{
   display: none;
@@ -324,10 +339,7 @@ footer a, footer address{
     margin: 0 auto;
   }
 
-  .search-scart{width: 75%;}
-  
-  .fa-search{margin-right: auto;}
-  .scart{margin-right: 30px;}
+  .search-scart{width: 80%;}
 
   hr {
     display: none;
@@ -618,6 +630,8 @@ footer a, footer address{
     border-bottom: 1px solid #FFF;
   }
 
+  .search-scart{width: 70%;}
+  
   .brands img{
   width: 50%;
 }
