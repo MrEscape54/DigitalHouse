@@ -49,8 +49,8 @@
                             <div class="submenu-container">
                                 <div class="submenu-items">
                                 <ul>
-                                    <li><a href="logout.php">Salir</a></li>
-                                    <li><a href="perfil.php">Perfil</a></li>
+                                    <li class="desplegable"><a href="logout.php">Salir</a></li>
+                                    <li class="desplegable"><a href="perfil.php">Perfil</a></li>
                                 </ul>
                                 </div>
                             </div>    

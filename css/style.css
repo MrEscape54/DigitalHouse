@@ -51,6 +51,15 @@ svg{
 
 .ingreso span:hover .submenu-container{display: block;}
 
+.ingreso a{
+  color: #999;
+  text-decoration: none;
+  font-size: 0.9em;
+  padding: 2px;
+}
+
+.ingreso img{height: 30px; border-radius: 5px;}
+
 .submenu-container{
   display: none;
   position: absolute; 
@@ -60,14 +69,20 @@ svg{
 
 .submenu-items{
   position: relative;
-  right: 22px;
-  background-color: white;
-  border: 1px solid #ccc;
+  right: 30px;
+  background-color: #F7F7F7;
   border-radius: 5px;
   padding: 3px;
 }
-    
+
 .submenu-container li{font-size: 0.9em;}
+
+.submenu-container .desplegable{
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.8em;
+  padding-bottom: 5px;
+}
 
 .logo-container img{
     display: block;
@@ -120,15 +135,6 @@ nav span{
   color: #999;
   font-size: 0.9em;
 }
-
-.ingreso a{
-  color: #999;
-  text-decoration: none;
-  font-size: 0.9em;
-  padding: 2px;
-}
-
-.ingreso img{height: 30px; border-radius: 5px;}
 
 .slider, .second-sponsor{
   display: none;
