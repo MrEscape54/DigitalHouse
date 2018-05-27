@@ -39,8 +39,24 @@
                 <span class="badge">13</span>
             </div>
             <div class="ingreso">
-                <a href="login.php" <?php echo $displayIngreso; ?> ><?php echo $avatar === '' ? 'Ingresar' :  ''; ?></a>
-                <a href="perfil.php" <?php echo $displayAvatar; ?> ><?php echo $avatar !== '' ? '<img src="' . $avatar . '">' : ''; ?></a>
+                <ul>
+                    <li <?php echo $displayIngreso; ?> >
+                        <a href="login.php"><?php echo $avatar === '' ? 'Ingresar' :  ''; ?></a>
+                    </li>
+                    <li class="avatar-container"<?php echo $displayAvatar; ?>> 
+                        <?php echo $avatar !== '' ? '<img src="' . $avatar . '">
+                        <span>
+                            <div class="submenu-container">
+                                <div class="submenu-items">
+                                <ul>
+                                    <li><a href="logout.php">Salir</a></li>
+                                    <li><a href="perfil.php">Perfil</a></li>
+                                </ul>
+                                </div>
+                            </div>    
+                        </span>' : ''; ?>
+                    </li>                    
+                </ul>
             </div>
         </div>
         <hr style="border:0.2px solid #ccc; width: 80%;">

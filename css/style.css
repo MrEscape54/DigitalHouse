@@ -2,6 +2,10 @@ body{
     font-family: 'Montserrat', sans-serif;
 }
 
+ul{list-style: none; padding: 0;}
+
+.submenu{display: none;}
+
 svg{
     color: #DCDC;
 }
@@ -27,6 +31,43 @@ svg{
     padding-right: 5px;
     font-size: 0.8em;
 }
+
+.avatar-container{position: relative;}
+
+.ingreso span{
+  position: absolute;
+  right: 0;
+  left: 0;
+  margin: 2px auto 0;
+  display: block;
+  width: 0;
+  height: 0;
+  border-bottom: 5px solid transparent;
+  border-top: 5px solid #CCC;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  cursor: pointer;
+}
+
+.ingreso span:hover .submenu-container{display: block;}
+
+.submenu-container{
+  display: none;
+  position: absolute; 
+  text-align: center;
+  margin-top: 5px;
+}
+
+.submenu-items{
+  position: relative;
+  right: 22px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 3px;
+}
+    
+.submenu-container li{font-size: 0.9em;}
 
 .logo-container img{
     display: block;
@@ -87,7 +128,7 @@ nav span{
   padding: 2px;
 }
 
-.ingreso a img{height: 30px; border-radius: 5px;}
+.ingreso img{height: 30px; border-radius: 5px;}
 
 .slider, .second-sponsor{
   display: none;
