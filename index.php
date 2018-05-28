@@ -1,18 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>DDL | Relojes de Lujo</title>
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="css/sanitize.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700|Open+Sans:800|Open+Sans+Condensed:300" rel="stylesheet">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
-</head>
-<body>
-
 <?php
     include 'header.php';
 ?>
@@ -52,13 +37,13 @@
                         <p> Uno de los lemas más antiguos de Breitling es "Instrumentos para profesionales". Esas palabras están vigentes hoy más que nunca.
                             Los relojes de la "Colección Profesional" están equipados con las características necesarias para ser los socios perfectos
                             de los aventurero.
-                         </p>
+                            </p>
                         <a class="sp-button" href="#" class="button outline">Descubre la colección</a>
                     </div>
                     <div class="sp-img">
                         <a href="#" title="Breitling-clock">
                             <img src="img/breitling-home.png" alt="Professional">
-                         </a>
+                            </a>
                     </div>
                 </div>
             </div>
