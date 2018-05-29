@@ -40,7 +40,8 @@ function ValidarRegistro($datos, $avatar) {
 
     if($_FILES['avatar']['error'] == UPLOAD_ERR_OK) {
       $ext = pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION);
-      if (($ext == 'jpg') || ($ext == 'JPG') || ($ext == 'PNG') || ($ext == 'png') || ($ext == 'gif') || ($ext == 'GIF')){
+      if (($ext == 'jpg') || ($ext == 'JPG') || ($ext == 'PNG') || ($ext == 'png') ||
+         ($ext == 'gif') || ($ext == 'GIF') || ($ext == 'jpeg') || ($ext == 'JPEG')) {
         $avatar = '/img/fotosPerfil/' . 'user' . AgregarID() . '.' . $ext ;
       }
       else {
@@ -144,6 +145,7 @@ function Ingresar($email) {
   foreach ($baseUsarios as $usuario) {
     if($usuario['email'] === $email) {
       $_SESSION['avatar'] = $usuario['avatar'];
+      $_SESSION['ID'] = $usuario['ID'];
     }
   }
 }

@@ -1,4 +1,1 @@
-{"ID":1,"nombre":"Daniel","email":"daniel@daniel.com","password":"$2y$10$U6aAHsiLXvvMMT67n2DKWOe0yQcrDOujxOcgdfXsC91Y6OoJDkzqC","avatar":"\/img\/fotosPerfil\/user1.jpg"}
-{"ID":2,"nombre":"Agatha","email":"agatha@agatha.com","password":"$2y$10$NcRVZ0n42.fvfJhly8G83uYXWcNf\/So.fF1SW7JzETm8LHwih68gu","avatar":"\/img\/fotosPerfil\/user2.jpg"}
-{"ID":3,"nombre":"Wiki","email":"wiki@wiki.com","password":"$2y$10$ReNjfi.YvVKMz37pLkcxVeNvjxUyVrnnGe03e57XpJDSivegVQPke","avatar":"\/img\/fotosPerfil\/user3.jpg"}
-{"ID":4,"nombre":"Daniel","email":"daniel@daniel2.com","password":"$2y$10$Jw7P2dd5MoZfNxztsVt1fe9xjW5ntBKLA6A.JdLFGl5GfVMRiJ09S","avatar":"\/img\/fotosPerfil\/user4.png"}
+{"ID":1,"nombre":"user1","email":"user1@user.com","password":"$2y$10$cLb8OAYRD7OLqKKu4SR.AOdc31fBe2CB9zHEO74RgF\/tLbjUZc1ci","avatar":"\/img\/fotosPerfil\/user1.png"}

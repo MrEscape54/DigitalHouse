@@ -1,4 +1,7 @@
 <?php
+
+include 'header.php';
+
 //--------------------------------------------------validación de datos----------------------------
 
 require_once('functions.php');
@@ -18,10 +21,10 @@ if ($_POST) {
     $nombre = $_POST['nombre'];
     $email = $_POST['email'];
     $phone = $_POST['phone'];
-    $avatar = '/img/fotosPerfil/avatar-generico.jpg';
+    $avatar = 'img/fotosPerfil/avatar-generico.jpg';
     $errores = ValidarRegistro($_POST, $avatar);
 }
-include 'header.php';
+
 ?>
 
     <main class="login-page">
@@ -38,7 +41,7 @@ include 'header.php';
                         <i class="fas fa-user"></i>
                     </div>
                     <span class="obligatorio" ><?php if(isset($errores['nombre'])) { echo $errores['nombre'];}?></span>
-                    
+
                 </div>
                 <div class="input-group input-group-icon">
                     <input type="email" name="email" value="<?php echo $email ?>" placeholder="Correo electrónico" />
@@ -77,9 +80,9 @@ include 'header.php';
                     <i class="fas fa-file-image"></i>
                     </div>
                     <span class="obligatorio" ><?php if(isset($errores['avatar'])) { echo $errores['avatar'];}?></span>
-                    
+
                 </div>
-                
+
                 <div class="input-group">
                     <input type="submit" value="Registrarse" />
                     <input type="reset" value="Limpiar campos" />
@@ -90,7 +93,4 @@ include 'header.php';
 
 <?php
     include 'footer.php';
-?>  
-
-</body>
-</html>
+?>

@@ -648,10 +648,6 @@ footer a, footer address{
     clear: both;
   }
 
-  #historial-compra {
-    width: 80%;
-  }
-
 /*------- ¡¡¡ LAPTOP 1024PX !!! -------*/
 
 @media (min-width: 1024px) {
@@ -725,9 +721,6 @@ footer a, footer address{
 
 }
 
-#historial-compra {
-  width: 60%;
-}
 
 @media (min-width: 1440px) {
 
