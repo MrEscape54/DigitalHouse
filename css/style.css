@@ -2,14 +2,24 @@ body{
     font-family: 'Montserrat', sans-serif;
 }
 
+ul{list-style: none; padding: 0;}
+
+.submenu{display: none;}
+
 svg{
     color: #DCDC;
 }
 
+.fa-search{margin-right: auto;}
+
+.scart {margin-right: 30px;}
+
 .search-scart {
     margin: 20px auto 5px;
+    width: 80%;
     display: flex;
     justify-content: space-around;
+    align-items: center;
 }
 
 .badge{
@@ -22,10 +32,62 @@ svg{
     font-size: 0.8em;
 }
 
+.avatar-container{position: relative;}
+
+.ingreso span{
+  position: absolute;
+  right: 0;
+  left: 0;
+  margin: 2px auto 0;
+  display: block;
+  width: 0;
+  height: 0;
+  border-bottom: 5px solid transparent;
+  border-top: 5px solid #CCC;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  cursor: pointer;
+}
+
+.ingreso span:hover .submenu-container{display: block;}
+
+.ingreso a{
+  color: #999;
+  text-decoration: none;
+  font-size: 0.9em;
+  padding: 2px;
+}
+
+.ingreso img{height: 30px; border-radius: 5px;}
+
+.submenu-container{
+  display: none;
+  position: absolute;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.submenu-items{
+  position: relative;
+  right: 30px;
+  background-color: #F7F7F7;
+  border-radius: 5px;
+  padding: 3px;
+}
+
+.submenu-container li{font-size: 0.9em;}
+
+.submenu-container .desplegable{
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.8em;
+  padding-bottom: 5px;
+}
+
 .logo-container img{
     display: block;
     margin: 15px auto 0;
-    width: 100px;
+    width: 150px;
 }
 
 .logo-container h4{
@@ -134,18 +196,19 @@ nav span{
 }
 
 .destacados h3{
-    text-align: center;
-    color: #222;
-    font-weight: 100;
-    font-size: 22px;
-    margin: 0 0 20px;}
+  text-align: center;
+  color: #222;
+  font-weight: 100;
+  font-size: 22px;
+  margin: 0 0 20px;
+  }
 
 .collections{
-    width: 80%;
-    margin: 0 auto 30px;
-    background-color: #EFECEA;
-    overflow: hidden;
-    padding-bottom: 30px;
+  width: 80%;
+  margin: 0 auto 30px;
+  background-color: #EFECEA;
+  overflow: hidden;
+  padding-bottom: 30px;
 }
 
 .collections .foto {
@@ -310,6 +373,17 @@ footer a, footer address{
   background-color: #f6f6f6;
 }
 
+/* ----------------- PERFIL ----------------- */
+
+#historial-compra {
+  width: 100%;
+  font-size: 0.8em;
+  border: 1px solid #e5e5e5;
+  border-collapse: collapse;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
 
 /* -----------------  MEDIA QUERIES  ------------------------- */
 
@@ -319,15 +393,12 @@ footer a, footer address{
 /*nav*/
 
   header{margin-bottom: 20px;}
-  
+
   .logo-container img {
     margin: 0 auto;
   }
 
-  .search-scart{width: 75%;}
-  
-  .fa-search{margin-right: auto;}
-  .scart{margin-right: 30px;}
+  .search-scart{width: 80%;}
 
   hr {
     display: none;
@@ -442,14 +513,14 @@ footer a, footer address{
     top: -32px;
     right: 0;
 }
- 
+
 .sliderinner {
     width: 100%;
     height: 100%;
     overflow: hidden;
     position: relative;
 }
- 
+
 .sliderinner>ul {
     list-style: none;
     padding: 0;
@@ -460,18 +531,18 @@ footer a, footer address{
     left: 0px;
     transition: left .8s cubic-bezier(0.77, 0, 0.175, 1);
 }
- 
+
 .sliderinner>ul>li {
     width: 25%;    /*Cantidad de imágenes dividido 100 (en este caso 6)*/
     float: left;
     position: relative;
 }
- 
+
 .sliderinner>ul>li>img {
     margin: auto;
     width: 100%;
 }
- 
+
 .slider input[type=radio] {
     position: relative;
     left: 50%;
@@ -479,7 +550,7 @@ footer a, footer address{
     top: 10px;
     z-index: 100;
 }
- 
+
 .slider label {
     visibility: hidden;
     position: absolute;
@@ -494,7 +565,7 @@ footer a, footer address{
     box-shadow: 0px 0px 3px rgba(0,0,0,.8);
     transition: background-color .2s;
 }
- 
+
 .slider input[type=radio]#control1:checked~label[for=control1] { background-color: #333; }
 .slider input[type=radio]#control2:checked~label[for=control2] { background-color: #333; }
 .slider input[type=radio]#control3:checked~label[for=control3] { background-color: #333; }
@@ -511,7 +582,7 @@ footer a, footer address{
 .slider input[type=radio]#control3:checked~.sliderinner>ul { left: -200% }
 .slider input[type=radio]#control4:checked~.sliderinner>ul { left: -300% }
 
- 
+
 /*marcas destacadas*/
   .destacados {
     display: flex;
@@ -540,9 +611,9 @@ footer a, footer address{
       justify-content: space-between;
     }
 
-    .segunda-fila{align-items: baseline;} 
+    .segunda-fila{align-items: baseline;}
 
-    
+
   .copyright {
     clear: both;
   }
@@ -575,6 +646,10 @@ footer a, footer address{
 
   .login-page {
     clear: both;
+  }
+
+  #historial-compra {
+    width: 80%;
   }
 
 /*------- ¡¡¡ LAPTOP 1024PX !!! -------*/
@@ -618,6 +693,8 @@ footer a, footer address{
     border-bottom: 1px solid #FFF;
   }
 
+  .search-scart{width: 70%;}
+
   .brands img{
   width: 50%;
 }
@@ -646,6 +723,10 @@ footer a, footer address{
     width: 20%;
   }
 
+}
+
+#historial-compra {
+  width: 60%;
 }
 
 @media (min-width: 1440px) {

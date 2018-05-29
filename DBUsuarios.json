@@ -1,4 +1,3 @@
-{"nombre":"sss","email":"sss@ss","phone":"","password":"$2y$10$d7ES5Qe0cPwVGmH7K9g8COrg4f8PunKKd5aagMgL9mLbvibCmcVju"}
-{"nombre":"sss","email":"sss@ss","phone":"","password":"$2y$10$Daf6GQLQXxgtX2INhrBon.jBUYASRzUyKmiGEq19feYk2JSt1JwGi"}
-{"nombre":"sss","email":"sss@ss","phone":"112244112345","password":"$2y$10$8Ym1NDGRFTvqE3IgX8oqf.JsuCtHCnxzt5GG6.V0wTI8t5G7scg4W"}
-{"nombre":"aaa","email":"aa@aa.com","phone":"","password":"$2y$10$wjDrWa\/YvTX3u2a9Mbd89.mCbEliv2Fs0Bm9d1pErN\/23fITOyS7S"}
+{"ID":1,"nombre":"Daniel","email":"daniel@daniel.com","password":"$2y$10$U6aAHsiLXvvMMT67n2DKWOe0yQcrDOujxOcgdfXsC91Y6OoJDkzqC","avatar":"\/img\/fotosPerfil\/user1.jpg"}
+{"ID":2,"nombre":"Agatha","email":"agatha@agatha.com","password":"$2y$10$NcRVZ0n42.fvfJhly8G83uYXWcNf\/So.fF1SW7JzETm8LHwih68gu","avatar":"\/img\/fotosPerfil\/user2.jpg"}
+{"ID":3,"nombre":"Wiki","email":"wiki@wiki.com","password":"$2y$10$ReNjfi.YvVKMz37pLkcxVeNvjxUyVrnnGe03e57XpJDSivegVQPke","avatar":"\/img\/fotosPerfil\/user3.jpg"}

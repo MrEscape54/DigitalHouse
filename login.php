@@ -3,40 +3,69 @@
 
 require_once('functions.php');
 
+if (estaLogueado()) {
+    header('location:index.php');
+    exit;
+}
+
+$nombre = '';
 $email = '';
-$password = '';
 $msg = 'none';
+$checked = '';
+
+if(isset($_COOKIE['email'])) {
+    $email = $_COOKIE['email'];
+    $checked = 'checked';
+}
 
 if($_POST) {
     $email = $_POST['email'];
-    $error = ValidarIngreso($_POST);
-    $error === true ? header('Location: index.php') : $msg = 'flex';
+    $datosValidos = ValidarIngreso($_POST);
+
+    if($datosValidos === true) {
+        Ingresar($email);
+        if(isset($_POST['recordar'])) {
+          $arrayUsuarios = TraerBaseDeUsuarios();
+          foreach ($arrayUsuarios as $usuarios) {
+            if($usuarios['email'] == $email){
+              setcookie('ID', $usuarios['ID'], time() + 60*60*24*30);
+              setcookie('email', $usuarios['email'], time() + 60*60*24*30);
+            }
+          }
+
+
+        }
+        if(isset($_COOKIE['email']) && !isset($_POST['recordar'])) {
+            $arrayUsuarios = TraerBaseDeUsuarios();
+          foreach ($arrayUsuarios as $usuarios) {
+            if($usuarios['email'] == $email){
+              setcookie('ID', $usuarios['ID'], time() - 1);
+              setcookie('email', $usuarios['email'], time() - 1);
+            }
+          }
+        }
+        if(!$_COOKIE['email']) {
+            $arrayUsuarios = TraerBaseDeUsuarios();
+            foreach ($arrayUsuarios as $usuarios) {
+                if($_POST['email'] ==  $usuarios['email']) {
+                    $_SESSION['ID'] = $usuarios['ID'];
+                }
+            }
+        }
+
+        header('Location: index.php');
+    }
+    else {
+        $msg = 'flex';
+    }
 }
-    
+include 'header.php';
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>DDL | Relojes de Lujo</title>
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="css/sanitize.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/contact.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700|Open+Sans:800" rel="stylesheet">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
-</head>
 <style>
     .warning{display: <?php echo $msg ?> ;}
 </style>
-<body>
-   
-<?php
-    include 'header.php';
-?>
+
     <div class="warning">
         <div class="input-icon">
         <i style="font-size:1.5em; color:Tomato; margin-right:5px;" class="fas fa-exclamation-triangle"></i>
@@ -59,7 +88,7 @@ if($_POST) {
                     </div>
                 </div>
                 <div class="input-group input-group-icon">
-                    <input type="password" name="password" placeholder="Contraseña" value="<?php echo $password ?>"/>
+                    <input type="password" name="password" placeholder="Contraseña"/>
                     <div class="input-icon">
                         <i class="fas fa-lock"></i>
                     </div>
@@ -70,18 +99,18 @@ if($_POST) {
                 </div>
                 <div>
                 <label>
-                    <input type="checkbox" name="recordar "id="cbox1" value="remember">
-                    <span>Recordarme</span>
+                    <input type="checkbox" name="recordar" id="cbox1" value="recordar" <?php echo $checked ?>>
+                    <span>Recordar mi usuario</span>
                 </label>
                 </div>
             </form>
 
         </div>
-    </main>    
+    </main>
 
 <?php
     include 'footer.php';
-?>  
+?>
 
 </body>
 </html>
