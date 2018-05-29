@@ -151,4 +151,5 @@ function Ingresar($email) {
 function estaLogueado(){
   return isset($_SESSION['avatar']);
 }
+
  ?>
