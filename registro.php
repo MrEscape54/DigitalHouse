@@ -1,7 +1,5 @@
 <?php
 
-include 'header.php';
-
 //--------------------------------------------------validación de datos----------------------------
 
 require_once('functions.php');
@@ -25,6 +23,7 @@ if ($_POST) {
     $errores = ValidarRegistro($_POST, $avatar);
 }
 
+include 'header.php';
 ?>
 
     <main class="login-page">

@@ -33,7 +33,6 @@ if($_POST) {
             }
           }
 
-
         }
         if(isset($_COOKIE['email']) && !isset($_POST['recordar'])) {
             $arrayUsuarios = TraerBaseDeUsuarios();
@@ -44,7 +43,7 @@ if($_POST) {
             }
           }
         }
-        if(!$_COOKIE['email']) {
+        if(!isset($_COOKIE['email'])) {
             $arrayUsuarios = TraerBaseDeUsuarios();
             foreach ($arrayUsuarios as $usuarios) {
                 if($_POST['email'] ==  $usuarios['email']) {
