@@ -373,17 +373,6 @@ footer a, footer address{
   background-color: #f6f6f6;
 }
 
-/* ----------------- PERFIL ----------------- */
-
-#historial-compra {
-  width: 100%;
-  font-size: 0.8em;
-  border: 1px solid #e5e5e5;
-  border-collapse: collapse;
-  background-color: #f9f9f9;
-  text-align: center;
-}
-
 
 /* -----------------  MEDIA QUERIES  ------------------------- */
 

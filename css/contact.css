@@ -153,7 +153,18 @@ input[type="submit"] + a{
   border: 5px solid #e5e5e5;
 }
 
+#historial-compra {
+  width: 100%;
+  font-size: 0.8em;
+  border: 1px solid #e5e5e5;
+  border-collapse: collapse;
+  background-color: #f9f9f9;
+  text-align: center;
+}
 
+.profile-data {
+  width: 100%;
+}
 
 /* MEDIA QUERIES */
 
@@ -218,6 +229,22 @@ input[type="submit"] + a{
    input[type="reset"] {
      width: 50%;
    }
+
+   .profile-pic {
+     width: 50%;
+     margin: 0 auto;
+   }
+
+   .profile-data {
+     width: 80%;
+     margin: 0 auto;
+   }
+
+   #historial-compra {
+     width: 80%;
+     margin: 0 auto;
+   }
+
 }
 
 @media (min-width: 1024px){
@@ -238,8 +265,21 @@ input[type="submit"] + a{
   main .login, main .signin, .warning{
       width: 40%;
   }
-}
 
+  .profile-pic {
+    width: 30%;
+  }
+
+  .profile-data {
+    width: 40%;
+    height: 2%;
+  }
+
+  #historial-compra {
+    width: 80%;
+  }
+
+}
 
 @media (min-width: 1440px){
 
