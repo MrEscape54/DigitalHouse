@@ -439,6 +439,7 @@ footer a, footer address{
   }
 
   #Gender{margin-top: 10px;}
+  
   #Gender li{
     margin: 0 5px;
     text-align: center;
@@ -449,7 +450,6 @@ footer a, footer address{
 
   .slider {
     display: block;
-    margin: auto;
     margin: 20px auto;
     position: relative;
 }
@@ -514,7 +514,7 @@ footer a, footer address{
     list-style: none;
     padding: 0;
     height: 100%;
-    width: 400%;    /*100% por cantidad de imágenes (en este caso 6)*/
+    width: 400%;    /*100% por cantidad de imágenes (en este caso 4)*/
     overflow: hidden;
     position: relative;
     left: 0px;
@@ -522,7 +522,7 @@ footer a, footer address{
 }
 
 .sliderinner>ul>li {
-    width: 25%;    /*Cantidad de imágenes dividido 100 (en este caso 6)*/
+    width: 25%;    /*Cantidad de imágenes dividido 100 (en este caso 4)*/
     float: left;
     position: relative;
 }
@@ -538,6 +538,8 @@ footer a, footer address{
     transform: translate(-230%);
     top: 10px;
     z-index: 100;
+    width: inherit;
+    display: inline-block;
 }
 
 .slider label {
