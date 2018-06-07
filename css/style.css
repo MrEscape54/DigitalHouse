@@ -438,22 +438,6 @@ nav span{display: none;}
   color: #FFF;
 }
 
-<<<<<<< HEAD
-  #Gender{margin-top: 10px;}
-  
-  #Gender li{
-    margin: 0 5px;
-    text-align: center;
-    border: none;
-    width: 100px;
-    border-radius: 10px;
-  }
-
-  .slider {
-    display: block;
-    margin: 20px auto;
-    position: relative;
-=======
 #Gender{margin-top: 10px;}
 
 #Gender li{
@@ -468,7 +452,6 @@ nav span{display: none;}
   display: block;
   margin: 20px auto;
   position: relative;
->>>>>>> sprint2
 }
 
 .boton-tr:hover{
@@ -528,22 +511,6 @@ border-radius: 5px;
 }
 
 .sliderinner>ul {
-<<<<<<< HEAD
-    list-style: none;
-    padding: 0;
-    height: 100%;
-    width: 400%;    /*100% por cantidad de imágenes (en este caso 4)*/
-    overflow: hidden;
-    position: relative;
-    left: 0px;
-    transition: left .8s cubic-bezier(0.77, 0, 0.175, 1);
-}
-
-.sliderinner>ul>li {
-    width: 25%;    /*Cantidad de imágenes dividido 100 (en este caso 4)*/
-    float: left;
-    position: relative;
-=======
   list-style: none;
   padding: 0;
   height: 100%;
@@ -558,7 +525,6 @@ border-radius: 5px;
   width: 25%;    /*Cantidad de imágenes dividido 100 (en este caso 4)*/
   float: left;
   position: relative;
->>>>>>> sprint2
 }
 
 .sliderinner>ul>li>img {
@@ -567,15 +533,6 @@ border-radius: 5px;
 }
 
 .slider input[type=radio] {
-<<<<<<< HEAD
-    position: relative;
-    left: 50%;
-    transform: translate(-230%);
-    top: 10px;
-    z-index: 100;
-    width: inherit;
-    display: inline-block;
-=======
   position: relative;
   left: 50%;
   transform: translate(-230%);
@@ -583,7 +540,6 @@ border-radius: 5px;
   z-index: 100;
   width: inherit;
   display: inline-block;
->>>>>>> sprint2
 }
 
 .slider label {
