@@ -23,7 +23,7 @@ function ValidarRegistro($datos, $avatar) {
       $errores['email'] = "En email ingresado no es válido.";
       }
       //Verifica si ya existe un usuario registrado con ese email
-      elseif (EsUsuario(TraerBaseDeUsuarios(), $email)) { 
+      elseif (EsUsuario(TraerBaseDeUsuarios(), $email)) {
       $errores['email'] = 'Ya existe un usuario asociado a ese email.';
       }
 
@@ -31,7 +31,7 @@ function ValidarRegistro($datos, $avatar) {
       if ($password === '') {
         $errores['password'] = 'Campo obligatorio';
       }
-    
+
     $rePassword = trim($datos['rePassword']);
 
     if (($password !== '') && ($password !== $rePassword)) {
@@ -40,7 +40,12 @@ function ValidarRegistro($datos, $avatar) {
 
     if($_FILES['avatar']['error'] == UPLOAD_ERR_OK) {
       $ext = pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION);
+<<<<<<< HEAD
       if (($ext == 'jpg') || ($ext == 'JPG') || ($ext == 'PNG') || ($ext == 'png') || ($ext == 'gif') || ($ext == 'GIF')){
+=======
+      if (($ext == 'jpg') || ($ext == 'JPG') || ($ext == 'PNG') || ($ext == 'png') ||
+         ($ext == 'gif') || ($ext == 'GIF') || ($ext == 'jpeg') || ($ext == 'JPEG')) {
+>>>>>>> 9febde2e36880d1b7ffb176856d45044e329493a
         $avatar = '/img/fotosPerfil/' . 'user' . AgregarID() . '.' . $ext ;
       }
       else {
@@ -78,7 +83,7 @@ function CrearUsuario($datos, $avatar) {
 }
 
 //-------------------------------------------Guarda datos de usuario en DBUsuario.json---------------------------------
-function GuardarDatos($nuevoUsuario, $avatar) { 
+function GuardarDatos($nuevoUsuario, $avatar) {
   $usuarioJSON = json_encode(CrearUsuario($nuevoUsuario, $avatar));
   file_put_contents('DBUsuarios.json', $usuarioJSON . PHP_EOL, FILE_APPEND | LOCK_EX);
   move_uploaded_file($_FILES['avatar']['tmp_name'], dirname(__FILE__) . $avatar);
@@ -86,7 +91,7 @@ function GuardarDatos($nuevoUsuario, $avatar) {
 
 //-----------------------------------------Valida email y password del form ingreso-----------------------------------
 function ValidarIngreso($datosIngreso) {
-  $email = ''; 
+  $email = '';
   $password = '';
 
   if($datosIngreso) {
@@ -150,6 +155,40 @@ function Ingresar($email) {
 
 function estaLogueado(){
   return isset($_SESSION['avatar']);
+}
+
+function Ingresar($email) {
+  $baseUsarios = TraerBaseDeUsuarios();
+  foreach ($baseUsarios as $usuario) {
+    if($usuario['email'] === $email) {
+      $_SESSION['avatar'] = $usuario['avatar'];
+      $_SESSION['ID'] = $usuario['ID'];
+    }
+  }
+}
+
+function estaLogueado(){
+  return isset($_SESSION['avatar']);
+}
+
+// obtener email
+function getEmail($id){
+  $arrayUsuarios = TraerBaseDeUsuarios();
+  foreach ($arrayUsuarios as $usuarios){
+    if($usuarios['ID'] == $id){
+      return $usuarios['email'];
+    };
+  }
+}
+
+// obtener nombre
+function getName($id){
+  $arrayUsuarios = TraerBaseDeUsuarios();
+  foreach ($arrayUsuarios as $usuarios){
+    if($usuarios['ID'] == $id){
+      return $usuarios['nombre'];
+    }
+  }
 }
 
  ?>

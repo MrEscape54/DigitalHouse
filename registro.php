@@ -1,13 +1,26 @@
 <?php
+
 //--------------------------------------------------validación de datos----------------------------
 
-require_once('functions.php');
+require('autoload.php');
 
+<<<<<<< HEAD
 if (estaLogueado()) {
     header('location:index.php');
     exit;
 }
 
+=======
+use DigitalHouse\Models\Autenticaciones;
+use DigitalHouse\Models\Validaciones;
+use DigitalHouse\Models\RepositorioJSON;
+
+if (Autenticaciones::estaLogueado()) {
+    header('location:index.php');
+    exit;
+}
+
+>>>>>>> 9febde2e36880d1b7ffb176856d45044e329493a
 $nombre = '';
 $email = '';
 $phone = '';
@@ -18,9 +31,16 @@ if ($_POST) {
     $nombre = $_POST['nombre'];
     $email = $_POST['email'];
     $phone = $_POST['phone'];
+<<<<<<< HEAD
     $avatar = '/img/fotosPerfil/avatar-generico.jpg';
     $errores = ValidarRegistro($_POST, $avatar);
 }
+=======
+    $avatar = 'img/fotosPerfil/avatar-generico.jpg';
+    $errores = Validaciones::ValidarRegistro($_POST, $avatar);
+}
+
+>>>>>>> 9febde2e36880d1b7ffb176856d45044e329493a
 include 'header.php';
 ?>
 
@@ -38,7 +58,7 @@ include 'header.php';
                         <i class="fas fa-user"></i>
                     </div>
                     <span class="obligatorio" ><?php if(isset($errores['nombre'])) { echo $errores['nombre'];}?></span>
-                    
+
                 </div>
                 <div class="input-group input-group-icon">
                     <input type="email" name="email" value="<?php echo $email ?>" placeholder="Correo electrónico" />
@@ -77,9 +97,9 @@ include 'header.php';
                     <i class="fas fa-file-image"></i>
                     </div>
                     <span class="obligatorio" ><?php if(isset($errores['avatar'])) { echo $errores['avatar'];}?></span>
-                    
+
                 </div>
-                
+
                 <div class="input-group">
                     <input type="submit" value="Registrarse" />
                     <input type="reset" value="Limpiar campos" />
@@ -90,7 +110,4 @@ include 'header.php';
 
 <?php
     include 'footer.php';
-?>  
-
-</body>
-</html>
+?>

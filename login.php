@@ -1,13 +1,24 @@
 <?php
 //--------------------------------------------------validación de datos----------------------------
+require('autoload.php');
 
-require_once('functions.php');
+use DigitalHouse\Models\Autenticaciones;
+use DigitalHouse\Models\Validaciones;
+use DigitalHouse\Models\RepositorioJSON;
 
+<<<<<<< HEAD
 if (estaLogueado()) {
+=======
+if (Autenticaciones::estaLogueado()) {
+>>>>>>> 9febde2e36880d1b7ffb176856d45044e329493a
     header('location:index.php');
     exit;
 }
 
+<<<<<<< HEAD
+=======
+$nombre = '';
+>>>>>>> 9febde2e36880d1b7ffb176856d45044e329493a
 $email = '';
 $msg = 'none';
 $checked = '';
@@ -19,6 +30,7 @@ if(isset($_COOKIE['email'])) {
 
 if($_POST) {
     $email = $_POST['email'];
+<<<<<<< HEAD
     $datosValidos = ValidarIngreso($_POST);
 
     if($datosValidos === true) {
@@ -30,6 +42,38 @@ if($_POST) {
 
         if(isset($_COOKIE['email']) && !isset($_POST['recordar'])) {
             setcookie('email', $email, time() -1);
+=======
+    $datosValidos = Validaciones::ValidarIngreso($_POST);
+
+    if($datosValidos === true) {
+        Autenticaciones::Ingresar($email);
+        if(isset($_POST['recordar'])) {
+          $arrayUsuarios = RepositorioJSON::TraerBaseDeUsuarios();
+          foreach ($arrayUsuarios as $usuarios) {
+            if($usuarios['email'] == $email){
+              setcookie('ID', $usuarios['ID'], time() + 60*60*24*30);
+              setcookie('email', $usuarios['email'], time() + 60*60*24*30);
+            }
+          }
+
+        }
+        if(isset($_COOKIE['email']) && !isset($_POST['recordar'])) {
+            $arrayUsuarios = RepositorioJSON::TraerBaseDeUsuarios();
+          foreach ($arrayUsuarios as $usuarios) {
+            if($usuarios['email'] == $email){
+              setcookie('ID', $usuarios['ID'], time() - 1);
+              setcookie('email', $usuarios['email'], time() - 1);
+            }
+          }
+        }
+        if(!isset($_COOKIE['email'])) {
+            $arrayUsuarios = RepositorioJSON::TraerBaseDeUsuarios();
+            foreach ($arrayUsuarios as $usuarios) {
+                if($_POST['email'] ==  $usuarios['email']) {
+                    $_SESSION['ID'] = $usuarios['ID'];
+                }
+            }
+>>>>>>> 9febde2e36880d1b7ffb176856d45044e329493a
         }
         header('Location: index.php');
     }
@@ -77,18 +121,19 @@ include 'header.php';
                 </div>
                 <div>
                 <label>
+<<<<<<< HEAD
                     <input type="checkbox" name="recordar" id="cbox1" value="recordar" <?php echo $checked; ?>>
+=======
+                    <input type="checkbox" name="recordar" id="cbox1" value="recordar" <?php echo $checked ?>>
+>>>>>>> 9febde2e36880d1b7ffb176856d45044e329493a
                     <span>Recordar mi usuario</span>
                 </label>
                 </div>
             </form>
 
         </div>
-    </main>    
+    </main>
 
 <?php
     include 'footer.php';
-?>  
-
-</body>
-</html>
+?>>
