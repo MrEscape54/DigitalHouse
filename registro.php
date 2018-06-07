@@ -2,9 +2,13 @@
 
 //--------------------------------------------------validación de datos----------------------------
 
-require_once('functions.php');
+require('autoload.php');
 
-if (estaLogueado()) {
+use DigitalHouse\Models\Autenticaciones;
+use DigitalHouse\Models\Validaciones;
+use DigitalHouse\Models\RepositorioJSON;
+
+if (Autenticaciones::estaLogueado()) {
     header('location:index.php');
     exit;
 }
@@ -20,7 +24,7 @@ if ($_POST) {
     $email = $_POST['email'];
     $phone = $_POST['phone'];
     $avatar = 'img/fotosPerfil/avatar-generico.jpg';
-    $errores = ValidarRegistro($_POST, $avatar);
+    $errores = Validaciones::ValidarRegistro($_POST, $avatar);
 }
 
 include 'header.php';

@@ -1,23 +1,27 @@
 <?php
 
-include_once('functions.php');
-include_once('header.php');
+include_once('autoload.php');
 
-if (!estaLogueado()) {
-   header('location:index.php');
-   exit;
+use DigitalHouse\Models\Autenticaciones;
+use DigitalHouse\Models\RepositorioJSON;
+
+if (Autenticaciones::estaLogueado() == false) {
+  header('location:index.php');
+  exit;
 }
+
+include_once('header.php');
 
 $nombre = '';
 $email = '';
 
 if (isset($_SESSION['ID'])) {
-  $nombre = getName($_SESSION['ID']);
-  $email = getEmail($_SESSION['ID']);
+  $nombre = RepositorioJSON::getName($_SESSION['ID']);
+  $email = RepositorioJSON::getEmail($_SESSION['ID']);
 
 } else if(isset($_COOKIE['ID'])){
-  $nombre = getName($_COOKIE['ID']);
-  $email = getEmail($_COOKIE['ID']);
+  $nombre = RepositorioJSON::getName($_COOKIE['ID']);
+  $email = RepositorioJSON::getEmail($_COOKIE['ID']);
 }
 
 ?>
