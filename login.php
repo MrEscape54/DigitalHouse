@@ -1,9 +1,12 @@
 <?php
 //--------------------------------------------------validación de datos----------------------------
+require('autoload.php');
 
-require_once('functions.php');
+use DigitalHouse\Models\Autenticaciones;
+use DigitalHouse\Models\Validaciones;
+use DigitalHouse\Models\RepositorioJSON;
 
-if (estaLogueado()) {
+if (Autenticaciones::estaLogueado()) {
     header('location:index.php');
     exit;
 }
@@ -20,12 +23,12 @@ if(isset($_COOKIE['email'])) {
 
 if($_POST) {
     $email = $_POST['email'];
-    $datosValidos = ValidarIngreso($_POST);
+    $datosValidos = Validaciones::ValidarIngreso($_POST);
 
     if($datosValidos === true) {
-        Ingresar($email);
+        Autenticaciones::Ingresar($email);
         if(isset($_POST['recordar'])) {
-          $arrayUsuarios = TraerBaseDeUsuarios();
+          $arrayUsuarios = RepositorioJSON::TraerBaseDeUsuarios();
           foreach ($arrayUsuarios as $usuarios) {
             if($usuarios['email'] == $email){
               setcookie('ID', $usuarios['ID'], time() + 60*60*24*30);
@@ -35,7 +38,7 @@ if($_POST) {
 
         }
         if(isset($_COOKIE['email']) && !isset($_POST['recordar'])) {
-            $arrayUsuarios = TraerBaseDeUsuarios();
+            $arrayUsuarios = RepositorioJSON::TraerBaseDeUsuarios();
           foreach ($arrayUsuarios as $usuarios) {
             if($usuarios['email'] == $email){
               setcookie('ID', $usuarios['ID'], time() - 1);
@@ -44,14 +47,13 @@ if($_POST) {
           }
         }
         if(!isset($_COOKIE['email'])) {
-            $arrayUsuarios = TraerBaseDeUsuarios();
+            $arrayUsuarios = RepositorioJSON::TraerBaseDeUsuarios();
             foreach ($arrayUsuarios as $usuarios) {
                 if($_POST['email'] ==  $usuarios['email']) {
                     $_SESSION['ID'] = $usuarios['ID'];
                 }
             }
         }
-
         header('Location: index.php');
     }
     else {

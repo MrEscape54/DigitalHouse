@@ -1,12 +1,16 @@
 <?php 
 
-    require_once('functions.php');
+    require('autoload.php');
+
+    use DigitalHouse\Models\Autenticaciones;
+    use DigitalHouse\Models\Validaciones;
+    use DigitalHouse\Models\RepositorioJSON;
 
     $avatar = '';
     $displayAvatar = '';
     $displayIngreso = '';
 
-    if (estaLogueado()) {
+    if (Autenticaciones::estaLogueado()) {
         $avatar = '/php/DigitalHouse/' . $_SESSION['avatar'];
         $displayIngreso = 'style="display: none;"';
     }

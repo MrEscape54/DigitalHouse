@@ -27,7 +27,7 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi impedit saepe nihil ea, eligendi exercitationem
                     ipsum quia, quibusdam et porro distinctio enim vero consectetur incidunt vel aliquam autem, nam sapiente.
                 </p>
-                <a class="boton-tr" href="login.php">Registrarse</a>
+                <a class="boton-tr" href="registro.php">Registrarse</a>
         </div>
         <section>
             <div class="second-sponsor">
