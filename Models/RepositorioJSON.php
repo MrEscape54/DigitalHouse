@@ -13,15 +13,10 @@ class RepositorioJSON extends Repositorio{
 
    public static function CrearUsuario($datos, $avatar) {
 
-      $usuario = [
-         'ID' => RepositorioJSON::AgregarID(),
-         'nombre' => $datos['nombre'],
-         'email' => $datos['email'],
-         'password' => password_hash($datos['password'], PASSWORD_DEFAULT),
-         'avatar' => $avatar
-       ];
-     
-       return  $usuario;
+    $id = RepositorioJSON::AgregarID();
+    $usuario = new Usuario($id, $datos['nombre'], $datos['email'], $datos['phone'], $datos['password'], $avatar);
+    
+    return  $usuario->getUsuario();
    }
 
    public static function EsUsuario($tablaUsuarios, $email) {
