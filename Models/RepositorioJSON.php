@@ -6,7 +6,9 @@ class RepositorioJSON extends Repositorio{
 
    public static function GuardarDatos($nuevoUsuario, $avatar) {
 
-    $usuarioJSON = json_encode(RepositorioJSON::CrearUsuario($nuevoUsuario, $avatar));
+    $usuario = RepositorioJSON::CrearUsuario($nuevoUsuario, $avatar);
+    $usuarioArray = $usuario->getUsuario();
+    $usuarioJSON = json_encode($usuarioArray);
     file_put_contents('DBUsuarios.json', $usuarioJSON . PHP_EOL, FILE_APPEND | LOCK_EX);
     move_uploaded_file($_FILES['avatar']['tmp_name'], dirname(__FILE__, 2) . $avatar);
    }
@@ -16,7 +18,7 @@ class RepositorioJSON extends Repositorio{
     $id = RepositorioJSON::AgregarID();
     $usuario = new Usuario($id, $datos['nombre'], $datos['email'], $datos['phone'], $datos['password'], $avatar);
     
-    return  $usuario->getUsuario();
+    return  $usuario;
    }
 
    public static function EsUsuario($tablaUsuarios, $email) {
