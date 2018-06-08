@@ -84,6 +84,58 @@ font-size: 0.8em;
 padding-bottom: 5px;
 }
 
+.avatar-container{position: relative;}
+
+.ingreso span{
+  position: absolute;
+  right: 0;
+  left: 0;
+  margin: 2px auto 0;
+  display: block;
+  width: 0;
+  height: 0;
+  border-bottom: 5px solid transparent;
+  border-top: 5px solid #CCC;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  cursor: pointer;
+}
+
+.ingreso span:hover .submenu-container{display: block;}
+
+.ingreso a{
+  color: #999;
+  text-decoration: none;
+  font-size: 0.9em;
+  padding: 2px;
+}
+
+.ingreso img{height: 30px; border-radius: 5px;}
+
+.submenu-container{
+  display: none;
+  position: absolute; 
+  text-align: center;
+  margin-top: 5px;
+}
+
+.submenu-items{
+  position: relative;
+  right: 30px;
+  background-color: #F7F7F7;
+  border-radius: 5px;
+  padding: 3px;
+}
+
+.submenu-container li{font-size: 0.9em;}
+
+.submenu-container .desplegable{
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.8em;
+  padding-bottom: 5px;
+}
+
 .logo-container img{
   display: block;
   margin: 15px auto 0;
@@ -383,6 +435,8 @@ background-color: #f6f6f6;
 
 header{margin-bottom: 20px;}
 
+.search-scart{width: 80%;}
+
 .logo-container img {
   margin: 0 auto;
 }
@@ -674,6 +728,10 @@ border-radius: 5px;
  color:#385667;
   border-bottom: 1px solid #385667;
 }
+
+  .search-scart{width: 70%;}
+  
+  .brands img{width: 50%;}
 
 #SubNav li a:hover{
  color: #FFF;
