@@ -4,6 +4,13 @@
 
 require('autoload.php');
 
+<<<<<<< HEAD
+if (estaLogueado()) {
+    header('location:index.php');
+    exit;
+}
+
+=======
 use DigitalHouse\Models\Autenticaciones;
 use DigitalHouse\Models\Validaciones;
 use DigitalHouse\Models\RepositorioJSON;
@@ -13,6 +20,7 @@ if (Autenticaciones::estaLogueado()) {
     exit;
 }
 
+>>>>>>> 9febde2e36880d1b7ffb176856d45044e329493a
 $nombre = '';
 $email = '';
 $phone = '';
@@ -23,10 +31,16 @@ if ($_POST) {
     $nombre = $_POST['nombre'];
     $email = $_POST['email'];
     $phone = $_POST['phone'];
+<<<<<<< HEAD
+    $avatar = '/img/fotosPerfil/avatar-generico.jpg';
+    $errores = ValidarRegistro($_POST, $avatar);
+}
+=======
     $avatar = 'img/fotosPerfil/avatar-generico.jpg';
     $errores = Validaciones::ValidarRegistro($_POST, $avatar);
 }
 
+>>>>>>> 9febde2e36880d1b7ffb176856d45044e329493a
 include 'header.php';
 ?>
 
