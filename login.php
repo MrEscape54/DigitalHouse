@@ -23,9 +23,9 @@ if(isset($_COOKIE['email'])) {
 
 if($_POST) {
     $email = $_POST['email'];
-    $datosValidos = Validaciones::ValidarIngreso($_POST);
+    $errores = Validaciones::ValidarIngreso($_POST);
 
-    if($datosValidos === true) {
+    if(!$errores) {
         Autenticaciones::Ingresar($email);
         if(isset($_POST['recordar'])) {
           $arrayUsuarios = RepositorioJSON::TraerBaseDeUsuarios();
@@ -56,7 +56,7 @@ if($_POST) {
         }
         header('Location: index.php');
     }
-    else {
+    else if (isset($errores['passOK']) && !isset($errores['email']) && !isset($errores['password'])){
         $msg = 'flex';
     }
 }
@@ -87,13 +87,17 @@ include 'header.php';
                     <div class="input-icon">
                         <i class="fas fa-envelope"></i>
                     </div>
+                    <span class="obligatorio" ><?php if(isset($errores['email'])) { echo $errores['email'];}?></span>
                 </div>
+
                 <div class="input-group input-group-icon">
                     <input type="password" name="password" placeholder="Contraseña"/>
                     <div class="input-icon">
                         <i class="fas fa-lock"></i>
                     </div>
+                    <span class="obligatorio" ><?php if(isset($errores['password'])) { echo $errores['password'];}?></span>
                 </div>
+
                 <div class="input-group">
                     <input type="submit" value="Ingresar" />
                     <a href="#">Olvidé mi contraseña</a>

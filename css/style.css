@@ -136,6 +136,11 @@ padding-bottom: 5px;
   padding-bottom: 5px;
 }
 
+.logo-container {
+  width: 152px;
+  margin: 0 auto;
+}
+
 .logo-container img{
   display: block;
   margin: 15px auto 0;
