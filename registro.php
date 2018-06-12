@@ -55,7 +55,8 @@ include 'header.php';
                 </div>
 
                 <div class="input-group input-group-icon">
-                    <input type="tel" name="phone" value="<?php echo $phone ?>" placeholder="Teléfono (opcional)" />
+                    <input type="tel" name="phone" value="<?php echo $phone ?>" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" 
+                           placeholder="Teléfono (opcional) xxx-xxxx-xxxx" />
                     <div class="input-icon">
                         <i class="fas fa-phone"></i>
                     </div>

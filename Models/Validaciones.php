@@ -17,7 +17,7 @@ class Validaciones {
          $errores['nombre'] = 'Campo obligatorio';
          }
    
-         $email = trim($datos['email']);
+         $email = strtolower(trim($datos['email']));
          if ($email === '') {
          $errores['email'] = 'Campo obligatorio';
          }
@@ -68,25 +68,42 @@ class Validaciones {
       }
    } // end function
 
-   public static function ValidarIngreso($datosIngreso) {
+  public static function ValidarIngreso($datosIngreso) {
 
-      $email = '';
-      $password = '';
-    
-      if($datosIngreso) {
-          $email = trim($datosIngreso['email']);
-          $password = trim($datosIngreso['password']);
-    
-          $baseDeUsuarios = RepositorioJSON::TraerBaseDeUsuarios();
-    
-          foreach ($baseDeUsuarios as $usuario) {
-            if ($email == $usuario['email']) {
-              return password_verify($password, $usuario['password']);
-            }
-          }
-          return false;
+    $email = '';
+    $password = '';
+    $errores = [];
+    $passOK = false;
+  
+    if($datosIngreso) {
+      $email = strtolower(trim($datosIngreso['email']));
+      if ($email === '') {
+        $errores['email'] = 'Campo obligatorio';
       }
-   }
+      elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      $errores['email'] = "En email ingresado no es válido.";
+      }
+
+      $password = trim($datosIngreso['password']);
+      if ($password === '') {
+        $errores['password'] = 'Campo obligatorio';
+      }
+
+      $baseDeUsuarios = RepositorioJSON::TraerBaseDeUsuarios();
+
+      foreach ($baseDeUsuarios as $usuario) {
+        if ($email == $usuario['email']) {
+          $passOK = password_verify($password, $usuario['password']);
+        }
+      }
+
+      if ($passOK === false) {
+        $errores['passOK'] = false;
+      }
+        
+      return $errores; 
+    }
+  }
 }
 
 ?>
