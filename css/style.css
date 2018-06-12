@@ -430,6 +430,17 @@ padding: 5px;
 background-color: #f6f6f6;
 }
 
+.restaurar {
+  border: none;
+  padding: 5px;
+  width: 100px;
+  text-align: center;
+  color: white;
+  background-color: tomato;
+  border-radius: 5px;
+  font-family: sans-serif;
+  cursor: pointer;
+}
 
 /* -----------------  MEDIA QUERIES  ------------------------- */
 
