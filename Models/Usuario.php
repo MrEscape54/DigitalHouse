@@ -15,15 +15,10 @@ class Usuario {
 
       $this->id = $id;
       $this->nombre = $nombre;
-      $this->email = $email;
+      $this->email = strtolower($email);
       $this->phone = $phone;
-      $this->password = $this->PasswordHash($password);
+      $this->password = password_hash($password, PASSWORD_DEFAULT);
       $this->avatar = $avatar;
-   }
-
-   private function PasswordHash($password) {
-      $password = password_hash($password, PASSWORD_DEFAULT);
-      return $password;
    }
 
    public function getUsuario() {

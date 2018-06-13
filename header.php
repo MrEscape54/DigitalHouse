@@ -11,7 +11,7 @@
     $displayIngreso = '';
 
     if (Autenticaciones::estaLogueado()) {
-        $avatar = '/php/DigitalHouse/' . $_SESSION['avatar'];
+        $avatar = $_SESSION['avatar'];
         $displayIngreso = 'style="display: none;"';
     }
     else {

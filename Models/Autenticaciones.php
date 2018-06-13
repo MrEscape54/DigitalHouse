@@ -9,7 +9,7 @@ class Autenticaciones {
     $baseUsarios = RepositorioJSON::TraerBaseDeUsuarios();
 
     foreach ($baseUsarios as $usuario) {
-        if($usuario['email'] === $email) {
+        if($usuario['email'] === strtolower($email)) {
           $_SESSION['avatar'] = $usuario['avatar'];
           $_SESSION['ID'] = $usuario['ID'];
         }
