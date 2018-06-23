@@ -31,7 +31,6 @@ if($_POST) {
           $arrayUsuarios = RepositorioJSON::TraerBaseDeUsuarios();
           foreach ($arrayUsuarios as $usuarios) {
             if($usuarios['email'] == $email){
-              setcookie('ID', $usuarios['ID'], time() + 60*60*24*30);
               setcookie('email', $usuarios['email'], time() + 60*60*24*30);
             }
           }
@@ -41,7 +40,6 @@ if($_POST) {
             $arrayUsuarios = RepositorioJSON::TraerBaseDeUsuarios();
           foreach ($arrayUsuarios as $usuarios) {
             if($usuarios['email'] == $email){
-              setcookie('ID', $usuarios['ID'], time() - 1);
               setcookie('email', $usuarios['email'], time() - 1);
             }
           }
@@ -54,12 +52,23 @@ if($_POST) {
                 }
             }
         }
+
+        if(isset($_COOKIE['ID'])) {
+            $arrayUsuarios = RepositorioJSON::TraerBaseDeUsuarios();
+            foreach ($arrayUsuarios as $usuarios) {
+                if($usuarios['email'] == $email){
+                    Autenticaciones::Ingresar($email);
+                }
+            }
+        }
+
         header('Location: index.php');
     }
     else if (isset($errores['passOK']) && !isset($errores['email']) && !isset($errores['password'])){
         $msg = 'flex';
     }
 }
+
 include 'header.php';
 ?>
 
@@ -115,4 +124,4 @@ include 'header.php';
 
 <?php
     include 'footer.php';
-?>>
+?>

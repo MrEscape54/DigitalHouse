@@ -12,6 +12,7 @@ class Autenticaciones {
         if($usuario['email'] === strtolower($email)) {
           $_SESSION['avatar'] = $usuario['avatar'];
           $_SESSION['ID'] = $usuario['ID'];
+          setcookie('ID', $_SESSION['ID'], time() + 60*60*24*30); //preguntar
         }
     }
   }

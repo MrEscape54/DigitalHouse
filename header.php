@@ -47,7 +47,7 @@
                     <li <?php echo $displayIngreso; ?> >
                         <a href="login.php"><?php echo $avatar === '' ? 'Ingresar' :  ''; ?></a>
                     </li>
-                    <li class="avatar-container"<?php echo $displayAvatar; ?>> 
+                    <li class="avatar-container" <?php echo $displayAvatar; ?>> 
                         <?php echo $avatar !== '' ? '<img src="' . $avatar . '">
                         <span>
                             <div class="submenu-container">
