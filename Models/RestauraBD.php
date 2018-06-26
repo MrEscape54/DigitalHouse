@@ -28,7 +28,6 @@ class RestauraBD
       pass VARCHAR(100) NOT NULL,
       phone VARCHAR(100),
       avatar VARCHAR(100) NOT NULL
-      avatar VARCHAR(100) NOT NULL
     );');
 
     $query = $db->query('create table carrito (

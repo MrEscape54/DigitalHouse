@@ -15,13 +15,22 @@ include_once('header.php');
 $nombre = '';
 $email = '';
 
-if (isset($_SESSION['ID'])) {
+/* if (isset($_SESSION['ID'])) {
   $nombre = RepositorioJSON::getName($_SESSION['ID']);
   $email = RepositorioJSON::getEmail($_SESSION['ID']);
 
 } else if(isset($_COOKIE['ID'])){
   $nombre = RepositorioJSON::getName($_COOKIE['ID']);
   $email = RepositorioJSON::getEmail($_COOKIE['ID']);
+} */
+
+if (isset($_SESSION['ID'])) {
+    $nombre = RepositorioJSON::getName($_SESSION['ID']);
+    $email = RepositorioJSON::getEmail($_SESSION['ID']);
+
+} else if(isset($_COOKIE['ID'])){
+    $nombre = RepositorioJSON::getName($_COOKIE['ID']);
+    $email = RepositorioJSON::getEmail($_COOKIE['ID']);
 }
 
 ?>

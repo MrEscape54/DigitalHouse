@@ -27,9 +27,11 @@ class Validaciones {
          //Verifica si ya existe un usuario registrado con ese email
          elseif (RepositorioJSON::EsUsuario(RepositorioJSON::TraerBaseDeUsuarios(), $email)) {
          $errores['email'] = 'Ya existe un usuario asociado a ese email.';
-         }
-   
-         $password = trim($datos['password']);
+         } elseif (RepositorioMySQL::EsUsuario(RepositorioMySQL::TraerBaseDeUsuarios(), $email)) {
+          $errores['email'] = 'Ya existe un usuario asociado a ese email.';
+      }
+
+          $password = trim($datos['password']);
          if ($password === '') {
          $errores['password'] = 'Campo obligatorio';
          }
@@ -45,12 +47,11 @@ class Validaciones {
             if (($ext == 'jpg') || ($ext == 'JPG') || ($ext == 'PNG') || ($ext == 'png') ||
                 ($ext == 'gif') || ($ext == 'GIF') || ($ext == 'jpeg') || ($ext == 'JPEG')) {
                 $avatar = '/img/fotosPerfil/' . 'user' . RepositorioJSON::AgregarID() . '.' . $ext ;
-            } /* else if (($ext == 'jpg') || ($ext == 'JPG') || ($ext == 'PNG') || ($ext == 'png') ||
+            } else if (($ext == 'jpg') || ($ext == 'JPG') || ($ext == 'PNG') || ($ext == 'png') ||
                 ($ext == 'gif') || ($ext == 'GIF') || ($ext == 'jpeg') || ($ext == 'JPEG')) {
-                $avatar = '/img/fotosPerfil/' . 'user' . ID MYSQL . '.' . $ext ;
-            } */
-            else {
-            $errores['avatar'] = 'El archivo no es una imagen válida (png, jpg, gif)';
+                $avatar = '/img/fotosPerfil/' . uniqid('user');
+            } else {
+                $errores['avatar'] = 'El archivo no es una imagen válida (png, jpg, gif)';
             }
          }
 
@@ -61,8 +62,8 @@ class Validaciones {
       
       //Si los datos son válidos se crea y guarda el registro.
       if ($datosValidos) {
-         RepositorioJSON::GuardarDatos($datos, $avatar);
-         // RepositorioMySQL::GuardarDatos($datos, $avatar);
+         // RepositorioJSON::GuardarDatos($datos, $avatar);
+         RepositorioMySQL::GuardarDatos($datos, $avatar);
          Autenticaciones::Ingresar($datos['email']);
          header('Location: index.php');
          exit;
@@ -93,8 +94,8 @@ class Validaciones {
         $errores['password'] = 'Campo obligatorio';
       }
 
-      $baseDeUsuarios = RepositorioJSON::TraerBaseDeUsuarios();
-      // $baseDeUsuarios = RepositorioMySQL::TraerBaseDeUsuarios();
+      // $baseDeUsuarios = RepositorioJSON::TraerBaseDeUsuarios();
+      $baseDeUsuarios = RepositorioMySQL::TraerBaseDeUsuarios();
 
       foreach ($baseDeUsuarios as $usuario) {
         if ($email == $usuario['email']) {
