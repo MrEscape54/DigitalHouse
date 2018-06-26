@@ -25,7 +25,10 @@ class RestauraBD
       id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
       nombre VARCHAR(100) NOT NULL,
       email VARCHAR(100) UNIQUE NOT NULL,
-      pass VARCHAR(100) NOT NULL
+      pass VARCHAR(100) NOT NULL,
+      phone VARCHAR(100),
+      avatar VARCHAR(100) NOT NULL
+      avatar VARCHAR(100) NOT NULL
     );');
 
     $query = $db->query('create table carrito (

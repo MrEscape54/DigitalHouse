@@ -6,7 +6,7 @@ class RepositorioJSON extends Repositorio{
 
    public static function GuardarDatos($nuevoUsuario, $avatar) {
 
-    $usuario = RepositorioJSON::CrearUsuario($nuevoUsuario, $avatar);
+    $usuario = self::CrearUsuario($nuevoUsuario, $avatar);
     $usuarioArray = $usuario->getUsuario();
     $usuarioJSON = json_encode($usuarioArray);
     file_put_contents('DBUsuarios.json', $usuarioJSON . PHP_EOL, FILE_APPEND | LOCK_EX);
@@ -15,7 +15,7 @@ class RepositorioJSON extends Repositorio{
 
    public static function CrearUsuario($datos, $avatar) {
 
-    $id = RepositorioJSON::AgregarID();
+    $id = self::AgregarID();
     $usuario = new Usuario($id, $datos['nombre'], $datos['email'], $datos['phone'], $datos['password'], $avatar);
     
     return  $usuario;
@@ -47,7 +47,7 @@ class RepositorioJSON extends Repositorio{
 
    public static function AgregarID() {
 
-      $usuarios = RepositorioJSON::TraerBaseDeUsuarios();
+      $usuarios = self::TraerBaseDeUsuarios();
       if (empty($usuarios)) {
          return 1;
       }
@@ -58,7 +58,7 @@ class RepositorioJSON extends Repositorio{
 
    public static function getEmail($id) {
 
-      $arrayUsuarios = RepositorioJSON::TraerBaseDeUsuarios();
+      $arrayUsuarios = self::TraerBaseDeUsuarios();
       foreach ($arrayUsuarios as $usuarios){
          if($usuarios['ID'] == $id){
             return $usuarios['email'];
@@ -68,13 +68,28 @@ class RepositorioJSON extends Repositorio{
 
    public static function getName($id) {
 
-      $arrayUsuarios = RepositorioJSON::TraerBaseDeUsuarios();
+      $arrayUsuarios = self::TraerBaseDeUsuarios();
       foreach ($arrayUsuarios as $usuarios){
          if($usuarios['ID'] == $id){
             return $usuarios['nombre'];
          }
       }
    }
+
+    public static function TraerCredenciales() {
+
+        $usuariosJSON = file_get_contents('credenciales.json');
+        $array = explode(PHP_EOL, $usuariosJSON); //Crea un elemento del array por línea. Usa como delimiter PHP_EOL
+        array_pop($array); // Quita la última linea ya que esta vacía
+
+        $arrayUsuarios = []; //contenedor
+
+        foreach ($array as $usuario) {
+            $arrayUsuarios[] = json_decode($usuario, true); //Completa $arrayUsuarios por cada índice de $array
+        }
+        return $arrayUsuarios;
+}
+
 } // end class
 
 ?>

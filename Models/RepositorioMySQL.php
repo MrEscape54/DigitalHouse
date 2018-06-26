@@ -3,8 +3,6 @@
 namespace DigitalHouse\Models;
 
 use PDO;
-use DigitalHouse\Models\RepositorioJSON;
-use DigitalHouse\Models\Usuario;
 
 class RepositorioMySQL extends Repositorio
 {
@@ -45,8 +43,8 @@ class RepositorioMySQL extends Repositorio
         $usuario = new Usuario($datos['nombre'], $datos['email'], $datos['phone'], $datos['password'], $avatar);
         return $usuario;
     }
-    public static function GuardarDatos($nuevoUsuario, $avatar)
-    {
+
+    public static function GuardarDatos($nuevoUsuario, $avatar) {
         $usuario = self::CrearUsuario($nuevoUsuario, $avatar);
         $usuarioArray = $usuario->getUsuario();
         $id = $usuarioArray['id'];
@@ -57,6 +55,7 @@ class RepositorioMySQL extends Repositorio
         $query = $db->query("INSERT INTO usuarios (id, nombre, email, pass, phone = null, avatar)
           VALUES ('$id', '$nombre', '$email', '$pass', '$phone', '$avatar')");
     }
+
     public static function EsUsuario($tablaUsuarios, $email) {
         $usuarioEmail = $db->query("SELECT email FROM usuarios WHERE email = $email");
         $usuarioEmail = $usuario->fetchAll(PDO::FETCH_ASSOC);
@@ -66,17 +65,21 @@ class RepositorioMySQL extends Repositorio
             return False;
         }
     }
+
     public static function TraerBaseDeUsuarios() {
         $usuarios = $db->query("SELECT * FROM usuarios");
         $usuarios= $usuarios->fetchAll(PDO::FETCH_ASSOC);
         return $usuarios;
     }
+
     public static function AgregarID() {}
+
     public static function getEmail($id) {
         $email = $db->email("SELECT email FROM usuarios WHERE id = $id");
         $email = $email->fetchAll(PDO::FETCH_ASSOC);
         return $email;
     }
+
     public static function getName($id) {
         $nombre = $db->nombre("SELECT nombre FROM usuarios WHERE id = $id");
         $nombre = $nombre->fetchAll(PDO::FETCH_ASSOC);

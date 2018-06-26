@@ -43,9 +43,12 @@ class Validaciones {
          if($_FILES['avatar']['error'] == UPLOAD_ERR_OK) {
             $ext = pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION);
             if (($ext == 'jpg') || ($ext == 'JPG') || ($ext == 'PNG') || ($ext == 'png') ||
-               ($ext == 'gif') || ($ext == 'GIF') || ($ext == 'jpeg') || ($ext == 'JPEG')) {
-            $avatar = '/img/fotosPerfil/' . 'user' . RepositorioJSON::AgregarID() . '.' . $ext ;
-            }
+                ($ext == 'gif') || ($ext == 'GIF') || ($ext == 'jpeg') || ($ext == 'JPEG')) {
+                $avatar = '/img/fotosPerfil/' . 'user' . RepositorioJSON::AgregarID() . '.' . $ext ;
+            } /* else if (($ext == 'jpg') || ($ext == 'JPG') || ($ext == 'PNG') || ($ext == 'png') ||
+                ($ext == 'gif') || ($ext == 'GIF') || ($ext == 'jpeg') || ($ext == 'JPEG')) {
+                $avatar = '/img/fotosPerfil/' . 'user' . ID MYSQL . '.' . $ext ;
+            } */
             else {
             $errores['avatar'] = 'El archivo no es una imagen válida (png, jpg, gif)';
             }
@@ -59,6 +62,7 @@ class Validaciones {
       //Si los datos son válidos se crea y guarda el registro.
       if ($datosValidos) {
          RepositorioJSON::GuardarDatos($datos, $avatar);
+         // RepositorioMySQL::GuardarDatos($datos, $avatar);
          Autenticaciones::Ingresar($datos['email']);
          header('Location: index.php');
          exit;
@@ -90,6 +94,7 @@ class Validaciones {
       }
 
       $baseDeUsuarios = RepositorioJSON::TraerBaseDeUsuarios();
+      // $baseDeUsuarios = RepositorioMySQL::TraerBaseDeUsuarios();
 
       foreach ($baseDeUsuarios as $usuario) {
         if ($email == $usuario['email']) {
