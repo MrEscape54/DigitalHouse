@@ -5,7 +5,7 @@ namespace DigitalHouse\Models;
 session_start();
 class Autenticaciones {
  
-  public static function Ingresar($email) {
+  /* public static function Ingresar($email) {
     $baseUsarios = RepositorioJSON::TraerBaseDeUsuarios();
 
     foreach ($baseUsarios as $usuario) {
@@ -15,6 +15,12 @@ class Autenticaciones {
           setcookie('ID', $_SESSION['ID'], time() + 60*60*24*30); //preguntar
         }
     }
+  } */
+
+  public static function Ingresar($id) {
+      $_SESSION['avatar'] = RepositorioMySQL::getAvatar($id);
+      $_SESSION['id'] = $id;
+      setcookie('id', $_SESSION['id'], time() + 60*60*24*30);
   }
 
   public static function Salir() {

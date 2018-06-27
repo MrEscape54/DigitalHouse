@@ -21,15 +21,17 @@ class RepositorioJSON extends Repositorio{
     return  $usuario;
    }
 
-   public static function EsUsuario($tablaUsuarios, $email) {
+   public static function EsUsuarioJSON($tablaDeUsuarios, $email) {
 
-      foreach ($tablaUsuarios as $usuario) {
+      foreach ($tablaDeUsuarios as $usuario) {
          if ($email == $usuario['email']) {
            return true;
          }
       }
       return false;
    }
+
+   public static function EsUsuarioMySQL($email) {}
 
    public static function TraerBaseDeUsuarios() {
 
@@ -43,7 +45,7 @@ class RepositorioJSON extends Repositorio{
          $arrayUsuarios[] = json_decode($usuario, true); //Completa $arrayUsuarios por cada índice de $array
       }
       return $arrayUsuarios;
-}
+    }
 
    public static function AgregarID() {
 
