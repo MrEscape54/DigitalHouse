@@ -2,9 +2,6 @@
 
 namespace DigitalHouse\Models;
 
-use DigitalHouse\Models\RepositorioJSON;
-use DigitalHouse\Models\RepositorioMySQL;
-
 class Validaciones {
 
    public static function ValidarRegistro($datos, $avatar) {
@@ -96,8 +93,8 @@ class Validaciones {
         $errores['password'] = 'Campo obligatorio';
       }
 
+      // COMPARA $PASSWORD CON EL HASH DEL REPOSITORIO | BUSCA POR $EMAIL.
       // $baseDeUsuarios = RepositorioJSON::TraerBaseDeUsuarios();
-      // $baseDeUsuarios = RepositorioMySQL::TraerBaseDeUsuarios();
 
       /* foreach ($baseDeUsuarios as $usuario) {
         if ($email == $usuario['email']) {
@@ -109,6 +106,7 @@ class Validaciones {
         $errores['passOK'] = false;
       } */
 
+        // MYSQL  -  COMPARA $PASSWORD CON EL HASH DEL REPOSITORIO | BUSCA POR $EMAIL
       $passwordHash = RepositorioMySQL::getPass(RepositorioMySQL::getID($email));
 
       if ( $passwordHash = $password) {

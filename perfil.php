@@ -4,6 +4,7 @@ include_once('autoload.php');
 
 use DigitalHouse\Models\Autenticaciones;
 use DigitalHouse\Models\RepositorioJSON;
+// use DigitalHouse\Models\RepositorioMySQL;
 
 if (Autenticaciones::estaLogueado() == false) {
   header('location:index.php');
@@ -15,23 +16,25 @@ include_once('header.php');
 $nombre = '';
 $email = '';
 
-/* if (isset($_SESSION['ID'])) {
+if (isset($_SESSION['ID'])) {
   $nombre = RepositorioJSON::getName($_SESSION['ID']);
   $email = RepositorioJSON::getEmail($_SESSION['ID']);
 
 } else if(isset($_COOKIE['ID'])){
   $nombre = RepositorioJSON::getName($_COOKIE['ID']);
   $email = RepositorioJSON::getEmail($_COOKIE['ID']);
-} */
-
-if (isset($_SESSION['ID'])) {
-    $nombre = RepositorioJSON::getName($_SESSION['ID']);
-    $email = RepositorioJSON::getEmail($_SESSION['ID']);
-
-} else if(isset($_COOKIE['ID'])){
-    $nombre = RepositorioJSON::getName($_COOKIE['ID']);
-    $email = RepositorioJSON::getEmail($_COOKIE['ID']);
 }
+
+/*  MYSQL
+    if (isset($_SESSION['ID'])) {
+        $nombre = RepositorioJSON::getName($_SESSION['ID']);
+        $email = RepositorioJSON::getEmail($_SESSION['ID']);
+
+    } else if(isset($_COOKIE['ID'])){
+            $nombre = RepositorioJSON::getName($_COOKIE['ID']);
+            $email = RepositorioJSON::getEmail($_COOKIE['ID']);
+    }
+*/
 
 ?>
 
