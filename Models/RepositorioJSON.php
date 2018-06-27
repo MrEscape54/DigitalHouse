@@ -7,7 +7,7 @@ class RepositorioJSON extends Repositorio{
    public static function GuardarDatos($nuevoUsuario, $avatar) {
 
     $usuario = self::CrearUsuario($nuevoUsuario, $avatar);
-    $usuarioArray = $usuario->getUsuario();
+    $usuarioArray = $usuario->getUsuarioJSON();
     $usuarioJSON = json_encode($usuarioArray);
     file_put_contents('DBUsuarios.json', $usuarioJSON . PHP_EOL, FILE_APPEND | LOCK_EX);
     move_uploaded_file($_FILES['avatar']['tmp_name'], dirname(__FILE__, 2) . $avatar);
@@ -15,8 +15,9 @@ class RepositorioJSON extends Repositorio{
 
    public static function CrearUsuario($datos, $avatar) {
 
+    $usuario = new Usuario($datos['nombre'], $datos['email'], $datos['phone'], $datos['password'], $avatar);
     $id = self::AgregarID();
-    $usuario = new Usuario($id, $datos['nombre'], $datos['email'], $datos['phone'], $datos['password'], $avatar);
+    $usuario->setID($id);
     
     return  $usuario;
    }
@@ -54,15 +55,15 @@ class RepositorioJSON extends Repositorio{
          return 1;
       }
       else {
-         return $usuarios[count($usuarios) - 1]['ID'] + 1;
+         return $usuarios[count($usuarios) - 1]['id'] + 1;
       }
    }
 
    public static function getEmail($id) {
 
       $arrayUsuarios = self::TraerBaseDeUsuarios();
-      foreach ($arrayUsuarios as $usuarios){
-         if($usuarios['ID'] == $id){
+      foreach ($arrayUsuarios as $usuarios) {
+         if ($usuarios['id'] == $id) {
             return $usuarios['email'];
          };
       }
@@ -71,8 +72,8 @@ class RepositorioJSON extends Repositorio{
    public static function getName($id) {
 
       $arrayUsuarios = self::TraerBaseDeUsuarios();
-      foreach ($arrayUsuarios as $usuarios){
-         if($usuarios['ID'] == $id){
+      foreach ($arrayUsuarios as $usuarios) {
+         if ($usuarios['id'] == $id) {
             return $usuarios['nombre'];
          }
       }

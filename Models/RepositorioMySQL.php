@@ -6,11 +6,11 @@ use PDO;
 
 class RepositorioMySQL extends Repositorio
 {
-    /* protected */ private $host;
-    /* protected */ private $dbName;
-    /* protected */ private $dbUser;
-    /* protected */ private $dbPass;
-    /* protected */ private $db;
+    protected $host;
+    protected $dbName;
+    protected $dbUser;
+    protected $dbPass;
+    protected $db;
 
     public function __construct()
     {
@@ -39,64 +39,29 @@ class RepositorioMySQL extends Repositorio
 
     }
 
-    /*
-     public function getHost(){
-        return $this->host;
-    }
-    public function getdbName(){
-        return $this->dbName;
-    }
-    public function getdbUser(){
-        return $this->dbUser;
-    }
-    public function getdbPass(){
-        return $this->dbPass;
-    }
-    public function getDB(){
-        return $this->db;
-    }
-    */
-
-    public function ConexionBD() {
-        /*
-        $host = $this->getHost();
-        $dbName = $this->getdbName();
-        $dbUser = $this->getdbUser();
-        $dbPass = $this->getdbUser();
-        */
-
-        // $host = $this->host;
-
-        $db = new PDO("mysql:host=$host;dbName=$dbName", $dbUser, $dbPass, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
-        //SOMETHING IS WRONG JACK
-        //CANT SLEF:: A UN METODO DINAMICO
-        //CANT $THIS-> A UN METODO STATIC DENTRO DE UN MEOTODO STATIC... ?!?!?!?!
-        //FUCKING KYS
-        return $db;
-    }
-
     public static function CrearUsuario($datos, $avatar) {
         $usuario = new Usuario($datos['nombre'], $datos['email'], $datos['phone'], $datos['password'], $avatar);
-        //ERROR FALTA PAREMETRO ID !?!?!?!
-        // El parametro ID era obligatorio para hacer un usuario con base de datos en JSON. Y CON MYSQL ?!?!?
         return $usuario;
     }
 
     public static function GuardarDatos($nuevoUsuario, $avatar) {
         $usuario = self::CrearUsuario($nuevoUsuario, $avatar);
-        $usuarioArray = $usuario->getUsuario();
-        $id = $usuarioArray['id'];
+        $usuarioArray = $usuario->getUsuarioMySQL();
         $nombre = $usuarioArray['nombre'];
         $email = $usuarioArray['email'];
         $pass = $usuarioArray['pass'];
         $phone = $usuarioArray['phone'];
-        $db = // establecer conexion
-        $db->query("INSERT INTO usuarios (id, nombre, email, pass, phone = null, avatar)
-          VALUES ('$id', '$nombre', '$email', '$pass', '$phone', '$avatar')");
+        $db = new RepositorioMySQL();
+        $db = $db->db;
+        $db->query("INSERT INTO usuarios (nombre, email, pass, phone = null, avatar)
+          VALUES ('$nombre', '$email', '$pass', '$phone', '$avatar')");
     }
 
+    public static function EsUsuarioJSON($tablaDeUsuarios, $email) {}
+
     public static function EsUsuarioMySQL($email) {
-        $db = // establecer conexion
+        $db = new RepositorioMySQL();
+        $db = $db->db;
         $query = $db->prepare("SELECT email FROM usuarios WHERE email = $email");
         $query->execute();
         $userEmail = $query->fetchAll(PDO::FETCH_ASSOC);
@@ -107,10 +72,9 @@ class RepositorioMySQL extends Repositorio
         }
     }
 
-    public static function EsUsuarioJSON($tablaDeUsuarios, $email) {}
-
     public static function TraerBaseDeUsuarios() {
-        $db = // establecer conexion
+        $db = new RepositorioMySQL();
+        $db = $db->db;
         $query = $db->prepare("SELECT * FROM usuarios");
         $query->execute();
         $usuariosBD = $query->fetchAll(PDO::FETCH_ASSOC);
@@ -120,7 +84,8 @@ class RepositorioMySQL extends Repositorio
     public static function AgregarID() {}
 
     public static function getEmail($id) {
-        $db = // establecer conexion
+        $db = new RepositorioMySQL();
+        $db = $db->db;
         $query = $db->prepare("SELECT email FROM usuarios WHERE id = $id");
         $query->execute();
         $email = $query->fetchAll(PDO::FETCH_ASSOC);
@@ -128,7 +93,8 @@ class RepositorioMySQL extends Repositorio
     }
 
     public static function getName($id) {
-        $db = // establecer conexion
+        $db = new RepositorioMySQL();
+        $db = $db->db;
         $query = $db->prepare("SELECT nombre FROM usuarios WHERE id = $id");
         $query->execute();
         $nombre = $query->fetchAll(PDO::FETCH_ASSOC);
@@ -136,7 +102,8 @@ class RepositorioMySQL extends Repositorio
     }
 
     public static function getID($email) {
-        $db = // establecer conexion
+        $db = new RepositorioMySQL();
+        $db = $db->db;
         $query = $db->prepare("SELECT email FROM usuarios WHERE email = $email");
         $query->execute();
         $id = $query->fetchAll(PDO::FETCH_ASSOC);
@@ -144,7 +111,8 @@ class RepositorioMySQL extends Repositorio
     }
 
     public static function getPass($id) {
-        $db = // establecer conexion
+        $db = new RepositorioMySQL();
+        $db = $db->db;
         $query = $db->prepare("SELECT pass FROM usuarios WHERE id = $id");
         $query->execute();
         $pass = $query->fetchAll(PDO::FETCH_ASSOC);
@@ -152,7 +120,8 @@ class RepositorioMySQL extends Repositorio
     }
 
     public static function getPhone($id) {
-        $db = // establecer conexion
+        $db = new RepositorioMySQL();
+        $db = $db->db;
         $query = $db->prepare("SELECT phone FROM usuarios WHERE id = $id");
         $query->execute();
         $phone = $query->fetchAll(PDO::FETCH_ASSOC);
@@ -160,11 +129,44 @@ class RepositorioMySQL extends Repositorio
     }
 
     public static function getAvatar($id) {
-        $db = // establecer conexion
+        $db = new RepositorioMySQL();
+        $db = $db->db;
         $query = $db->prepare("SELECT avatar FROM usuarios WHERE id = $id");
         $query->execute();
         $avatar = $query->fetchAll(PDO::FETCH_ASSOC);
         return $avatar;
+    }
+
+    public static function setName($id, $nombre){
+        $db = new RepositorioMySQL();
+        $db = $db->db;
+        $query = $db->prepare("UPDATE usuarios SET nombre = $nombre WHERE id = $id");
+        $query->execute();
+    }
+    public static function setEmail($id, $email){
+        $db = new RepositorioMySQL();
+        $db = $db->db;
+        $query = $db->prepare("UPDATE usuarios SET email = $email WHERE id = $id");
+        $query->execute();
+    }
+    public static function setPass($id, $pass){
+        $db = new RepositorioMySQL();
+        $db = $db->db;
+        $pass = password_hash($pass, PASSWORD_DEFAULT);
+        $query = $db->prepare("UPDATE usuarios SET pass = $pass WHERE id = $id");
+        $query->execute();
+    }
+    public static function setPhone($id, $phone){
+        $db = new RepositorioMySQL();
+        $db = $db->db;
+        $query = $db->prepare("UPDATE usuarios SET phone = $phone WHERE id = $id");
+        $query->execute();
+    }
+    public static function setAvatar($id, $avatar){
+        $db = new RepositorioMySQL();
+        $db = $db->db;
+        $query = $db->prepare("UPDATE usuarios SET avatar = $avatar WHERE id = $id");
+        $query->execute();
     }
 
 }

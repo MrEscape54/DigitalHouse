@@ -3,6 +3,7 @@
 namespace DigitalHouse\Models;
 
 session_start();
+
 class Autenticaciones {
  
   /* public static function Ingresar($email) {
@@ -17,9 +18,10 @@ class Autenticaciones {
     }
   } */
 
-  public static function Ingresar($id) {
-      $_SESSION['avatar'] = RepositorioMySQL::getAvatar($id);
+  public static function Ingresar($email) {
+      $id = RepositorioMySQL::getID($email);
       $_SESSION['id'] = $id;
+      $_SESSION['avatar'] = RepositorioMySQL::getAvatar($id);
       setcookie('id', $_SESSION['id'], time() + 60*60*24*30);
   }
 

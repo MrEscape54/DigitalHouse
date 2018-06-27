@@ -11,9 +11,8 @@ class Usuario {
    private $password;
    private $avatar;
 
-   public function __construct($id, $nombre, $email, $phone, $password, $avatar) {
+   public function __construct($nombre, $email, $phone, $password, $avatar) {
 
-      $this->id = $id;
       $this->nombre = $nombre;
       $this->email = strtolower($email);
       $this->phone = $phone;
@@ -21,9 +20,13 @@ class Usuario {
       $this->avatar = $avatar;
    }
 
-   public function getUsuario() {
+   public function setID($id){
+       $this->id = $id;
+   }
+
+   public function getUsuarioJSON() {
       $array = [
-         'ID' => $this->id,
+         'id' => $this->id,
          'nombre' => $this->nombre,
          'email' => $this->email,
          'phone' => $this->phone,
@@ -33,6 +36,18 @@ class Usuario {
 
       return $array;
    }
+
+    public function getUsuarioMySQL() {
+        $array = [
+            'nombre' => $this->nombre,
+            'email' => $this->email,
+            'phone' => $this->phone,
+            'password' => $this->password,
+            'avatar' => $this->avatar
+        ];
+
+        return $array;
+    }
 
 }
 
