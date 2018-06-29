@@ -63,7 +63,7 @@ class Validaciones {
       if ($datosValidos) {
          RepositorioJSON::GuardarDatos($datos, $avatar);
          RepositorioMySQL::GuardarDatos($datos, $avatar);
-         Autenticaciones::Ingresar(RepositorioMySQL::getID($datos['email']));
+         Autenticaciones::Ingresar($datos['email']);
          header('Location: index.php');
          exit;
       } else {
@@ -105,8 +105,14 @@ class Validaciones {
       } */
 
         // MYSQL  -  COMPARA $PASSWORD CON EL HASH DEL REPOSITORIO | BUSCA POR $EMAIL
-        $passwordHash = RepositorioMySQL::getPass(RepositorioMySQL::getID($email));
-        $passOK = password_verify($password, $passwordHash);
+        if (RepositorioMySQL::getID($email) == False) {
+            $errores['email'] = "En email ingresado no es válido.";
+        } else {
+            $passwordHash = RepositorioMySQL::getPass(RepositorioMySQL::getID($email));
+            $passOK = password_verify($password, $passwordHash);
+        }
+
+
         if ($passOK == False) {
           $errores['passOK'] = false;
         }
