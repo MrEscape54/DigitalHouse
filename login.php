@@ -1,5 +1,6 @@
 <?php
-//--------------------------------------------------validación de datos----------------------------
+// VALIDACION DE DATOS
+
 require('autoload.php');
 
 use DigitalHouse\Models\Autenticaciones;
@@ -59,12 +60,6 @@ if($_POST) {
         }
 
         if(isset($_COOKIE['id'])) {
-            /* $arrayUsuarios = RepositorioJSON::TraerBaseDeUsuarios();
-            foreach ($arrayUsuarios as $usuarios) {
-                if($usuarios['email'] == $email){
-                    Autenticaciones::Ingresar($email);
-                }
-            } */
             Autenticaciones::Ingresar($email);
         }
         header('Location: index.php');

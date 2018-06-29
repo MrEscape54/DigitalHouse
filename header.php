@@ -3,15 +3,14 @@
     require('autoload.php');
 
     use DigitalHouse\Models\Autenticaciones;
-    use DigitalHouse\Models\Validaciones;
-    use DigitalHouse\Models\RepositorioJSON;
+    use DigitalHouse\Models\RepositorioMySQL;
 
     $avatar = '';
     $displayAvatar = '';
     $displayIngreso = '';
 
     if (Autenticaciones::estaLogueado()) {
-        $avatar = $_SESSION['avatar'];
+        $avatar = RepositorioMySQL::getAvatar($_SESSION['id']);
         $displayIngreso = 'style="display: none;"';
     }
     else {

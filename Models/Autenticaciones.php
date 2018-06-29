@@ -19,6 +19,7 @@ class Autenticaciones {
   } */
 
   public static function Ingresar($email) {
+      var_dump($email); die;
       $id = RepositorioMySQL::getID($email);
       $_SESSION['id'] = $id;
       $_SESSION['avatar'] = RepositorioMySQL::getAvatar($id);
