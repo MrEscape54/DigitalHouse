@@ -14,29 +14,21 @@ class RepositorioMySQL extends Repositorio
 
     public function __construct()
     {
-
         $this->host = '127.0.0.1';
         $this->dbName = 'ddl';
         $credenciales = RepositorioJSON::TraerCredenciales();
         $user = '';
         $pass = '';
-        foreach ($credenciales as $value) {
-            if ($value = 'user') {
-                $user = $value;
-            } else if ($credenciales = 'pass') {
-                $pass = $value;
-            }
-        }
-        $this->dbUser = $user;
-        $this->dbPass = $pass;
+
+        $this->dbUser = $credenciales['user'];
+        $this->dbPass = $credenciales['pass'];
 
         $this->db = new PDO(
-            "mysql:host=$this->host;dbName=$this->dbName",
+            "mysql:host=$this->host;dbname=$this->dbName",
             $this->dbUser,
             $this->dbPass,
             [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
         );
-
     }
 
     public static function CrearUsuario($datos, $avatar) {
@@ -49,13 +41,14 @@ class RepositorioMySQL extends Repositorio
         $usuarioArray = $usuario->getUsuarioMySQL();
         $nombre = $usuarioArray['nombre'];
         $email = $usuarioArray['email'];
-        $pass = $usuarioArray['pass'];
+        $pass = $usuarioArray['password'];
         $phone = $usuarioArray['phone'];
         // establecer conexion
         $db = new RepositorioMySQL();
         $conexion = $db->db;
-        $query = $conexion->prepare("INSERT INTO usuarios (nombre, email, pass, phone = null, avatar)
+        $query = $conexion->prepare("INSERT INTO usuarios (nombre, email, pass, phone, avatar)
           VALUES ('$nombre', '$email', '$pass', '$phone', '$avatar')");
+          var_dump($query);
         $query->execute();
     }
 
@@ -64,8 +57,9 @@ class RepositorioMySQL extends Repositorio
     public static function EsUsuarioMySQL($email) {
         $db = new RepositorioMySQL();
         $conexion = $db->db;
-        $query = $conexion->prepare("SELECT email FROM usuarios WHERE email = $email");
+        $query = $conexion->prepare("SELECT email FROM usuarios WHERE email = '$email'");
         $query->execute();
+
         $userEmail = $query->fetchAll(PDO::FETCH_ASSOC);
         if ($email == $userEmail) {
             return True;
@@ -106,9 +100,10 @@ class RepositorioMySQL extends Repositorio
     public static function getID($email) {
         $db = new RepositorioMySQL();
         $conexion = $db->db;
-        $query = $conexion->prepare("SELECT email FROM usuarios WHERE email = $email");
+        $query = $conexion->prepare("SELECT email FROM usuarios WHERE email = '$email'");
         $query->execute();
         $id = $query->fetchAll(PDO::FETCH_ASSOC);
+        var_dump($id);
         return $id;
     }
 

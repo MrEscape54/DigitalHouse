@@ -61,7 +61,6 @@ if($_POST) {
                 }
             }
         }
-
         header('Location: index.php');
     }
     else if (isset($errores['passOK']) && !isset($errores['email']) && !isset($errores['password'])){
