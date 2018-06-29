@@ -32,8 +32,6 @@ class Autenticaciones {
   }
 
   public static function estaLogueado(){
-    return isset($_SESSION['avatar']);
+    return isset($_SESSION['id']);
   }
 }
-
-?>

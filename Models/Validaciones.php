@@ -73,8 +73,6 @@ class Validaciones {
 
   public static function ValidarIngreso($datosIngreso) {
 
-    $email = '';
-    $password = '';
     $errores = [];
     $passOK = false;
 
@@ -117,9 +115,8 @@ class Validaciones {
           $errores['passOK'] = false;
       }
 
-      return $errores;
     }
+      return $errores;
   }
-}
 
-?>
+}

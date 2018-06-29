@@ -6,8 +6,6 @@ require('autoload.php');
 
 use DigitalHouse\Models\Autenticaciones;
 use DigitalHouse\Models\Validaciones;
-use DigitalHouse\Models\RepositorioJSON;
-use DigitalHouse\Models\RepositorioMySQL;
 
 if (Autenticaciones::estaLogueado()) {
     header('location:index.php');

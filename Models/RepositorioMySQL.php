@@ -17,9 +17,6 @@ class RepositorioMySQL extends Repositorio
         $this->host = '127.0.0.1';
         $this->dbName = 'ddl';
         $credenciales = RepositorioJSON::TraerCredenciales();
-        $user = '';
-        $pass = '';
-
         $this->dbUser = $credenciales['user'];
         $this->dbPass = $credenciales['pass'];
 
@@ -48,7 +45,6 @@ class RepositorioMySQL extends Repositorio
         $conexion = $db->db;
         $query = $conexion->prepare("INSERT INTO usuarios (nombre, email, pass, phone, avatar)
           VALUES ('$nombre', '$email', '$pass', '$phone', '$avatar')");
-          var_dump($query);
         $query->execute();
     }
 
@@ -167,5 +163,3 @@ class RepositorioMySQL extends Repositorio
     }
 
 }
-
-?>

@@ -82,14 +82,6 @@ class RepositorioJSON extends Repositorio{
     public static function TraerCredenciales() {
 
         $usuariosJSON = file_get_contents('credenciales.json');
-        //$array = explode(PHP_EOL, $usuariosJSON); //Crea un elemento del array por línea. Usa como delimiter PHP_EOL
-        //array_pop($array); // Quita la última linea ya que esta vacía
-
-        //$arrayUsuarios = []; //contenedor
-
-        //foreach ($array as $usuario) {
-        //    $arrayUsuarios[] = json_decode($usuario, true); //Completa $arrayUsuarios por cada índice de $array
-        //}
         $arrayUsuarios = json_decode($usuariosJSON, true);
         return $arrayUsuarios;
 }
