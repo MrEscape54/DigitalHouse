@@ -55,11 +55,11 @@ class RepositorioMySQL extends Repositorio
         $conexion = $db->db;
         $query = $conexion->prepare("SELECT email FROM usuarios WHERE email = '$email'");
         $query->execute();
-        $userEmail = $query->fetchAll(PDO::FETCH_UNIQUE);
-        if ($email == $userEmail) {
-            return True;
-        } else if ($email != $userEmail) {
+        $userEmail = $query->fetch(PDO::FETCH_ASSOC);
+        if (!$userEmail) {
             return False;
+        } else {
+            return True;
         }
     }
 
@@ -68,7 +68,7 @@ class RepositorioMySQL extends Repositorio
         $conexion = $db->db;
         $query = $conexion->prepare("SELECT * FROM usuarios");
         $query->execute();
-        $usuariosBD = $query->fetchAll(PDO::FETCH_UNIQUE);
+        $usuariosBD = $query->fetchAll(PDO::FETCH_ASSOC); // VERIFICAR SI FUNCIONA DEBIDAMENTE
         return $usuariosBD;
     }
 
@@ -79,8 +79,8 @@ class RepositorioMySQL extends Repositorio
         $conexion = $db->db;
         $query = $conexion->prepare("SELECT email FROM usuarios WHERE id = $id");
         $query->execute();
-        $email = $query->fetchAll(PDO::FETCH_UNIQUE);
-        return $email;
+        $email = $query->fetch(PDO::FETCH_ASSOC);
+        return $email['email'];
     }
 
     public static function getName($id) {
@@ -88,8 +88,8 @@ class RepositorioMySQL extends Repositorio
         $conexion = $db->db;
         $query = $conexion->prepare("SELECT nombre FROM usuarios WHERE id = $id");
         $query->execute();
-        $nombre = $query->fetchAll(PDO::FETCH_UNIQUE);
-        return $nombre;
+        $nombre = $query->fetch(PDO::FETCH_ASSOC);
+        return $nombre['nombre'];
     }
 
     public static function getID($email) {
@@ -97,8 +97,8 @@ class RepositorioMySQL extends Repositorio
         $conexion = $db->db;
         $query = $conexion->prepare("SELECT id FROM usuarios WHERE email = '$email'");
         $query->execute();
-        $id = $query->fetchAll(PDO::FETCH_UNIQUE); // RECIBO UN ARRAY!!!
-        return $id;
+        $id = $query->fetch(PDO::FETCH_ASSOC);
+        return $id['id'];
     }
 
     public static function getPass($id) {
@@ -106,7 +106,8 @@ class RepositorioMySQL extends Repositorio
         $conexion = $db->db;
         $query = $conexion->prepare("SELECT pass FROM usuarios WHERE id = $id");
         $query->execute();
-        $pass = $query->fetchAll(PDO::FETCH_UNIQUE);
+        $pass = $query->fetchAll(PDO::FETCH_ASSOC);
+        $pass = $pass['0']['pass'];
         return $pass; // DEVUELVE EL HASH DEL PASSWORD
     }
 
@@ -115,8 +116,8 @@ class RepositorioMySQL extends Repositorio
         $conexion = $db->db;
         $query = $conexion->prepare("SELECT phone FROM usuarios WHERE id = $id");
         $query->execute();
-        $phone = $query->fetchAll(PDO::FETCH_UNIQUE);
-        return $phone;
+        $phone = $query->fetch(PDO::FETCH_ASSOC);
+        return $phone['phone'];
     }
 
     public static function getAvatar($id) {
@@ -124,8 +125,8 @@ class RepositorioMySQL extends Repositorio
         $conexion = $db->db;
         $query = $conexion->prepare("SELECT avatar FROM usuarios WHERE id = $id");
         $query->execute();
-        $avatar = $query->fetchAll(PDO::FETCH_UNIQUE);
-        return $avatar;
+        $avatar = $query->fetch(PDO::FETCH_ASSOC);
+        return $avatar['avatar'];
     }
 
     public static function setName($id, $nombre){

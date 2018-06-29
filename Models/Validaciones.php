@@ -105,16 +105,11 @@ class Validaciones {
       } */
 
         // MYSQL  -  COMPARA $PASSWORD CON EL HASH DEL REPOSITORIO | BUSCA POR $EMAIL
-        $id = RepositorioMySQL::getID($email);
-        $passwordHash = RepositorioMySQL::getPass($id);
-
-      if ( $passwordHash = $password) {
-          $passOK = password_verify($password, $passwordHash);
-      }
-
-      if ($passOK == False) {
+        $passwordHash = RepositorioMySQL::getPass(RepositorioMySQL::getID($email));
+        $passOK = password_verify($password, $passwordHash);
+        if ($passOK == False) {
           $errores['passOK'] = false;
-      }
+        }
 
     }
       return $errores;

@@ -2,8 +2,8 @@
 
 session_start();
 // var_dump($_SESSION);
-if (isset($_SESSION['ID'])) {
-   setcookie('ID', $_SESSION['ID'], time() -1);
+if (isset($_SESSION['id'])) {
+   setcookie('id', $_SESSION['id'], time() -1);
 session_destroy();
 }
 
