@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ec9c1977-38f3-4717-a8e5-adef480d9c59" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBUsuarios.json" beforeDir="false" afterPath="$PROJECT_DIR$/DBUsuarios.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/RepositorioMySQL.php" beforeDir="false" afterPath="$PROJECT_DIR$/Models/RepositorioMySQL.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Usuario.php" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Usuario.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Validaciones.php" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Validaciones.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/registro.php" beforeDir="false" afterPath="$PROJECT_DIR$/registro.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,7 +16,38 @@
     <favorites_list name="DigitalHouse" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="login.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/login.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="483">
+              <caret line="39" column="61" selection-start-line="39" selection-start-column="61" selection-end-line="39" selection-end-column="61" />
+              <folding>
+                <element signature="e#2213#2269#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Validaciones.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Models/Validaciones.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="525">
+              <caret line="115" lean-forward="true" selection-start-line="115" selection-end-line="115" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Autenticaciones.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Models/Autenticaciones.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -40,14 +67,14 @@
         <option value="$PROJECT_DIR$/perfil.php" />
         <option value="$PROJECT_DIR$/logout.php" />
         <option value="$PROJECT_DIR$/credenciales.json" />
-        <option value="$PROJECT_DIR$/login.php" />
         <option value="$PROJECT_DIR$/header.php" />
         <option value="$PROJECT_DIR$/Models/Usuario.php" />
-        <option value="$PROJECT_DIR$/Models/Autenticaciones.php" />
         <option value="$PROJECT_DIR$/registro.php" />
-        <option value="$PROJECT_DIR$/DBUsuarios.json" />
         <option value="$PROJECT_DIR$/Models/RepositorioMySQL.php" />
         <option value="$PROJECT_DIR$/Models/Validaciones.php" />
+        <option value="$PROJECT_DIR$/DBUsuarios.json" />
+        <option value="$PROJECT_DIR$/Models/Autenticaciones.php" />
+        <option value="$PROJECT_DIR$/login.php" />
       </list>
     </option>
   </component>
@@ -82,6 +109,11 @@
             <path>
               <item name="DigitalHouse" type="b2602c69:ProjectViewProjectNode" />
               <item name="DigitalHouse" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DigitalHouse" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DigitalHouse" type="462c0819:PsiDirectoryNode" />
+              <item name="Models" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -127,7 +159,7 @@
       <workItem from="1530282557997" duration="38000" />
       <workItem from="1530289250779" duration="12672000" />
       <workItem from="1530304940481" duration="103000" />
-      <workItem from="1530306080988" duration="5479000" />
+      <workItem from="1530306080988" duration="6742000" />
     </task>
     <task id="LOCAL-00001" summary="Repositorio Mysql and updates">
       <created>1530020579469</created>
@@ -185,11 +217,18 @@
       <option name="project" value="LOCAL" />
       <updated>1530308065082</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="avatar ok">
+      <created>1530311577757</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1530311577757</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46276000" />
+    <option name="totallyTimeSpent" value="47539000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -202,17 +241,19 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49891067" visible="true" weight="0.13059701" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32897604" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32897604" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
-      <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info id="Structure" order="1" sideWeight="0.50108933" side_tool="true" weight="0.12473348" />
       <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49891067" visible="true" weight="0.13059701" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info id="Structure" order="1" sideWeight="0.50108933" side_tool="true" weight="0.12473348" />
       <window_info id="Favorites" order="2" sideWeight="0.50108933" side_tool="true" weight="0.12473348" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -220,7 +261,6 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Command Line Tools Console" order="13" weight="0.32897604" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.32897604" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32897604" />
@@ -264,7 +304,8 @@
     <MESSAGE value="todavia hay errores" />
     <MESSAGE value="validacion lISTA ???!?!?!?!?!(((????? chan" />
     <MESSAGE value="validaciones OK (creo)" />
-    <option name="LAST_COMMIT_MESSAGE" value="validaciones OK (creo)" />
+    <MESSAGE value="avatar ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="avatar ok" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -450,9 +491,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/RestaurarBD.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -474,13 +512,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
           <caret line="5" column="47" lean-forward="true" selection-start-line="5" selection-start-column="47" selection-end-line="5" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="31" column="42" lean-forward="true" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
         </state>
       </provider>
     </entry>
@@ -518,22 +549,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Models/Autenticaciones.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="23" column="61" lean-forward="true" selection-start-line="23" selection-start-column="61" selection-end-line="23" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/registro.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="552">
           <caret line="25" column="62" lean-forward="true" selection-start-line="25" selection-start-column="62" selection-end-line="25" selection-end-column="62" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DBUsuarios.json">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/credenciales.json">
       <provider selected="true" editor-type-id="text-editor" />
@@ -545,10 +566,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/DBUsuarios.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" column="178" lean-forward="true" selection-start-line="1" selection-start-column="178" selection-end-line="1" selection-end-column="178" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Models/Autenticaciones.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Models/Validaciones.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="667">
-          <caret line="53" column="90" lean-forward="true" selection-start-line="53" selection-start-column="90" selection-end-line="53" selection-end-column="90" />
+        <state relative-caret-position="525">
+          <caret line="115" lean-forward="true" selection-start-line="115" selection-end-line="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="39" column="61" selection-start-line="39" selection-start-column="61" selection-end-line="39" selection-end-column="61" />
+          <folding>
+            <element signature="e#2213#2269#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

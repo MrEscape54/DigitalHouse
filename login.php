@@ -37,7 +37,7 @@ if($_POST) {
               setcookie('email', $usuarios['email'], time() + 60*60*24*30);
             }
           } */
-            setcookie('id', $id, time() + 60*60*24*30);
+            setcookie('email', $email, time() + 60*60*24*30);
 
         }
         if(isset($_COOKIE['id']) && !isset($_POST['recordar'])) {
