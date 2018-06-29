@@ -8,7 +8,7 @@ use DigitalHouse\Models\Autenticaciones;
 use DigitalHouse\Models\Validaciones;
 
 if (Autenticaciones::estaLogueado()) {
-    header('location:index.php');
+    header('location: index.php');
     exit;
 }
 

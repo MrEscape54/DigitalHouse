@@ -40,7 +40,7 @@ class RepositorioMySQL extends Repositorio
         $email = $usuarioArray['email'];
         $pass = $usuarioArray['password'];
         $phone = $usuarioArray['phone'];
-        // establecer conexion
+        move_uploaded_file($_FILES['avatar']['tmp_name'], $avatar);
         $db = new RepositorioMySQL();
         $conexion = $db->db;
         $query = $conexion->prepare("INSERT INTO usuarios (nombre, email, pass, phone, avatar)
@@ -126,6 +126,15 @@ class RepositorioMySQL extends Repositorio
         $query->execute();
         $avatar = $query->fetch(PDO::FETCH_ASSOC);
         return $avatar['avatar'];
+    }
+
+    public static function getLastID() { //TRAE EL MAXIMO ID
+        $db = new RepositorioMySQL();
+        $conexion = $db->db;
+        $query = $conexion->prepare("SELECT MAX(id) FROM usuarios");
+        $query->execute();
+        $maxID = $query->fetch(PDO::FETCH_ASSOC);
+        return $maxID['$maxID'];
     }
 
     public static function setName($id, $nombre){

@@ -48,7 +48,8 @@ class Validaciones {
             $ext = pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION);
             if (($ext == 'jpg') || ($ext == 'JPG') || ($ext == 'PNG') || ($ext == 'png') ||
                 ($ext == 'gif') || ($ext == 'GIF') || ($ext == 'jpeg') || ($ext == 'JPEG')) {
-                $avatar = '/img/fotosPerfil/' . 'user' . RepositorioJSON::AgregarID() . '.' . $ext ;
+                //$avatar = 'img/fotosPerfil/' . 'user' . RepositorioJSON::AgregarID() . '.' . $ext;
+                $avatar = 'img/fotosPerfil/' . 'user' . (RepositorioMySQL::getLastID() + 1) . '.' . $ext;
             } else {
                 $errores['avatar'] = 'El archivo no es una imagen válida (png, jpg, gif)';
             }
