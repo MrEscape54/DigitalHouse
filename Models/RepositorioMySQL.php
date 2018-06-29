@@ -107,8 +107,7 @@ class RepositorioMySQL extends Repositorio
         $query = $conexion->prepare("SELECT pass FROM usuarios WHERE id = $id");
         $query->execute();
         $pass = $query->fetch(PDO::FETCH_ASSOC);
-        $pass = $pass['0']['pass'];
-        return $pass; // DEVUELVE EL HASH DEL PASSWORD
+        return $pass['pass']; // DEVUELVE EL HASH DEL PASSWORD
     }
 
     public static function getPhone($id) {

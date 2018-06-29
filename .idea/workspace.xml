@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ec9c1977-38f3-4717-a8e5-adef480d9c59" name="Default" comment="validacion lISTA ???!?!?!?!?!(((????? chan">
+    <list default="true" id="ec9c1977-38f3-4717-a8e5-adef480d9c59" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DBUsuarios.json" beforeDir="false" afterPath="$PROJECT_DIR$/DBUsuarios.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Models/RepositorioMySQL.php" beforeDir="false" afterPath="$PROJECT_DIR$/Models/RepositorioMySQL.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Validaciones.php" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Validaciones.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/credenciales.json" beforeDir="false" afterPath="$PROJECT_DIR$/credenciales.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,29 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="RepositorioMySQL.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="RepositorioMySQL.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Models/RepositorioMySQL.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-276">
-              <caret line="99" column="46" selection-start-line="99" selection-start-column="46" selection-end-line="99" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Validaciones.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Models/Validaciones.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="502">
-              <caret line="65" column="52" lean-forward="true" selection-start-line="65" selection-start-column="52" selection-end-line="65" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DBUsuarios.json" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/DBUsuarios.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
-              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+            <state relative-caret-position="437">
+              <caret line="109" column="62" lean-forward="true" selection-start-line="109" selection-start-column="62" selection-end-line="109" selection-end-column="62" />
             </state>
           </provider>
         </entry>
@@ -68,11 +49,11 @@
         <option value="$PROJECT_DIR$/header.php" />
         <option value="$PROJECT_DIR$/logout.php" />
         <option value="$PROJECT_DIR$/credenciales.json" />
-        <option value="$PROJECT_DIR$/Models/RepositorioMySQL.php" />
-        <option value="$PROJECT_DIR$/login.php" />
         <option value="$PROJECT_DIR$/Models/Autenticaciones.php" />
         <option value="$PROJECT_DIR$/Models/Validaciones.php" />
         <option value="$PROJECT_DIR$/DBUsuarios.json" />
+        <option value="$PROJECT_DIR$/login.php" />
+        <option value="$PROJECT_DIR$/Models/RepositorioMySQL.php" />
       </list>
     </option>
   </component>
@@ -111,7 +92,7 @@
             <path>
               <item name="DigitalHouse" type="b2602c69:ProjectViewProjectNode" />
               <item name="DigitalHouse" type="462c0819:PsiDirectoryNode" />
-              <item name="Models" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -157,7 +138,7 @@
       <workItem from="1530282557997" duration="38000" />
       <workItem from="1530289250779" duration="12672000" />
       <workItem from="1530304940481" duration="103000" />
-      <workItem from="1530306080988" duration="1380000" />
+      <workItem from="1530306080988" duration="1940000" />
     </task>
     <task id="LOCAL-00001" summary="Repositorio Mysql and updates">
       <created>1530020579469</created>
@@ -201,11 +182,18 @@
       <option name="project" value="LOCAL" />
       <updated>1530300364071</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="validacion lISTA ???!?!?!?!?!(((????? chan">
+      <created>1530307466924</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1530307466924</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42177000" />
+    <option name="totallyTimeSpent" value="42737000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -291,7 +279,7 @@
           <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="53" />
+      <option name="time" value="55" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -531,38 +519,41 @@
     <entry file="file://$PROJECT_DIR$/credenciales.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/login.php">
+    <entry file="file://$PROJECT_DIR$/DBUsuarios.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Models/Autenticaciones.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="20" column="43" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Models/RepositorioMySQL.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-276">
-          <caret line="99" column="46" selection-start-line="99" selection-start-column="46" selection-end-line="99" selection-end-column="46" />
+        <state relative-caret-position="23">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Models/Validaciones.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="502">
+        <state relative-caret-position="1495">
           <caret line="65" column="52" lean-forward="true" selection-start-line="65" selection-start-column="52" selection-end-line="65" selection-end-column="52" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DBUsuarios.json">
+    <entry file="file://$PROJECT_DIR$/img/fotosPerfil/user2.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        <state relative-caret-position="368">
+          <caret line="31" column="42" lean-forward="true" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Models/Autenticaciones.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="25" column="3" lean-forward="true" selection-start-line="25" selection-start-column="3" selection-end-line="25" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Models/RepositorioMySQL.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="109" column="62" lean-forward="true" selection-start-line="109" selection-start-column="62" selection-end-line="109" selection-end-column="62" />
         </state>
       </provider>
     </entry>
