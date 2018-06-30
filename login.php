@@ -28,9 +28,9 @@ if($_POST) {
     $id = RepositorioMySQL::getID($email);
     $errores = Validaciones::ValidarIngreso($_POST);
 
-    if(!$errores) {
+    if (!$errores) {
         Autenticaciones::Ingresar($email);
-        if(isset($_POST['recordar'])) {
+        if (isset($_POST['recordar'])) {
           /* $arrayUsuarios = RepositorioJSON::TraerBaseDeUsuarios();
           foreach ($arrayUsuarios as $usuarios) {
             if($usuarios['email'] == $email){
@@ -40,7 +40,8 @@ if($_POST) {
             setcookie('email', $email, time() + 60*60*24*30);
 
         }
-        if(isset($_COOKIE['id']) && !isset($_POST['recordar'])) {
+
+        if (isset($_COOKIE['id']) && !isset($_POST['recordar'])) {
             /* $arrayUsuarios = RepositorioJSON::TraerBaseDeUsuarios();
           foreach ($arrayUsuarios as $usuarios) {
             if($usuarios['email'] == $email){
@@ -49,7 +50,8 @@ if($_POST) {
           } */
             setcookie('id', $id, time() - 1);
         }
-        if(!isset($_COOKIE['id'])) {
+
+        if (!isset($_COOKIE['id'])) {
             /* $arrayUsuarios = RepositorioJSON::TraerBaseDeUsuarios();
             foreach ($arrayUsuarios as $usuarios) {
                 if($_POST['email'] ==  $usuarios['email']) {
@@ -59,9 +61,11 @@ if($_POST) {
             $_SESSION['id'] = $id;
         }
 
-        if(isset($_COOKIE['id'])) {
+        if (isset($_COOKIE['id'])) {
+            $email = RepositorioMySQL::getEmail($_COOKIE['id']);
             Autenticaciones::Ingresar($email);
         }
+
         header('Location: index.php');
     }
     else if (isset($errores['passOK']) && !isset($errores['email']) && !isset($errores['password'])){
