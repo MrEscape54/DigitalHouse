@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ec9c1977-38f3-4717-a8e5-adef480d9c59" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/RepositorioMySQL.php" beforeDir="false" afterPath="$PROJECT_DIR$/Models/RepositorioMySQL.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/RestauraBD.php" beforeDir="false" afterPath="$PROJECT_DIR$/Models/RestauraBD.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,12 +16,12 @@
     <favorites_list name="DigitalHouse" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="RepositorioMySQL.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Models/RepositorioMySQL.php">
+    <leaf>
+      <file leaf-file-name="RestauraBD.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Models/RestauraBD.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="552">
-              <caret line="24" column="31" lean-forward="true" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
+            <state relative-caret-position="2109">
+              <caret line="91" column="57" selection-start-line="91" selection-start-column="57" selection-end-line="91" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -39,7 +39,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Models/RestauraBD.php" />
         <option value="$PROJECT_DIR$/DBUsuarios.json" />
         <option value="$PROJECT_DIR$/autoload.php" />
         <option value="$PROJECT_DIR$/perfil.php" />
@@ -49,6 +48,7 @@
         <option value="$PROJECT_DIR$/Models/Usuario.php" />
         <option value="$PROJECT_DIR$/Models/RepositorioJSON.php" />
         <option value="$PROJECT_DIR$/Models/RepositorioMySQL.php" />
+        <option value="$PROJECT_DIR$/Models/RestauraBD.php" />
       </list>
     </option>
   </component>
@@ -67,16 +67,15 @@
     </servers>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="946" />
-    <option name="width" value="974" />
-    <option name="height" value="1040" />
+    <option name="y" value="27" />
+    <option name="width" value="1366" />
+    <option name="height" value="741" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -93,6 +92,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -130,6 +130,12 @@
       <workItem from="1530056136777" duration="12030000" />
       <workItem from="1530106624306" duration="9843000" />
       <workItem from="1530135165026" duration="422000" />
+      <workItem from="1530489597001" duration="168000" />
+      <workItem from="1530493176557" duration="1257000" />
+      <workItem from="1530532036254" duration="1340000" />
+      <workItem from="1530542055347" duration="614000" />
+      <workItem from="1530564946977" duration="34000" />
+      <workItem from="1530624993957" duration="1406000" />
     </task>
     <task id="LOCAL-00001" summary="Repositorio Mysql and updates">
       <created>1530020579469</created>
@@ -163,7 +169,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25793000" />
+    <option name="totallyTimeSpent" value="30612000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -175,10 +181,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="0" y="25" width="1366" height="743" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49891067" visible="true" weight="0.12633263" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49891067" visible="true" weight="0.2469697" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32897604" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
@@ -249,6 +255,13 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Models/RepositorioMySQL.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="624">
+          <caret line="24" column="26" lean-forward="true" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Models/RepositorioMySQL.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
@@ -382,13 +395,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Desktop/backup/DigitalHouse/Models/RepositorioJSON.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="644">
-          <caret line="58" column="30" lean-forward="true" selection-start-line="58" selection-start-column="30" selection-end-line="58" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/Desktop/backup/DigitalHouse/Models/RepositorioJSON.php" />
     <entry file="file://$PROJECT_DIR$/DBUsuarios.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
@@ -407,13 +414,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
           <caret line="6" column="44" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Models/RestauraBD.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>
@@ -462,17 +462,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Desktop/proyecto/Repositorios/RepositorioMySql.php">
+    <entry file="file://$USER_HOME$/Desktop/proyecto/Repositorios/RepositorioMySql.php" />
+    <entry file="file://$PROJECT_DIR$/Models/RepositorioMySQL.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        <state relative-caret-position="520">
+          <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Models/RepositorioMySQL.php">
+    <entry file="file://$PROJECT_DIR$/Models/RestauraBD.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="24" column="31" lean-forward="true" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
+        <state relative-caret-position="2109">
+          <caret line="91" column="57" selection-start-line="91" selection-start-column="57" selection-end-line="91" selection-end-column="57" />
         </state>
       </provider>
     </entry>
