@@ -15,13 +15,13 @@ class RestauraBD
     $opt = [PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION];
     $db = new PDO($dsn, $db_user, $db_pass, $opt);
 
-    $query = $db->query('drop database if exists ddl');
+    $query = $db->exec('drop database if exists ldd');
 
-    $query = $db->query('create database ddl;');
+    $query = $db->exec('create database ldd;');
 
-    $query = $db->query('use ddl;');
+    $query = $db->exec('use ldd;');
 
-    $query = $db->query('create table customers (
+    $query = $db->exec('create table customers (
       id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
       first_name VARCHAR(45) NOT NULL,
       last_name VARCHAR(45) NOT NULL,
@@ -30,39 +30,38 @@ class RestauraBD
       address_id INT,
       phone VARCHAR(45),
       credit_card_id INT,
-      create_time TIMESTAMP,
-      update_time TIMESTAMP ,
+      created_at TIMESTAMP null,
+      updated_at TIMESTAMP null,
       avatar VARCHAR(45) NOT NULL
     );');
 
-    $query = $db->query('create table products (
+    $query = $db->exec('create table products (
       id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
       brand_id INT ,
-      model_id INT,
-      model_id INT,
-      genero_id INT,
+      type_id INT,
+      genre_id INT,
       description VARCHAR(300),
       price DECIMAL,
       is_available INT,
       picture VARCHAR(45)
     );');
 
-    $query = $db->query('create table brands (
+    $query = $db->exec('create table brands (
       id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
       brand_name VARCHAR(45) NOT NULL
     );');
 
-    $query = $db->query('create table genres (
+    $query = $db->exec('create table genres (
       id TINYINT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
       genre_name VARCHAR(1) NOT NULL
     );');
 
-    $query = $db->query('create table types (
+    $query = $db->exec('create table types (
       id TINYINT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
       type_name VARCHAR(45) NOT NULL
     );');
 
-    $query = $db->query('create table order_details (
+    $query = $db->exec('create table order_details (
       id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
       order_id INT,
       product_id INT,
@@ -71,7 +70,7 @@ class RestauraBD
       total_amount DECIMAL
     );');
 
-    $query = $db->query('create table orders (
+    $query = $db->exec('create table orders (
       id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
       customer_id INT,
       order_date DATE,
@@ -80,7 +79,7 @@ class RestauraBD
       statis_delivered_date DATE
     )');
 
-    $query = $db->query('create table credit_cards (
+    $query = $db->exec('create table credit_cards (
       id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
       credit_card_number VARCHAR(20),
       credit_card_brand VARCHAR(20),
@@ -88,7 +87,7 @@ class RestauraBD
       credit_card_expy INT
     )');
 
-    $query = $db->query('create table addresses (
+    $query = $db->exec('create table addresses (
       id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
       city VARCHAR(45),
       province VARCHAR(45),
@@ -96,7 +95,7 @@ class RestauraBD
       zipcode VARCHAR(10)
     )');
 
-    $query = $db->query("INSERT INTO marca (nombre)
+    $query = $db->exec("INSERT INTO brands (brand_name)
     VALUES
       ('breitling'),
       ('cartier'),
@@ -108,10 +107,10 @@ class RestauraBD
       ('tag'),
       ('zenith');");
 
-    $query = $db->query("INSERT INTO genres (genre_name)
+    $query = $db->exec("INSERT INTO genres (genre_name)
     VALUES ('m'), ('f'), ('u');");
 
-    $query = $db->query("INSERT INTO types (type_name)
+    $query = $db->exec("INSERT INTO types (type_name)
     VALUES
       ('deportivo'),
       ('automatico'),
@@ -124,8 +123,6 @@ class RestauraBD
   $credenciales = json_encode($_POST);
   file_put_contents('credenciales.json', $credenciales);  
 
+  $db = null;
   }
 }
-
-
-?>
